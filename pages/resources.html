@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notion Resources — Guides, Templates, Stories, &amp; Learning Hub</title>
+    <meta
+      name="description"
+      content="Everything you need to get more from Notion — explore templates, customer stories, developer docs, and expert guides."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <link rel="stylesheet" href="../assets/css/pages.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23000'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='white' font-family='Inter,Arial' font-size='16' font-weight='700'%3EN%3C/text%3E%3C/svg%3E"
+    />
+  </head>
+  <body class="resources-page">
+    <!-- Header / Navbar -->
+    <header class="site-header" id="siteHeader">
+      <nav class="nav" aria-label="Main">
+        <div class="nav-left">
+          <a href="../index.html" class="logo" aria-label="Notion – Home">N</a>
+        </div>
+
+        <div class="nav-center">
+          <div class="nav-dropdown" data-dropdown>
+            <button class="nav-dropdown-btn" type="button" aria-expanded="false">
+              Product
+              <svg class="chevron" viewBox="0 0 10 10" aria-hidden="true">
+                <path d="M2 3.5 L5 6.5 L8 3.5" fill="none" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </button>
+            <div class="dropdown-panel">
+              <a href="product.html">Product Overview</a>
+              <a href="product.html#features">AI &amp; Search</a>
+              <a href="product.html#agents">Agents &amp; Automation</a>
+              <a href="product.html#usecases">Use Cases</a>
+            </div>
+          </div>
+
+          <div class="nav-dropdown" data-dropdown>
+            <button class="nav-dropdown-btn" type="button" aria-expanded="false">
+              Resources
+              <svg class="chevron" viewBox="0 0 10 10" aria-hidden="true">
+                <path d="M2 3.5 L5 6.5 L8 3.5" fill="none" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </button>
+            <div class="dropdown-panel">
+              <a href="resources.html">Resources Hub</a>
+              <a href="developers.html">Developer Platform</a>
+              <a href="startups.html">Notion for Startups</a>
+            </div>
+          </div>
+
+          <a class="nav-link" href="#cta">Pricing</a>
+          <a class="nav-link" href="#cta">Request a demo</a>
+        </div>
+
+        <div class="nav-right">
+          <a class="btn btn-ghost hide-mobile" href="#cta">Log in</a>
+          <a class="btn btn-primary" href="#cta">Get Notion free</a>
+          <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu">
+            <span></span>
+          </button>
+        </div>
+      </nav>
+
+      <div class="mobile-nav" id="mobileNav" hidden>
+        <a href="product.html">Product</a>
+        <a href="resources.html">Resources</a>
+        <a href="developers.html">Developers</a>
+        <a href="startups.html">Startups</a>
+        <a href="#cta">Pricing</a>
+        <a href="#cta">Log in</a>
+        <a href="#cta">Get Notion free</a>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section & Live Search -->
+      <section class="resources-hero">
+        <div class="container">
+          <div class="fade-up">
+            <h1 class="resources-hero-title">
+              Everything you need to get more from Notion.
+            </h1>
+            <p class="resources-hero-sub">
+              Explore templates, guides, customer stories, and developer resources to help your team work better.
+            </p>
+
+            <!-- Live Search Bar -->
+            <div class="resources-search-box">
+              <div class="resources-search-input-wrap">
+                <span class="resources-search-icon">🔍</span>
+                <input
+                  type="text"
+                  id="resourcesSearchInput"
+                  placeholder="Search resources, templates, guides, or API docs..."
+                  aria-label="Search resources"
+                />
+                <button class="resources-clear-btn" id="resourcesClearSearchBtn" type="button" hidden aria-label="Clear search">✕</button>
+              </div>
+            </div>
+
+            <!-- Category Filter Pills -->
+            <div class="resources-filter-pills">
+              <button class="filter-pill-btn active" data-category="All" type="button">All Resources</button>
+              <button class="filter-pill-btn" data-category="Templates" type="button">Templates</button>
+              <button class="filter-pill-btn" data-category="Guides" type="button">Guides</button>
+              <button class="filter-pill-btn" data-category="Stories" type="button">Customer Stories</button>
+              <button class="filter-pill-btn" data-category="Blog" type="button">Blog</button>
+              <button class="filter-pill-btn" data-category="Webinars" type="button">Webinars</button>
+              <button class="filter-pill-btn" data-category="Learning" type="button">Learning &amp; Docs</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Resource Section -->
+      <section class="product-section">
+        <div class="container-wide">
+          <div class="resources-featured-card fade-up">
+            <div class="featured-card-text">
+              <span class="tag blue" style="align-self: flex-start;">FEATURED GUIDE</span>
+              <h3>Build your team's knowledge hub</h3>
+              <p>
+                A practical guide to organizing knowledge, projects, and workflows in one unified workspace. Learn how leading tech teams eliminate wiki sprawl.
+              </p>
+              <div>
+                <button class="btn btn-primary" type="button" data-resource-id="res-1">Read full guide →</button>
+              </div>
+            </div>
+
+            <!-- HTML/CSS Visual Preview Canvas -->
+            <div class="featured-card-visual">
+              <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border); padding-bottom: 10px;">
+                <span style="font-size: 13px; font-weight: 600;">📘 Central Knowledge Architecture Spec</span>
+                <span class="tag green">Live Template</span>
+              </div>
+              <div style="background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 12px; font-size: 12.5px;">
+                <div style="color: var(--blue); font-weight: 600; margin-bottom: 6px;">✦ Notion AI Auto-Indexing</div>
+                <div style="color: var(--text-muted);">Parsing 14 teamspaces and linking architectural decision records...</div>
+              </div>
+              <div style="display: flex; gap: 8px;">
+                <span class="tag yellow">Architecture</span>
+                <span class="tag purple">Permissions</span>
+                <span class="tag pink">AI Agents</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Browse Section -->
+          <div style="margin-bottom: 32px;" class="fade-up">
+            <p class="eyebrow">BROWSE BY CATEGORY</p>
+            <h2 class="section-title" style="text-align: left;">Explore core Notion ecosystems</h2>
+          </div>
+
+          <div class="resources-browse-grid fade-up">
+            <!-- Card 1: Templates -->
+            <div class="browse-card" data-resource-id="res-2">
+              <div class="browse-card-head">
+                <div class="browse-icon blue">🎯</div>
+                <span class="arrow-btn" aria-hidden="true">→</span>
+              </div>
+              <div>
+                <h3>Templates</h3>
+                <p>Pre-built database frameworks for sprint planning, roadmaps, personal wikis, and design systems.</p>
+              </div>
+              <div class="browse-preview-frame">
+                <div style="font-weight: 600; margin-bottom: 4px;">▣ Agile Sprint Board</div>
+                <div style="color: var(--text-muted);">To-do (4) • In Progress (3) • Complete (12)</div>
+              </div>
+            </div>
+
+            <!-- Card 2: Consultants -->
+            <div class="browse-card" data-resource-id="res-3">
+              <div class="browse-card-head">
+                <div class="browse-icon yellow">🤝</div>
+                <span class="arrow-btn" aria-hidden="true">→</span>
+              </div>
+              <div>
+                <h3>Consultants</h3>
+                <p>Connect with certified Notion solution partners for enterprise setup and workspace migrations.</p>
+              </div>
+              <div class="browse-preview-frame">
+                <div style="font-weight: 600; margin-bottom: 4px;">Verified Solution Partners</div>
+                <div style="color: var(--text-muted);">⭐ 4.9 Rating • 200+ Enterprise Audits</div>
+              </div>
+            </div>
+
+            <!-- Card 3: Connections -->
+            <div class="browse-card" data-resource-id="res-4">
+              <div class="browse-card-head">
+                <div class="browse-icon purple">⚡</div>
+                <span class="arrow-btn" aria-hidden="true">→</span>
+              </div>
+              <div>
+                <h3>Connections</h3>
+                <p>Sync data automatically with GitHub, Slack, Jira, Figma, and 50+ enterprise integrations.</p>
+              </div>
+              <div class="browse-preview-frame">
+                <div style="display: flex; gap: 8px; font-weight: 600;">
+                  <span>⚙️ GitHub</span>
+                  <span>💬 Slack</span>
+                  <span>🎨 Figma</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Dynamic Filter & Search Results Target Container -->
+      <section class="product-section bg-soft" id="resourcesSearchSection">
+        <div class="container-wide">
+          <div style="margin-bottom: 32px;" class="fade-up">
+            <p class="eyebrow">DISCOVER &amp; LEARN</p>
+            <h2 class="section-title" style="text-align: left;">Resource Library &amp; Articles</h2>
+          </div>
+
+          <!-- Live JS Target Grid -->
+          <div class="dynamic-results-grid" id="resourcesDynamicResults">
+            <!-- Populated dynamically by pages.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Learn Section -->
+      <section class="product-section">
+        <div class="container-wide">
+          <div style="margin-bottom: 36px;" class="fade-up">
+            <p class="eyebrow">LEARN</p>
+            <h2 class="section-title" style="text-align: left;">Deepen your Notion expertise</h2>
+          </div>
+
+          <div class="resources-learn-grid fade-up">
+            <!-- Developers -->
+            <div class="learn-card" data-resource-id="res-8">
+              <div class="learn-card-visual">
+                <span style="color: var(--blue);">const notion = new Client();</span>
+                <span>await notion.pages.create();</span>
+              </div>
+              <h4>Developers</h4>
+              <p>Explore REST API documentation, SDKs, webhooks, and OAuth guides.</p>
+            </div>
+
+            <!-- Academy -->
+            <div class="learn-card" data-resource-id="res-9">
+              <div class="learn-card-visual" style="text-align: center;">
+                <span style="font-size: 24px;">🎓</span>
+                <span style="font-weight: 600; color: var(--text);">Notion Certified</span>
+              </div>
+              <h4>Academy</h4>
+              <p>Free self-paced video courses for beginners, admins, and power users.</p>
+            </div>
+
+            <!-- Product Tours -->
+            <div class="learn-card" data-resource-id="res-10">
+              <div class="learn-card-visual" style="text-align: center;">
+                <span style="font-size: 24px;">🧭</span>
+                <span style="color: var(--blue); font-weight: 600;">Interactive Demos</span>
+              </div>
+              <h4>Product Tours</h4>
+              <p>Self-guided interactive walkthroughs of Notion AI and project tools.</p>
+            </div>
+
+            <!-- Help Center -->
+            <div class="learn-card" data-resource-id="res-11">
+              <div class="learn-card-visual" style="text-align: center;">
+                <span style="font-size: 24px;">❓</span>
+                <span style="color: var(--text-muted);">24/7 Support Articles</span>
+              </div>
+              <h4>Help Center</h4>
+              <p>Find instant answers to billing, account settings, and workspace security.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Final CTA -->
+      <section class="cta" id="cta">
+        <div class="container">
+          <div class="fade-up">
+            <h2>Ready to transform how your team works?</h2>
+            <p style="font-size: 18px; color: var(--text-muted); margin-bottom: 28px;">
+              Get started with Notion free today or request a personalized team demo.
+            </p>
+            <div class="cta-actions">
+              <a class="btn btn-primary btn-lg" href="#">Get Notion free</a>
+              <a class="btn btn-secondary btn-lg" href="#">Request a demo</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Resource Detail Modal Window Overlay -->
+    <div class="resource-modal-overlay" id="resourceModalOverlay" aria-hidden="true">
+      <div class="resource-modal-container" role="dialog" aria-modal="true">
+        <div class="modal-header">
+          <div class="modal-title-wrap">
+            <span class="tag blue" id="resModalCategory">Guide</span>
+            <h3 id="resModalTitle">Resource Title</h3>
+          </div>
+          <button class="modal-close-btn" id="closeResourceModalBtn" type="button" aria-label="Close modal">✕</button>
+        </div>
+        <div class="resource-modal-body">
+          <p style="font-size: 16px; font-weight: 500; color: var(--text);" id="resModalDesc">Resource description text.</p>
+          <div style="background: var(--bg-soft); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 20px; font-size: 14.5px; line-height: 1.6;" id="resModalBodyContent">
+            Resource detailed body text.
+          </div>
+          <div style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 12px;">
+            <button class="btn btn-secondary" onclick="document.getElementById('resourceModalOverlay').classList.remove('open'); document.body.style.overflow='';" type="button">Close</button>
+            <button class="btn btn-primary" onclick="alert('Exploring simulated Notion resource...')" type="button">Explore resource →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container-wide">
+        <div class="footer-grid">
+          <div>
+            <a href="../index.html" class="logo-wordmark" aria-label="Notion – Home">
+              <span class="logo">N</span>
+              Notion
+            </a>
+            <p class="footer-quote">
+              “We shape our tools, and thereafter our tools shape us.”
+              <cite>Marshall McLuhan</cite>
+            </p>
+          </div>
+
+          <div class="footer-col">
+            <h4>Product</h4>
+            <a href="product.html">Product Overview</a>
+            <a href="product.html#features">Notion AI</a>
+            <a href="product.html#agents">Agents &amp; Automation</a>
+            <a href="#cta">Pricing</a>
+            <a href="#cta">Request a demo</a>
+          </div>
+
+          <div class="footer-col">
+            <h4>Resources</h4>
+            <a href="resources.html">Resources Hub</a>
+            <a href="developers.html">Developer Platform</a>
+            <a href="startups.html">Startups</a>
+            <a href="#cta">Customer Stories</a>
+          </div>
+
+          <div class="footer-col">
+            <h4>Company</h4>
+            <a href="#cta">About us</a>
+            <a href="#cta">Careers</a>
+            <a href="#cta">Security</a>
+            <a href="#cta">Terms &amp; privacy</a>
+          </div>
+
+          <div class="footer-col">
+            <h4>Notion for</h4>
+            <a href="startups.html">Startups</a>
+            <a href="developers.html">Developers</a>
+            <a href="#cta">Enterprise</a>
+            <a href="#cta">Small businesses</a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div>
+            <span>© 2026 Notion Labs, Inc.</span>
+            ·
+            <a href="#cta">Cookie settings</a>
+            ·
+            <span>Codeforge educational clone</span>
+          </div>
+          <button class="lang-btn" type="button">English (US)</button>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/pages.js"></script>
+  </body>
+</html>
