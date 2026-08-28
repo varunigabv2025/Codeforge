@@ -6,6 +6,12 @@
       const link = event.target.closest("a[href]");
       if (!link) return;
       const href = (link.getAttribute("href") || "").trim();
+      if (!href || href === "#") {
+        event.preventDefault();
+        return;
+      }
+      // Allow external links, same-page anchors, and local HTML pages.
+      if (/^(https?:|mailto:|tel:)/i.test(href) || href.startsWith("#")) return;
       const path = href.split("?")[0].split("#")[0];
       const allow = /(?:^|\/)(?:index\.html|pricing\.html|developers\.html|startups\.html)$/i.test(path);
       if (allow) return;

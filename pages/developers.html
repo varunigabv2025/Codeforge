@@ -3,45 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Build with Notion's Developer Platform – Notion</title>
-    <meta name="description" content="Sync any data source. Build any agent tool. Orchestrate any agent. No infra required." />
+    <title>/dev/notion – Notion Developer Platform</title>
+    <meta name="description" content="Not just another CRUD API for your SaaS. Sync any data source. Build any agent tool. Orchestrate any agent. No infra required." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../assets/css/styles.css" />
     <link rel="stylesheet" href="../assets/css/pages.css" />
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23000'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='white' font-family='Inter,Arial' font-size='16' font-weight='700'%3EN%3C/text%3E%3C/svg%3E" />
   </head>
   <body class="dev-platform-page">
-    <script>
-      // Force scroll to top on page load
-      window.addEventListener('beforeunload', function() {
-        window.scrollTo(0, 0);
-      });
-      document.addEventListener('DOMContentLoaded', function() {
-        window.scrollTo(0, 0);
-      });
-    </script>
-    
-    <!-- 1. TOP NAVIGATION -->
-    <header class="dev-nav-header">
+
+    <!-- ── NAV ─────────────────────────────────────────────── -->
+    <header class="dev-nav-header" id="devNav">
       <nav class="dev-nav-container">
         <div class="dev-nav-left">
           <a href="../index.html" class="dev-nav-logo" aria-label="Notion Home">
-            <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
-              <path d="M3.5 3L18.5 2C20.3 1.85 20.75 1.95 21.9 2.75L26.5 6C27.3 6.55 27.55 6.7 27.55 7.3V25C27.55 26.1 27.15 26.75 25.7 26.85L8.5 27.85C7.4 27.9 6.9 27.75 6.35 27.05L2.8 22.5C2.15 21.7 1.9 21.1 1.9 20.4V4.8C1.9 3.9 2.3 3.1 3.5 3Z" fill="#000"/>
+            <!-- White sticker "N" logo -->
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="28" height="28" rx="6" fill="white"/>
+              <path d="M5.5 5.5L18 4.7C19.5 4.6 19.9 4.7 20.8 5.3L24.5 7.8C25.2 8.2 25.4 8.3 25.4 8.8V23C25.4 23.9 25.1 24.4 23.9 24.5L9.2 25.3C8.3 25.4 7.9 25.3 7.5 24.7L4.6 21C4 20.3 3.8 19.8 3.8 19.2V6.8C3.8 6.1 4.1 5.5 5.5 5.5Z" fill="#0D0D0D"/>
             </svg>
           </a>
         </div>
 
         <div class="dev-nav-center">
-          <a href="#sync-section" class="dev-nav-link">Syncs</a>
-          <a href="#tools-section" class="dev-nav-link">Agent tools</a>
-          <a href="#webhooks-section" class="dev-nav-link">Webhooks</a>
-          <a href="#workers-section" class="dev-nav-link">Workers</a>
-          <a href="#external-agents-section" class="dev-nav-link">External agents</a>
-          <a href="#platform-section" class="dev-nav-link">Platform</a>
-          <a href="#" class="dev-nav-link">Docs</a>
+          <a href="#sync" class="dev-nav-link" data-key="S"><span class="dev-nav-key">S</span> Syncs</a>
+          <a href="#tools" class="dev-nav-link" data-key="A"><span class="dev-nav-key">A</span> Agent tools</a>
+          <a href="#webhooks" class="dev-nav-link" data-key="H"><span class="dev-nav-key">H</span> Webhooks</a>
+          <a href="#workers" class="dev-nav-link" data-key="W"><span class="dev-nav-key">W</span> Workers</a>
+          <a href="#externalAgents" class="dev-nav-link" data-key="E"><span class="dev-nav-key">E</span> External agents</a>
+          <a href="#platform" class="dev-nav-link" data-key="P"><span class="dev-nav-key">P</span> Platform</a>
+          <a href="https://developers.notion.com" class="dev-nav-link" data-key="D" target="_blank" rel="noopener"><span class="dev-nav-key">D</span> Docs</a>
         </div>
 
         <div class="dev-nav-right">
@@ -49,509 +42,631 @@
           <a href="#" class="dev-nav-cta">Get Notion free</a>
         </div>
 
-        <button class="dev-nav-mobile-toggle" aria-label="Menu">
-          <span></span>
-          <span></span>
-          <span></span>
+        <button class="dev-nav-mobile-toggle" id="devMobileToggle" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
         </button>
       </nav>
+
+      <!-- Mobile drawer -->
+      <div class="dev-mobile-drawer" id="devMobileDrawer">
+        <a href="#sync" class="dev-mobile-link">Syncs</a>
+        <a href="#tools" class="dev-mobile-link">Agent tools</a>
+        <a href="#webhooks" class="dev-mobile-link">Webhooks</a>
+        <a href="#workers" class="dev-mobile-link">Workers</a>
+        <a href="#externalAgents" class="dev-mobile-link">External agents</a>
+        <a href="#platform" class="dev-mobile-link">Platform</a>
+        <a href="https://developers.notion.com" class="dev-mobile-link" target="_blank" rel="noopener">Docs ↗</a>
+        <div class="dev-mobile-divider"></div>
+        <a href="#" class="dev-mobile-link">Log in</a>
+        <a href="#" class="dev-mobile-cta">Get Notion free</a>
+      </div>
     </header>
 
-    <!-- 2. HERO -->
+    <!-- ── HERO ───────────────────────────────────────────── -->
     <section class="dev-hero-section" id="hero">
+      <div class="dev-hero-bg-grid" aria-hidden="true"></div>
       <div class="dev-hero-container">
         <div class="dev-hero-content">
-          <h1 class="dev-hero-title">Build with Notion's Developer Platform</h1>
-          <p class="dev-hero-subtitle">Sync any data source. Build any agent tool. Orchestrate any agent. No infra required.</p>
-          
+          <h1 class="dev-hero-title"><span class="dev-hero-path">/dev/</span>notion</h1>
+          <p class="dev-hero-subtitle">Not just another CRUD API for your SaaS.</p>
+
           <div class="dev-hero-cta-group">
             <div class="dev-cli-install">
               <code class="dev-cli-code">curl -fsSL https://ntn.dev | bash</code>
-              <button class="dev-cli-copy" data-copy="curl -fsSL https://ntn.dev | bash" aria-label="Copy">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                  <rect x="4" y="4" width="8" height="8" rx="1" stroke="currentColor" stroke-width="1.2"/>
-                  <path d="M2 9V2C2 1.44772 2.44772 1 3 1H9" stroke="currentColor" stroke-width="1.2"/>
+              <button class="dev-cli-copy" data-copy="curl -fsSL https://ntn.dev | bash" aria-label="Copy to clipboard">
+                <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+                  <rect x="4.5" y="4.5" width="8" height="8" rx="1.5" stroke="currentColor" stroke-width="1.3"/>
+                  <path d="M2.5 9.5V2.5C2.5 1.94772 2.94772 1.5 3.5 1.5H9.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
                 </svg>
               </button>
             </div>
-            <p class="dev-hero-subtext">Start building on the Notion CLI or <a href="#">read our docs</a></p>
+            <p class="dev-hero-subtext">Start building on the Notion CLI or <a href="https://developers.notion.com" target="_blank" rel="noopener">read our docs</a></p>
           </div>
         </div>
 
         <div class="dev-hero-visual">
-          <div class="dev-hero-placeholder">
-            <p style="text-align: center; color: rgba(0,0,0,0.4); padding: 80px 20px;">Developer Platform Visual</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 3. TRUSTED BY ENGINEERS -->
-    <section class="dev-trusted-section">
-      <div class="dev-trusted-container">
-        <p class="dev-trusted-label">Trusted by engineers at</p>
-        <div class="dev-trusted-logos">
-          <img src="https://images.ctfassets.net/spoqsaf9291f/jWkCPMAAj0Av69704DQoB/84499b606028b276e0bf94c238f07097/OpenAI-black-wordmark-cropped.png" alt="OpenAI" />
-          <img src="https://images.ctfassets.net/spoqsaf9291f/502ApiNcRHgIwrDU8XRYTQ/497492503acb3fa21bbd9dd1aec193c3/Figma-logo-color.svg" alt="Figma" />
-          <img src="https://images.ctfassets.net/spoqsaf9291f/4eiEZBWL5gEClwB1IHi18I/b9b86479965977121ceabd01f45567a7/ramp.png" alt="Ramp" />
-          <img src="https://images.ctfassets.net/spoqsaf9291f/2Oi4GW0XT4kscGI5wwE2sG/8f6b7b5ea9e1dba59eb0cd89b6e5ee97/match-group-logo.svg" alt="Match Group" />
-          <img src="https://images.ctfassets.net/spoqsaf9291f/6NEhbP27yAbhvWdLKPHTFV/6978b1603c567d69f5fe7b4895b1d30f/Vercel.svg" alt="Vercel" />
-          <img src="https://www.notion.so/front-static/pages/product/super-duper/companies/nvidia.png" alt="NVIDIA" />
-        </div>
-      </div>
-    </section>
-
-    <!-- 4. SYNC ANY DATA SOURCE INTO NOTION -->
-    <section class="dev-sync-section" id="sync-section">
-      <div class="dev-sync-container">
-        <div class="dev-sync-text">
-          <h2 class="dev-section-heading">Sync any data source into Notion.</h2>
-          <p class="dev-section-description">Continuously upsert external records into a Notion Database with Workers, a declarative schema, and a persistent cursor.</p>
-        </div>
-
-        <div class="dev-sync-visual">
-          <div class="dev-sync-code-panel">
-            <div class="dev-code-header">
-              <span class="dev-code-filename">zendeskSync.ts</span>
-            </div>
-            <pre class="dev-code-content"><code><span class="code-import">import</span> { <span class="code-class">Worker</span> } <span class="code-import">from</span> <span class="code-string">"@notionhq/workers"</span>;
-
-<span class="code-export">export</span> <span class="code-const">const</span> <span class="code-var">worker</span> = <span class="code-class">Worker</span>.<span class="code-fn">sync</span>({
-  <span class="code-prop">name</span>: <span class="code-string">"ticketsSync"</span>,
-  <span class="code-prop">source</span>: zendesk,
-  <span class="code-prop">destination</span>: notion,
-  <span class="code-fn">transform</span>(<span class="code-param">ticket</span>) {
-    <span class="code-return">return</span> {
-      <span class="code-prop">title</span>: ticket.subject,
-      <span class="code-prop">status</span>: ticket.status,
-      <span class="code-prop">priority</span>: ticket.priority
-    };
-  }
-});</code></pre>
-          </div>
-
-          <div class="dev-sync-runtime-panel">
-            <div class="dev-runtime-header">
-              <span class="dev-runtime-label">Workers</span>
-              <span class="dev-runtime-name">sync:ticketsSync</span>
-            </div>
-            <div class="dev-runtime-output">
-              <div class="dev-runtime-line">Connecting. Found 5 new tickets...</div>
-              <div class="dev-runtime-line">✓ Synced: <strong>TICKET-1234</strong></div>
-              <div class="dev-runtime-line">✓ Synced: <strong>TICKET-1235</strong></div>
-              <div class="dev-runtime-line">✓ Synced: <strong>TICKET-1236</strong></div>
-            </div>
-          </div>
-
-          <div class="dev-sync-notion-visual">
-            <img src="https://www.notion.so/front-static/pages/dev/sync-database.png" alt="Notion Database Sync" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 5. BUILD ANY TOOL FOR YOUR AGENTS -->
-    <section class="dev-tools-section" id="tools-section">
-      <div class="dev-tools-container">
-        <div class="dev-tools-text">
-          <h2 class="dev-section-heading">Build any tool for your agents.</h2>
-          <p class="dev-section-description">Write custom tools for Notion Agents that generate assets, query live data, and hit any API.</p>
-        </div>
-
-        <div class="dev-tools-carousel">
-          <div class="dev-tools-tabs">
-            <button class="dev-tool-tab active" data-tool="presentation">
-              <span class="dev-tool-tab-title">Generate assets from your docs</span>
-              <span class="dev-tool-tab-file">presentationTool.ts</span>
-            </button>
-            <button class="dev-tool-tab" data-tool="query">
-              <span class="dev-tool-tab-title">Query any data warehouse</span>
-              <span class="dev-tool-tab-file">queryRevenueTool.ts</span>
-            </button>
-            <button class="dev-tool-tab" data-tool="browser">
-              <span class="dev-tool-tab-title">Take actions in any app</span>
-              <span class="dev-tool-tab-file">browserTools.md</span>
-            </button>
-          </div>
-
-          <div class="dev-tools-content">
-            <div class="dev-tool-panel active" data-content="presentation">
-              <div class="dev-tool-code">
-                <pre><code><span class="code-import">import</span> { <span class="code-class">Tool</span> } <span class="code-import">from</span> <span class="code-string">"@notionhq/agents"</span>;
-
-<span class="code-export">export</span> <span class="code-const">const</span> <span class="code-var">generatePresentation</span> = <span class="code-class">Tool</span>({
-  <span class="code-prop">name</span>: <span class="code-string">"generate_presentation"</span>,
-  <span class="code-prop">description</span>: <span class="code-string">"Create slides from docs"</span>,
-  <span class="code-fn">execute</span>: <span class="code-keyword">async</span> (<span class="code-param">params</span>) => {
-    <span class="code-comment">// Generate presentation logic</span>
-    <span class="code-return">return</span> presentationUrl;
-  }
-});</code></pre>
-              </div>
-              <div class="dev-tool-visual">
-                <img src="https://www.notion.so/front-static/pages/dev/tool-presentation.png" alt="Presentation Tool" />
-              </div>
-            </div>
-
-            <div class="dev-tool-panel" data-content="query">
-              <div class="dev-tool-code">
-                <pre><code><span class="code-import">import</span> { <span class="code-class">Tool</span> } <span class="code-import">from</span> <span class="code-string">"@notionhq/agents"</span>;
-
-<span class="code-export">export</span> <span class="code-const">const</span> <span class="code-var">queryRevenue</span> = <span class="code-class">Tool</span>({
-  <span class="code-prop">name</span>: <span class="code-string">"query_revenue"</span>,
-  <span class="code-prop">description</span>: <span class="code-string">"Query data warehouse"</span>,
-  <span class="code-fn">execute</span>: <span class="code-keyword">async</span> (<span class="code-param">params</span>) => {
-    <span class="code-return">return</span> <span class="code-keyword">await</span> warehouse.query(params);
-  }
-});</code></pre>
-              </div>
-              <div class="dev-tool-visual">
-                <img src="https://www.notion.so/front-static/pages/dev/tool-query.png" alt="Query Tool" />
-              </div>
-            </div>
-
-            <div class="dev-tool-panel" data-content="browser">
-              <div class="dev-tool-code">
-                <pre><code><span class="code-import">import</span> { <span class="code-class">Tool</span> } <span class="code-import">from</span> <span class="code-string">"@notionhq/agents"</span>;
-
-<span class="code-export">export</span> <span class="code-const">const</span> <span class="code-var">browserAction</span> = <span class="code-class">Tool</span>({
-  <span class="code-prop">name</span>: <span class="code-string">"browser_action"</span>,
-  <span class="code-prop">description</span>: <span class="code-string">"Take actions in any app"</span>,
-  <span class="code-fn">execute</span>: <span class="code-keyword">async</span> (<span class="code-param">params</span>) => {
-    <span class="code-return">return</span> <span class="code-keyword">await</span> browser.navigate(params);
-  }
-});</code></pre>
-              </div>
-              <div class="dev-tool-visual">
-                <img src="https://www.notion.so/front-static/pages/dev/tool-browser.png" alt="Browser Tool" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 6. TRIGGER NOTION WORKFLOWS FROM ANYWHERE -->
-    <section class="dev-webhooks-section" id="webhooks-section">
-      <div class="dev-webhooks-container">
-        <div class="dev-webhooks-text">
-          <h2 class="dev-section-heading">Trigger Notion workflows from anywhere.</h2>
-          <p class="dev-section-description">Listen for incoming webhooks from any app, then run workflows with Notion Agents, pages, databases, and external APIs.</p>
-        </div>
-
-        <div class="dev-webhooks-ticker">
-          <div class="dev-ticker-track" data-direction="left">
-            <div class="dev-ticker-item">
-              <span class="dev-ticker-icon">🔀</span>
-              <span class="dev-ticker-text">PR merged</span>
-            </div>
-            <div class="dev-ticker-item">
-              <span class="dev-ticker-icon">❌</span>
-              <span class="dev-ticker-text">Customer canceled</span>
-            </div>
-            <div class="dev-ticker-item">
-              <span class="dev-ticker-icon">✍️</span>
-              <span class="dev-ticker-text">Candidate signed offer</span>
-            </div>
-            <div class="dev-ticker-item">
-              <span class="dev-ticker-icon">📄</span>
-              <span class="dev-ticker-text">Contract signed</span>
-            </div>
-            <div class="dev-ticker-item">
-              <span class="dev-ticker-icon">🚨</span>
-              <span class="dev-ticker-text">Issue escalated</span>
-            </div>
-          </div>
-
-          <div class="dev-ticker-track" data-direction="right">
-            <div class="dev-ticker-item">
-              <span class="dev-ticker-icon">🧪</span>
-              <span class="dev-ticker-text">Start experiment</span>
-            </div>
-            <div class="dev-ticker-item">
-              <span class="dev-ticker-icon">🔥</span>
-              <span class="dev-ticker-text">Create incident</span>
-            </div>
-            <div class="dev-ticker-item">
-              <span class="dev-ticker-icon">👏</span>
-              <span class="dev-ticker-text">Send kudos to team</span>
-            </div>
-            <div class="dev-ticker-item">
-              <span class="dev-ticker-icon">📝</span>
-              <span class="dev-ticker-text">Create onboarding page</span>
-            </div>
-            <div class="dev-ticker-item">
-              <span class="dev-ticker-icon">💬</span>
-              <span class="dev-ticker-text">Notify the CS team</span>
-            </div>
-            <div class="dev-ticker-item">
-              <span class="dev-ticker-icon">✅</span>
-              <span class="dev-ticker-text">Update task status</span>
-            </div>
-            <div class="dev-ticker-item">
-              <span class="dev-ticker-icon">📟</span>
-              <span class="dev-ticker-text">Page on-call</span>
-            </div>
-            <div class="dev-ticker-item">
-              <span class="dev-ticker-icon">💰</span>
-              <span class="dev-ticker-text">Update opportunity</span>
-            </div>
-            <div class="dev-ticker-item">
-              <span class="dev-ticker-icon">📧</span>
-              <span class="dev-ticker-text">Send welcome email</span>
-            </div>
-            <div class="dev-ticker-item">
-              <span class="dev-ticker-icon">👤</span>
-              <span class="dev-ticker-text">Update customer record</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 7. ALL OF THIS, ON A HOSTED RUNTIME -->
-    <section class="dev-workers-section" id="workers-section">
-      <div class="dev-workers-container">
-        <div class="dev-workers-text">
-          <h2 class="dev-section-heading">All of this, on a hosted runtime.</h2>
-          <p class="dev-section-description">Workers are isolated sandboxes managed by Notion, so the code behind your syncs, tools, and workflows runs on our infra instead of your servers.</p>
-          <a href="#" class="dev-link-arrow">Read the docs →</a>
-        </div>
-
-        <div class="dev-workers-terminal">
-          <div class="dev-terminal-window">
-            <div class="dev-terminal-titlebar">
-              <div class="dev-terminal-dots">
-                <span></span><span></span><span></span>
-              </div>
-              <span class="dev-terminal-title">Terminal</span>
-            </div>
-            <div class="dev-terminal-body">
-              <div class="dev-terminal-prompt">$ ntn deploy worker</div>
-              <div class="dev-terminal-output">[build] Deploying...</div>
-              <div class="dev-terminal-output">[build] Uploading to Notion...</div>
-              <div class="dev-terminal-output">[build] Worker updated...</div>
-              <div class="dev-terminal-blank"></div>
-              <div class="dev-terminal-output">Capabilities:</div>
-              <div class="dev-terminal-output">  <span class="dev-terminal-badge">tool</span>  queryCustomers</div>
-              <div class="dev-terminal-output">  <span class="dev-terminal-badge">tool</span>  moreOfficeSnacks</div>
-              <div class="dev-terminal-output">  <span class="dev-terminal-badge">sync</span>  linearTickets</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="dev-beta-notice">
-          <p>Syncs, agent tools, and webhook triggers are available in beta.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 8. BRING YOUR FAVORITE AGENTS INTO NOTION -->
-    <section class="dev-external-agents-section" id="external-agents-section">
-      <div class="dev-external-container">
-        <div class="dev-external-header">
-          <h2 class="dev-section-heading">Bring your favorite agents into Notion.</h2>
-          <p class="dev-section-description">Use external agents like Claude, Cursor, Decagon, or one you've built, in a shared interface for your team and agents.</p>
-          <a href="#" class="dev-link-arrow">Join the waitlist →</a>
-        </div>
-
-        <div class="dev-external-visual">
-          <img src="https://www.notion.so/front-static/pages/dev/external-agents-hero.png" alt="External Agents" />
-        </div>
-      </div>
-    </section>
-
-    <!-- 9. MENTION -->
-    <section class="dev-feature-section dev-mention-section">
-      <div class="dev-feature-container">
-        <div class="dev-feature-content">
-          <h3 class="dev-feature-heading">Mention</h3>
-          <p class="dev-feature-description">Collaborate with agents like teammates. @mention them in any page, comment, or chat with them directly.</p>
-        </div>
-        <div class="dev-feature-visual">
-          <img src="https://www.notion.so/front-static/pages/dev/mention.png" alt="Mention agents" />
-        </div>
-      </div>
-    </section>
-
-    <!-- 10. ASSIGN -->
-    <section class="dev-feature-section dev-assign-section">
-      <div class="dev-feature-container dev-feature-reverse">
-        <div class="dev-feature-content">
-          <h3 class="dev-feature-heading">Assign</h3>
-          <p class="dev-feature-description">Hand off work to your agents from any task, or trigger them in parallel.</p>
-        </div>
-        <div class="dev-feature-visual">
-          <img src="https://www.notion.so/front-static/pages/dev/assign.png" alt="Assign tasks to agents" />
-        </div>
-      </div>
-    </section>
-
-    <!-- 11. ORCHESTRATE -->
-    <section class="dev-feature-section dev-orchestrate-section">
-      <div class="dev-feature-container">
-        <div class="dev-feature-content">
-          <h3 class="dev-feature-heading">Orchestrate</h3>
-          <p class="dev-feature-description">Watch agents think, call tools, and act across Notion and other apps, with your review and approval when it matters.</p>
-        </div>
-        <div class="dev-feature-visual">
-          <img src="https://www.notion.so/front-static/pages/dev/orchestrate.png" alt="Orchestrate agents" />
-        </div>
-      </div>
-    </section>
-
-    <!-- 12. BYO AGENT -->
-    <section class="dev-feature-section dev-byo-section">
-      <div class="dev-feature-container dev-feature-reverse">
-        <div class="dev-feature-content">
-          <h3 class="dev-feature-heading">BYO Agent</h3>
-          <p class="dev-feature-description">Bring your in-house agents into Notion with the External Agents API. Notion gives them triggers, tools, and permissions so they show up as first-class collaborators on all the same surfaces.</p>
-          
-          <div class="dev-api-endpoints">
-            <div class="dev-api-method">
-              <span class="dev-api-verb">POST</span>
-              <span class="dev-api-path">/sessions/{id}</span>
-            </div>
-            <div class="dev-api-method">
-              <span class="dev-api-verb">POST</span>
-              <span class="dev-api-path">/sessions/{id}/messages</span>
-            </div>
-            <div class="dev-api-method">
-              <span class="dev-api-verb">GET</span>
-              <span class="dev-api-path">/sessions/{id}/events</span>
-            </div>
-          </div>
-        </div>
-        <div class="dev-feature-visual">
-          <img src="https://www.notion.so/front-static/pages/dev/byo-agent.png" alt="Bring your own agent" />
-        </div>
-      </div>
-    </section>
-
-    <!-- 13. CLI, API, MCP, SDK — LFG -->
-    <section class="dev-platform-section" id="platform-section">
-      <div class="dev-platform-container">
-        <h2 class="dev-platform-heading">CLI, API, MCP, SDK — LFG.</h2>
-
-        <div class="dev-platform-grid">
-          <article class="dev-platform-card">
-            <div class="dev-platform-card-header">
-              <h3 class="dev-platform-card-title">Notion CLI</h3>
-              <span class="dev-platform-badge">Beta</span>
-            </div>
-            <p class="dev-platform-card-desc">Let coding agents use token-efficient commands to build and deploy syncs and tools to our Workers runtime.</p>
-            <div class="dev-platform-card-visual">
-              <div class="dev-platform-terminal">
-                <div class="dev-platform-prompt">$ ntn init</div>
-                <div class="dev-platform-prompt">$ ntn deploy</div>
-              </div>
-            </div>
-          </article>
-
-          <article class="dev-platform-card">
-            <div class="dev-platform-card-header">
-              <h3 class="dev-platform-card-title">Notion API</h3>
-            </div>
-            <p class="dev-platform-card-desc">Turn docs into Markdown and build internal tools with PATs or shared connections.</p>
-            <div class="dev-platform-card-visual">
-              <div class="dev-platform-code-snippet">
-                <code>GET /v1/pages/{id}</code>
-                <code>POST /v1/databases</code>
-              </div>
-            </div>
-          </article>
-
-          <article class="dev-platform-card">
-            <div class="dev-platform-card-header">
-              <h3 class="dev-platform-card-title">Notion MCP</h3>
-            </div>
-            <p class="dev-platform-card-desc">Search, read, and edit pages and databases with up to 91% fewer tokens.</p>
-            <div class="dev-platform-card-visual">
-              <img src="https://www.notion.so/front-static/pages/dev/mcp-claude.png" alt="MCP Claude" />
-            </div>
-          </article>
-
-          <article class="dev-platform-card">
-            <div class="dev-platform-card-header">
-              <h3 class="dev-platform-card-title">Notion Agent SDK</h3>
-              <span class="dev-platform-badge">Alpha</span>
-            </div>
-            <p class="dev-platform-card-desc">Bring your Agents into any app. Trigger runs via API, keep multi-turn threads, and stream responses in real time.</p>
-            <div class="dev-platform-card-code">
-              <pre><code><span class="code-import">import</span> { <span class="code-class">NotionAgentsClient</span> } <span class="code-import">from</span> <span class="code-string">"@notionhq/agents-client"</span>;
-
-<span class="code-const">const</span> <span class="code-var">client</span> = <span class="code-keyword">new</span> <span class="code-class">NotionAgentsClient</span>();
-
-<span class="code-const">const</span> <span class="code-var">agent</span> = <span class="code-keyword">await</span> client.agents.<span class="code-fn">agent</span>(id);
-
-<span class="code-keyword">await</span> agent.<span class="code-fn">chat</span>({
-  <span class="code-prop">message</span>: <span class="code-string">"Hello, World!"</span>
-});</code></pre>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- 14. ANY DATA. ANY TOOL. ANY AGENT. ALL IN NOTION. -->
-    <section class="dev-diagram-section">
-      <div class="dev-diagram-container">
-        <h2 class="dev-diagram-heading">Any data. Any tool. Any agent. All in Notion.</h2>
-        
-        <div class="dev-diagram-visual">
           <picture>
-            <source media="(max-width: 768px)" srcset="https://www.notion.so/front-static/pages/dev/diagram/mobile.svg" />
-            <img src="https://www.notion.so/front-static/pages/dev/diagram/diagram.svg" alt="Developer Platform Architecture" class="dev-diagram-img" />
+            <source media="(max-width: 768px)" srcset="https://www.notion.com/front-static/pages/dev/hero/ui-mobile2.webp" />
+            <img
+              class="dev-hero-img"
+              src="https://www.notion.com/front-static/pages/dev/hero/ui.webp"
+              alt="Notion Developer Platform UI"
+              loading="eager"
+              decoding="async"
+            />
           </picture>
         </div>
       </div>
     </section>
 
-    <!-- 15. FOOTER -->
+    <!-- ── KEYNOTE TICKER ─────────────────────────────────── -->
+    <div class="dev-keynote-band">
+      <a href="https://youtube.com/live/rpE2rzKO6L0" target="_blank" rel="noopener" class="dev-keynote-inner">
+        <img
+          class="dev-keynote-thumb"
+          src="https://www.notion.com/front-static/pages/dev/keynote-ticker/NotionDeveloperPlatform-Keynote.jpg"
+          alt="Keynote thumbnail"
+          loading="lazy"
+        />
+        <span class="dev-keynote-text">See the Developer Platform in action.&nbsp;<strong>Re-watch the keynote →</strong></span>
+      </a>
+    </div>
+
+    <!-- ── TRUSTED BY ─────────────────────────────────────── -->
+    <section class="dev-trusted-section">
+      <div class="dev-trusted-container">
+        <p class="dev-trusted-label">Trusted by engineers at</p>
+        <div class="dev-trusted-logos">
+          <img src="https://www.notion.com/front-static/logos/generic/en/openai-blue.svg"    alt="OpenAI"     class="dev-logo-item" />
+          <img src="https://www.notion.com/front-static/logos/generic/en/figma-blue.svg"     alt="Figma"      class="dev-logo-item" />
+          <img src="https://www.notion.com/front-static/logos/generic/en/ramp-blue.svg"      alt="Ramp"       class="dev-logo-item" />
+          <img src="https://www.notion.com/front-static/logos/generic/en/matchgroup-blue.svg" alt="Match Group" class="dev-logo-item" />
+          <img src="https://www.notion.com/front-static/logos/generic/en/vercel-blue.svg"    alt="Vercel"     class="dev-logo-item" />
+          <img src="https://www.notion.com/front-static/logos/generic/en/nvidia-blue.svg"    alt="NVIDIA"     class="dev-logo-item" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SYNC ──────────────────────────────────────────── -->
+    <section class="dev-section dev-sync-section" id="sync">
+      <div class="dev-section-container">
+        <div class="dev-section-header">
+          <h2 class="dev-section-heading">Sync any data source into Notion.</h2>
+          <p class="dev-section-desc">Continuously upsert external records into a Notion Database with Workers, a declarative schema, and a persistent cursor.</p>
+        </div>
+
+        <div class="dev-sync-body">
+          <!-- Source tabs -->
+          <div class="dev-sync-tabs" role="tablist">
+            <button class="dev-sync-tab active" role="tab" aria-selected="true" data-target="tab-zendesk">
+              <img src="https://www.notion.com/front-static/pages/dev/tabs/icon_zendesk.svg" alt="" class="dev-tab-icon" />
+              Zendesk
+            </button>
+            <button class="dev-sync-tab" role="tab" aria-selected="false" data-target="tab-salesforce">
+              <img src="https://www.notion.com/front-static/pages/dev/tabs/icon_cloud.svg" alt="" class="dev-tab-icon" />
+              Salesforce
+            </button>
+            <button class="dev-sync-tab" role="tab" aria-selected="false" data-target="tab-linear">
+              <img src="https://www.notion.com/front-static/pages/dev/tabs/icon_linear-2.svg" alt="" class="dev-tab-icon" />
+              Linear
+            </button>
+          </div>
+
+          <!-- Tab panels -->
+          <div class="dev-sync-panels">
+            <div class="dev-sync-panel active" id="tab-zendesk">
+              <div class="dev-code-window">
+                <div class="dev-code-titlebar">
+                  <div class="dev-code-dots"><span></span><span></span><span></span></div>
+                  <span class="dev-code-filename">zendeskSync.ts</span>
+                  <a href="https://github.com/makenotion/notion-sdk-js" target="_blank" rel="noopener" class="dev-code-github">See example ↗</a>
+                </div>
+                <pre class="dev-code-body"><code><span class="tok-import">import</span> { <span class="tok-class">Worker</span> } <span class="tok-import">from</span> <span class="tok-string">"@notionhq/workers"</span>;
+<span class="tok-import">import</span> { <span class="tok-class">zendesk</span> } <span class="tok-import">from</span> <span class="tok-string">"@notionhq/integrations"</span>;
+
+<span class="tok-kw">export</span> <span class="tok-kw">const</span> <span class="tok-var">worker</span> = <span class="tok-class">Worker</span>.<span class="tok-fn">sync</span>({
+  <span class="tok-prop">name</span>: <span class="tok-string">"ticketsSync"</span>,
+  <span class="tok-prop">source</span>: zendesk,
+  <span class="tok-prop">destination</span>: notion,
+  <span class="tok-fn">transform</span>(<span class="tok-param">ticket</span>) {
+    <span class="tok-kw">return</span> {
+      <span class="tok-prop">title</span>:    ticket.<span class="tok-prop">subject</span>,
+      <span class="tok-prop">status</span>:   ticket.<span class="tok-prop">status</span>,
+      <span class="tok-prop">priority</span>: ticket.<span class="tok-prop">priority</span>,
+      <span class="tok-prop">assignee</span>: ticket.<span class="tok-prop">assignee_id</span>,
+    };
+  },
+});</code></pre>
+              </div>
+              <div class="dev-sync-runtime">
+                <div class="dev-runtime-bar">
+                  <span class="dev-runtime-label">Workers</span>
+                  <span class="dev-runtime-name">sync:ticketsSync</span>
+                  <span class="dev-runtime-dot"></span>
+                </div>
+                <div class="dev-runtime-lines">
+                  <div class="dev-runtime-line">Connecting. Found <strong>5 new tickets</strong>…</div>
+                  <div class="dev-runtime-line dev-runtime-ok">✓ Synced: <strong>TICKET-1234</strong></div>
+                  <div class="dev-runtime-line dev-runtime-ok">✓ Synced: <strong>TICKET-1235</strong></div>
+                  <div class="dev-runtime-line dev-runtime-ok">✓ Synced: <strong>TICKET-1236</strong></div>
+                  <div class="dev-runtime-line dev-runtime-ok">✓ Synced: <strong>TICKET-1237</strong></div>
+                  <div class="dev-runtime-line dev-runtime-ok">✓ Synced: <strong>TICKET-1238</strong></div>
+                  <div class="dev-runtime-line">Waiting for next event…</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="dev-sync-panel" id="tab-salesforce">
+              <div class="dev-code-window">
+                <div class="dev-code-titlebar">
+                  <div class="dev-code-dots"><span></span><span></span><span></span></div>
+                  <span class="dev-code-filename">salesforceSync.ts</span>
+                  <a href="https://github.com/makenotion/notion-sdk-js" target="_blank" rel="noopener" class="dev-code-github">See example ↗</a>
+                </div>
+                <pre class="dev-code-body"><code><span class="tok-import">import</span> { <span class="tok-class">Worker</span> } <span class="tok-import">from</span> <span class="tok-string">"@notionhq/workers"</span>;
+<span class="tok-import">import</span> { <span class="tok-class">salesforce</span> } <span class="tok-import">from</span> <span class="tok-string">"@notionhq/integrations"</span>;
+
+<span class="tok-kw">export</span> <span class="tok-kw">const</span> <span class="tok-var">worker</span> = <span class="tok-class">Worker</span>.<span class="tok-fn">sync</span>({
+  <span class="tok-prop">name</span>: <span class="tok-string">"dealsSync"</span>,
+  <span class="tok-prop">source</span>: salesforce,
+  <span class="tok-prop">destination</span>: notion,
+  <span class="tok-fn">transform</span>(<span class="tok-param">opportunity</span>) {
+    <span class="tok-kw">return</span> {
+      <span class="tok-prop">title</span>:  opportunity.<span class="tok-prop">Name</span>,
+      <span class="tok-prop">stage</span>:  opportunity.<span class="tok-prop">StageName</span>,
+      <span class="tok-prop">value</span>:  opportunity.<span class="tok-prop">Amount</span>,
+      <span class="tok-prop">close</span>:  opportunity.<span class="tok-prop">CloseDate</span>,
+    };
+  },
+});</code></pre>
+              </div>
+              <div class="dev-sync-runtime">
+                <div class="dev-runtime-bar">
+                  <span class="dev-runtime-label">Workers</span>
+                  <span class="dev-runtime-name">sync:dealsSync</span>
+                  <span class="dev-runtime-dot"></span>
+                </div>
+                <div class="dev-runtime-lines">
+                  <div class="dev-runtime-line">Polling Salesforce API…</div>
+                  <div class="dev-runtime-line dev-runtime-ok">✓ Synced: <strong>Acme Corp — $280k</strong></div>
+                  <div class="dev-runtime-line dev-runtime-ok">✓ Synced: <strong>Wayne Ent — $1.2M</strong></div>
+                  <div class="dev-runtime-line">Waiting for next event…</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="dev-sync-panel" id="tab-linear">
+              <div class="dev-code-window">
+                <div class="dev-code-titlebar">
+                  <div class="dev-code-dots"><span></span><span></span><span></span></div>
+                  <span class="dev-code-filename">linearSync.ts</span>
+                  <a href="https://github.com/makenotion/notion-sdk-js" target="_blank" rel="noopener" class="dev-code-github">See example ↗</a>
+                </div>
+                <pre class="dev-code-body"><code><span class="tok-import">import</span> { <span class="tok-class">Worker</span> } <span class="tok-import">from</span> <span class="tok-string">"@notionhq/workers"</span>;
+<span class="tok-import">import</span> { <span class="tok-class">linear</span> } <span class="tok-import">from</span> <span class="tok-string">"@notionhq/integrations"</span>;
+
+<span class="tok-kw">export</span> <span class="tok-kw">const</span> <span class="tok-var">worker</span> = <span class="tok-class">Worker</span>.<span class="tok-fn">sync</span>({
+  <span class="tok-prop">name</span>: <span class="tok-string">"issuesSync"</span>,
+  <span class="tok-prop">source</span>: linear,
+  <span class="tok-prop">destination</span>: notion,
+  <span class="tok-fn">transform</span>(<span class="tok-param">issue</span>) {
+    <span class="tok-kw">return</span> {
+      <span class="tok-prop">title</span>:    issue.<span class="tok-prop">title</span>,
+      <span class="tok-prop">state</span>:    issue.<span class="tok-prop">state</span>.<span class="tok-prop">name</span>,
+      <span class="tok-prop">priority</span>: issue.<span class="tok-prop">priority</span>,
+      <span class="tok-prop">team</span>:     issue.<span class="tok-prop">team</span>.<span class="tok-prop">name</span>,
+    };
+  },
+});</code></pre>
+              </div>
+              <div class="dev-sync-runtime">
+                <div class="dev-runtime-bar">
+                  <span class="dev-runtime-label">Workers</span>
+                  <span class="dev-runtime-name">sync:issuesSync</span>
+                  <span class="dev-runtime-dot"></span>
+                </div>
+                <div class="dev-runtime-lines">
+                  <div class="dev-runtime-line">Streaming Linear events…</div>
+                  <div class="dev-runtime-line dev-runtime-ok">✓ Synced: <strong>ENG-112</strong> — Dark mode</div>
+                  <div class="dev-runtime-line dev-runtime-ok">✓ Synced: <strong>ENG-113</strong> — Perf regression</div>
+                  <div class="dev-runtime-line">Waiting for next event…</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TOOLS ─────────────────────────────────────────── -->
+    <section class="dev-section dev-tools-section" id="tools">
+      <div class="dev-section-container">
+        <div class="dev-section-header">
+          <h2 class="dev-section-heading">Build any tool for your agents.</h2>
+          <p class="dev-section-desc">Write custom tools for Notion Agents that generate assets, query live data, and hit any API.</p>
+        </div>
+
+        <div class="dev-tools-body">
+          <div class="dev-tools-tabs" role="tablist">
+            <button class="dev-tool-tab active" role="tab" data-target="tool-gen" aria-selected="true">
+              <strong class="dev-tool-tab-title">Generate assets from your docs</strong>
+              <span class="dev-tool-tab-file">presentationTool.ts</span>
+            </button>
+            <button class="dev-tool-tab" role="tab" data-target="tool-query" aria-selected="false">
+              <strong class="dev-tool-tab-title">Query any data warehouse</strong>
+              <span class="dev-tool-tab-file">queryRevenueTool.ts</span>
+            </button>
+            <button class="dev-tool-tab" role="tab" data-target="tool-action" aria-selected="false">
+              <strong class="dev-tool-tab-title">Take actions in any app</strong>
+              <span class="dev-tool-tab-file">browserTool.ts</span>
+            </button>
+          </div>
+
+          <div class="dev-tools-panels">
+            <div class="dev-tool-panel active" id="tool-gen">
+              <div class="dev-code-window">
+                <div class="dev-code-titlebar">
+                  <div class="dev-code-dots"><span></span><span></span><span></span></div>
+                  <span class="dev-code-filename">presentationTool.ts</span>
+                </div>
+                <pre class="dev-code-body"><code><span class="tok-import">import</span> { <span class="tok-class">Tool</span> } <span class="tok-import">from</span> <span class="tok-string">"@notionhq/agents"</span>;
+
+<span class="tok-kw">export</span> <span class="tok-kw">const</span> <span class="tok-var">generatePresentation</span> = <span class="tok-class">Tool</span>({
+  <span class="tok-prop">name</span>: <span class="tok-string">"generate_presentation"</span>,
+  <span class="tok-prop">description</span>: <span class="tok-string">"Create slides from a Notion page"</span>,
+  <span class="tok-prop">parameters</span>: {
+    <span class="tok-prop">pageId</span>:  { <span class="tok-prop">type</span>: <span class="tok-string">"string"</span> },
+    <span class="tok-prop">format</span>:  { <span class="tok-prop">type</span>: <span class="tok-string">"string"</span>, <span class="tok-prop">enum</span>: [<span class="tok-string">"pptx"</span>, <span class="tok-string">"pdf"</span>] },
+  },
+  <span class="tok-fn">execute</span>: <span class="tok-kw">async</span> ({ <span class="tok-param">pageId</span>, <span class="tok-param">format</span> }) => {
+    <span class="tok-kw">const</span> <span class="tok-var">page</span>   = <span class="tok-kw">await</span> notion.<span class="tok-fn">pages</span>.<span class="tok-fn">retrieve</span>({ page_id: pageId });
+    <span class="tok-kw">const</span> <span class="tok-var">slides</span> = <span class="tok-kw">await</span> slides.<span class="tok-fn">generate</span>({ page, format });
+    <span class="tok-kw">return</span> { url: slides.<span class="tok-prop">downloadUrl</span> };
+  },
+});</code></pre>
+              </div>
+              <div class="dev-tool-preview">
+                <img src="https://www.notion.com/front-static/pages/dev/byo/byo-1.webp" alt="Generate presentation preview" loading="lazy" />
+              </div>
+            </div>
+
+            <div class="dev-tool-panel" id="tool-query">
+              <div class="dev-code-window">
+                <div class="dev-code-titlebar">
+                  <div class="dev-code-dots"><span></span><span></span><span></span></div>
+                  <span class="dev-code-filename">queryRevenueTool.ts</span>
+                </div>
+                <pre class="dev-code-body"><code><span class="tok-import">import</span> { <span class="tok-class">Tool</span> } <span class="tok-import">from</span> <span class="tok-string">"@notionhq/agents"</span>;
+
+<span class="tok-kw">export</span> <span class="tok-kw">const</span> <span class="tok-var">queryRevenue</span> = <span class="tok-class">Tool</span>({
+  <span class="tok-prop">name</span>: <span class="tok-string">"query_revenue"</span>,
+  <span class="tok-prop">description</span>: <span class="tok-string">"Query live revenue from the data warehouse"</span>,
+  <span class="tok-prop">parameters</span>: {
+    <span class="tok-prop">startDate</span>: { <span class="tok-prop">type</span>: <span class="tok-string">"string"</span> },
+    <span class="tok-prop">endDate</span>:   { <span class="tok-prop">type</span>: <span class="tok-string">"string"</span> },
+    <span class="tok-prop">segment</span>:   { <span class="tok-prop">type</span>: <span class="tok-string">"string"</span> },
+  },
+  <span class="tok-fn">execute</span>: <span class="tok-kw">async</span> (<span class="tok-param">params</span>) => {
+    <span class="tok-kw">const</span> <span class="tok-var">rows</span> = <span class="tok-kw">await</span> warehouse.<span class="tok-fn">query</span>(
+      <span class="tok-string">`SELECT sum(mrr) FROM revenue
+       WHERE date BETWEEN $1 AND $2
+         AND segment = $3`</span>,
+      [<span class="tok-param">params</span>.<span class="tok-prop">startDate</span>, <span class="tok-param">params</span>.<span class="tok-prop">endDate</span>, <span class="tok-param">params</span>.<span class="tok-prop">segment</span>]
+    );
+    <span class="tok-kw">return</span> rows[<span class="tok-num">0</span>];
+  },
+});</code></pre>
+              </div>
+              <div class="dev-tool-preview">
+                <img src="https://www.notion.com/front-static/pages/dev/byo/byo-2.webp" alt="Query warehouse preview" loading="lazy" />
+              </div>
+            </div>
+
+            <div class="dev-tool-panel" id="tool-action">
+              <div class="dev-code-window">
+                <div class="dev-code-titlebar">
+                  <div class="dev-code-dots"><span></span><span></span><span></span></div>
+                  <span class="dev-code-filename">browserTool.ts</span>
+                </div>
+                <pre class="dev-code-body"><code><span class="tok-import">import</span> { <span class="tok-class">Tool</span> } <span class="tok-import">from</span> <span class="tok-string">"@notionhq/agents"</span>;
+
+<span class="tok-kw">export</span> <span class="tok-kw">const</span> <span class="tok-var">submitExpense</span> = <span class="tok-class">Tool</span>({
+  <span class="tok-prop">name</span>: <span class="tok-string">"submit_expense"</span>,
+  <span class="tok-prop">description</span>: <span class="tok-string">"Submit an expense report in Ramp"</span>,
+  <span class="tok-prop">parameters</span>: {
+    <span class="tok-prop">amount</span>:      { <span class="tok-prop">type</span>: <span class="tok-string">"number"</span> },
+    <span class="tok-prop">category</span>:    { <span class="tok-prop">type</span>: <span class="tok-string">"string"</span> },
+    <span class="tok-prop">description</span>: { <span class="tok-prop">type</span>: <span class="tok-string">"string"</span> },
+  },
+  <span class="tok-fn">execute</span>: <span class="tok-kw">async</span> (<span class="tok-param">params</span>) => {
+    <span class="tok-kw">const</span> <span class="tok-var">result</span> = <span class="tok-kw">await</span> ramp.<span class="tok-fn">expenses</span>.<span class="tok-fn">create</span>(<span class="tok-param">params</span>);
+    <span class="tok-kw">return</span> { id: result.<span class="tok-prop">id</span>, status: <span class="tok-string">"submitted"</span> };
+  },
+});</code></pre>
+              </div>
+              <div class="dev-tool-preview">
+                <img src="https://www.notion.com/front-static/pages/dev/byo/byo-3.webp" alt="Browser action preview" loading="lazy" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── WEBHOOKS ───────────────────────────────────────── -->
+    <section class="dev-section dev-webhooks-section" id="webhooks">
+      <div class="dev-section-container">
+        <div class="dev-section-header dev-section-header--dark">
+          <h2 class="dev-section-heading dev-section-heading--light">Trigger Notion workflows from anywhere.</h2>
+          <p class="dev-section-desc dev-section-desc--light">Listen for incoming webhooks from any app, then run workflows with Notion Agents, pages, databases, and external APIs.</p>
+        </div>
+
+        <div class="dev-webhooks-slots">
+          <!-- Row 1: event triggers (scroll left) -->
+          <div class="dev-slot-track dev-slot-track--left" aria-hidden="true">
+            <div class="dev-slot-row">
+              <div class="dev-slot-pill"><img src="https://www.notion.com/front-static/pages/dev/slot/github.svg" alt="" class="dev-slot-icon" />PR merged</div>
+              <div class="dev-slot-pill"><img src="https://www.notion.com/front-static/pages/dev/slot/stripe.svg" alt="" class="dev-slot-icon" />Customer canceled</div>
+              <div class="dev-slot-pill"><img src="https://www.notion.com/front-static/pages/dev/slot/workday.svg" alt="" class="dev-slot-icon" />Candidate signed offer</div>
+              <div class="dev-slot-pill"><img src="https://www.notion.com/front-static/pages/dev/slot/docusign.svg" alt="" class="dev-slot-icon" />Contract signed</div>
+              <div class="dev-slot-pill"><img src="https://www.notion.com/front-static/pages/dev/slot/pagerduty.svg" alt="" class="dev-slot-icon" />Issue escalated</div>
+              <div class="dev-slot-pill"><img src="https://www.notion.com/front-static/pages/dev/slot/jira.svg" alt="" class="dev-slot-icon" />Bug reported</div>
+              <div class="dev-slot-pill"><img src="https://www.notion.com/front-static/pages/dev/slot/slack.svg" alt="" class="dev-slot-icon" />Message sent</div>
+              <!-- duplicated for loop -->
+              <div class="dev-slot-pill"><img src="https://www.notion.com/front-static/pages/dev/slot/github.svg" alt="" class="dev-slot-icon" />PR merged</div>
+              <div class="dev-slot-pill"><img src="https://www.notion.com/front-static/pages/dev/slot/stripe.svg" alt="" class="dev-slot-icon" />Customer canceled</div>
+              <div class="dev-slot-pill"><img src="https://www.notion.com/front-static/pages/dev/slot/workday.svg" alt="" class="dev-slot-icon" />Candidate signed offer</div>
+              <div class="dev-slot-pill"><img src="https://www.notion.com/front-static/pages/dev/slot/docusign.svg" alt="" class="dev-slot-icon" />Contract signed</div>
+              <div class="dev-slot-pill"><img src="https://www.notion.com/front-static/pages/dev/slot/pagerduty.svg" alt="" class="dev-slot-icon" />Issue escalated</div>
+              <div class="dev-slot-pill"><img src="https://www.notion.com/front-static/pages/dev/slot/jira.svg" alt="" class="dev-slot-icon" />Bug reported</div>
+              <div class="dev-slot-pill"><img src="https://www.notion.com/front-static/pages/dev/slot/slack.svg" alt="" class="dev-slot-icon" />Message sent</div>
+            </div>
+          </div>
+          <!-- Row 2: notion actions (scroll right) -->
+          <div class="dev-slot-track dev-slot-track--right" aria-hidden="true">
+            <div class="dev-slot-row">
+              <div class="dev-slot-pill dev-slot-pill--notion">🧪 Start experiment</div>
+              <div class="dev-slot-pill dev-slot-pill--notion">🔥 Create incident</div>
+              <div class="dev-slot-pill dev-slot-pill--notion">👏 Send kudos to team</div>
+              <div class="dev-slot-pill dev-slot-pill--notion">📝 Create onboarding page</div>
+              <div class="dev-slot-pill dev-slot-pill--notion">💬 Notify the CS team</div>
+              <div class="dev-slot-pill dev-slot-pill--notion">✅ Update task status</div>
+              <div class="dev-slot-pill dev-slot-pill--notion">📟 Page on-call</div>
+              <div class="dev-slot-pill dev-slot-pill--notion">💰 Update opportunity</div>
+              <!-- duplicated for loop -->
+              <div class="dev-slot-pill dev-slot-pill--notion">🧪 Start experiment</div>
+              <div class="dev-slot-pill dev-slot-pill--notion">🔥 Create incident</div>
+              <div class="dev-slot-pill dev-slot-pill--notion">👏 Send kudos to team</div>
+              <div class="dev-slot-pill dev-slot-pill--notion">📝 Create onboarding page</div>
+              <div class="dev-slot-pill dev-slot-pill--notion">💬 Notify the CS team</div>
+              <div class="dev-slot-pill dev-slot-pill--notion">✅ Update task status</div>
+              <div class="dev-slot-pill dev-slot-pill--notion">📟 Page on-call</div>
+              <div class="dev-slot-pill dev-slot-pill--notion">💰 Update opportunity</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── WORKERS ────────────────────────────────────────── -->
+    <section class="dev-section dev-workers-section" id="workers">
+      <div class="dev-section-container">
+        <div class="dev-workers-layout">
+          <div class="dev-workers-text">
+            <h2 class="dev-section-heading">All of this, on a hosted runtime.</h2>
+            <p class="dev-section-desc">Workers are isolated sandboxes managed by Notion, so the code behind your syncs, tools, and workflows runs on our infra instead of your servers.</p>
+            <a href="https://developers.notion.com" target="_blank" rel="noopener" class="dev-link-arrow">Read the docs →</a>
+            <div class="dev-beta-chip">Syncs, agent tools, and webhook triggers available in beta</div>
+          </div>
+
+          <div class="dev-workers-terminal-wrap">
+            <div class="dev-terminal-window">
+              <div class="dev-terminal-titlebar">
+                <div class="dev-terminal-dots"><span></span><span></span><span></span></div>
+                <span class="dev-terminal-title">Terminal</span>
+              </div>
+              <div class="dev-terminal-body">
+                <p class="dev-terminal-line"><span class="dev-term-prompt">$</span> <span class="dev-term-cmd">ntn deploy worker</span></p>
+                <p class="dev-terminal-line dev-term-out">[build] Deploying…</p>
+                <p class="dev-terminal-line dev-term-out">[build] Uploading to Notion Workers runtime…</p>
+                <p class="dev-terminal-line dev-term-ok">[build] ✓ Worker updated.</p>
+                <p class="dev-terminal-line"> </p>
+                <p class="dev-terminal-line dev-term-out">Capabilities:</p>
+                <p class="dev-terminal-line dev-term-out">  <span class="dev-term-badge dev-term-badge--tool">tool</span>  queryCustomers</p>
+                <p class="dev-terminal-line dev-term-out">  <span class="dev-term-badge dev-term-badge--tool">tool</span>  moreOfficeSnacks</p>
+                <p class="dev-terminal-line dev-term-out">  <span class="dev-term-badge dev-term-badge--sync">sync</span>  linearTickets</p>
+                <p class="dev-terminal-line dev-term-out">  <span class="dev-term-badge dev-term-badge--sync">sync</span>  zendeskTickets</p>
+              </div>
+            </div>
+            <img class="dev-circuit-img" src="https://www.notion.com/front-static/pages/dev/workers/notionCircuit.svg" alt="" aria-hidden="true" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── EXTERNAL AGENTS ───────────────────────────────── -->
+    <section class="dev-section dev-external-section" id="externalAgents">
+      <div class="dev-section-container">
+        <div class="dev-section-header">
+          <span class="dev-alpha-badge">Alpha</span>
+          <h2 class="dev-section-heading">Bring your favorite agents into Notion.</h2>
+          <p class="dev-section-desc">Use external agents like Claude, Cursor, Decagon, or one you've built, in a shared interface for your team and agents.</p>
+          <a href="#" class="dev-link-arrow dev-link-arrow--blue">Join the waitlist →</a>
+        </div>
+
+        <div class="dev-agents-grid">
+          <!-- Mention -->
+          <div class="dev-agent-card">
+            <img src="https://www.notion.com/front-static/pages/dev/external-agents/mention-agents.webp" alt="Mention agents" class="dev-agent-img" loading="lazy" />
+            <h3 class="dev-agent-title">Mention</h3>
+            <p class="dev-agent-desc">Collaborate with agents like teammates. @mention them in any page, comment, or chat with them directly.</p>
+          </div>
+          <!-- Assign -->
+          <div class="dev-agent-card">
+            <img src="https://www.notion.com/front-static/pages/dev/external-agents/assign-to-agents.webp" alt="Assign to agents" class="dev-agent-img" loading="lazy" />
+            <h3 class="dev-agent-title">Assign</h3>
+            <p class="dev-agent-desc">Hand off work to your agents from any task, or trigger them in parallel from a workflow.</p>
+          </div>
+          <!-- Orchestrate -->
+          <div class="dev-agent-card">
+            <img src="https://www.notion.com/front-static/pages/dev/external-agents/generate.webp" alt="Orchestrate agents" class="dev-agent-img" loading="lazy" />
+            <h3 class="dev-agent-title">Orchestrate</h3>
+            <p class="dev-agent-desc">Watch agents think, call tools, and act across Notion and other apps, with your review when it matters.</p>
+          </div>
+          <!-- BYO Agent -->
+          <div class="dev-agent-card dev-agent-card--byo">
+            <div class="dev-byo-content">
+              <h3 class="dev-agent-title">BYO Agent</h3>
+              <p class="dev-agent-desc">Bring your in-house agents into Notion with the External Agents API. Notion gives them triggers, tools, and permissions so they show up as first-class collaborators.</p>
+              <div class="dev-api-endpoints">
+                <div class="dev-api-method"><span class="dev-api-verb">POST</span><span class="dev-api-path">/sessions/{id}</span></div>
+                <div class="dev-api-method"><span class="dev-api-verb">POST</span><span class="dev-api-path">/sessions/{id}/messages</span></div>
+                <div class="dev-api-method"><span class="dev-api-verb">GET</span><span class="dev-api-path">/sessions/{id}/events</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PLATFORM ───────────────────────────────────────── -->
+    <section class="dev-section dev-platform-section" id="platform">
+      <div class="dev-section-container">
+        <h2 class="dev-platform-heading">CLI, API, MCP, SDK — LFG.</h2>
+
+        <div class="dev-platform-grid">
+          <!-- CLI -->
+          <article class="dev-platform-card">
+            <div class="dev-platform-card-top">
+              <h3 class="dev-platform-card-title">Notion CLI</h3>
+              <span class="dev-platform-badge dev-platform-badge--beta">Beta</span>
+            </div>
+            <p class="dev-platform-card-desc">Let coding agents use token-efficient commands to build and deploy syncs and tools to our Workers runtime.</p>
+            <div class="dev-platform-commands">
+              <div class="dev-cmd-row">
+                <code class="dev-cmd-code">$ ntn init</code>
+                <button class="dev-cmd-copy" data-copy="ntn init" aria-label="Copy">
+                  <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="1" stroke="currentColor" stroke-width="1.1"/><path d="M2 8.5V2C2 1.44772 2.44772 1 3 1H8.5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></svg>
+                </button>
+              </div>
+              <div class="dev-cmd-row">
+                <code class="dev-cmd-code">$ ntn deploy</code>
+                <button class="dev-cmd-copy" data-copy="ntn deploy" aria-label="Copy">
+                  <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="1" stroke="currentColor" stroke-width="1.1"/><path d="M2 8.5V2C2 1.44772 2.44772 1 3 1H8.5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- API -->
+          <article class="dev-platform-card">
+            <div class="dev-platform-card-top">
+              <h3 class="dev-platform-card-title">Notion API</h3>
+            </div>
+            <p class="dev-platform-card-desc">Turn docs into Markdown and build internal tools with PATs or shared connections.</p>
+            <div class="dev-platform-commands">
+              <div class="dev-cmd-row">
+                <code class="dev-cmd-code">GET /v1/pages/{id}</code>
+                <button class="dev-cmd-copy" data-copy="GET /v1/pages/{id}" aria-label="Copy">
+                  <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="1" stroke="currentColor" stroke-width="1.1"/><path d="M2 8.5V2C2 1.44772 2.44772 1 3 1H8.5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></svg>
+                </button>
+              </div>
+              <div class="dev-cmd-row">
+                <code class="dev-cmd-code">POST /v1/databases</code>
+                <button class="dev-cmd-copy" data-copy="POST /v1/databases" aria-label="Copy">
+                  <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="1" stroke="currentColor" stroke-width="1.1"/><path d="M2 8.5V2C2 1.44772 2.44772 1 3 1H8.5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- MCP -->
+          <article class="dev-platform-card">
+            <div class="dev-platform-card-top">
+              <h3 class="dev-platform-card-title">Notion MCP</h3>
+            </div>
+            <p class="dev-platform-card-desc">Search, read, and edit pages and databases with up to 91% fewer tokens.</p>
+            <div class="dev-platform-commands">
+              <div class="dev-cmd-row">
+                <code class="dev-cmd-code">npx @notion/mcp-server</code>
+                <button class="dev-cmd-copy" data-copy="npx @notion/mcp-server" aria-label="Copy">
+                  <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="1" stroke="currentColor" stroke-width="1.1"/><path d="M2 8.5V2C2 1.44772 2.44772 1 3 1H8.5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Agent SDK -->
+          <article class="dev-platform-card">
+            <div class="dev-platform-card-top">
+              <h3 class="dev-platform-card-title">Notion Agent SDK</h3>
+              <span class="dev-platform-badge dev-platform-badge--alpha">Alpha</span>
+            </div>
+            <p class="dev-platform-card-desc">Bring your Agents into any app. Trigger runs via API, keep multi-turn threads, and stream responses in real time.</p>
+            <div class="dev-platform-code-block">
+              <pre><code><span class="tok-import">import</span> { <span class="tok-class">NotionAgentsClient</span> } <span class="tok-import">from</span> <span class="tok-string">"@notionhq/agents-client"</span>;
+
+<span class="tok-kw">const</span> <span class="tok-var">client</span> = <span class="tok-kw">new</span> <span class="tok-class">NotionAgentsClient</span>();
+<span class="tok-kw">const</span> <span class="tok-var">agent</span>  = <span class="tok-kw">await</span> client.agents.<span class="tok-fn">agent</span>(id);
+
+<span class="tok-kw">await</span> agent.<span class="tok-fn">chat</span>({ <span class="tok-prop">message</span>: <span class="tok-string">"Hello, world!"</span> });</code></pre>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── DIAGRAM ────────────────────────────────────────── -->
+    <section class="dev-section dev-diagram-section">
+      <div class="dev-section-container">
+        <h2 class="dev-diagram-heading">Any data. Any tool. Any agent. All in Notion.</h2>
+        <div class="dev-diagram-visual">
+          <picture>
+            <source media="(max-width: 768px)" srcset="https://www.notion.com/front-static/pages/dev/diagram/mobile.svg" />
+            <img src="https://www.notion.com/front-static/pages/dev/diagram/diagram.svg" alt="Developer Platform Architecture Diagram" class="dev-diagram-img" loading="lazy" />
+          </picture>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FOOTER ─────────────────────────────────────────── -->
     <footer class="dev-footer">
-      <div class="dev-footer-container">
+      <div class="dev-footer-inner">
+        <!-- Top row: brand + links -->
         <div class="dev-footer-top">
           <div class="dev-footer-brand">
-            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" class="dev-footer-logo">
-              <path d="M3.5 3L18.5 2C20.3 1.85 20.75 1.95 21.9 2.75L26.5 6C27.3 6.55 27.55 6.7 27.55 7.3V25C27.55 26.1 27.15 26.75 25.7 26.85L8.5 27.85C7.4 27.9 6.9 27.75 6.35 27.05L2.8 22.5C2.15 21.7 1.9 21.1 1.9 20.4V4.8C1.9 3.9 2.3 3.1 3.5 3Z" fill="currentColor"/>
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+              <rect width="28" height="28" rx="6" fill="white" fill-opacity="0.12"/>
+              <path d="M5.5 5.5L18 4.7C19.5 4.6 19.9 4.7 20.8 5.3L24.5 7.8C25.2 8.2 25.4 8.3 25.4 8.8V23C25.4 23.9 25.1 24.4 23.9 24.5L9.2 25.3C8.3 25.4 7.9 25.3 7.5 24.7L4.6 21C4 20.3 3.8 19.8 3.8 19.2V6.8C3.8 6.1 4.1 5.5 5.5 5.5Z" fill="white"/>
             </svg>
             <span class="dev-footer-wordmark">Notion</span>
           </div>
-
           <div class="dev-footer-links">
             <button class="dev-footer-lang">English (US)</button>
             <a href="#" class="dev-footer-link">Cookie settings</a>
-            <a href="#" class="dev-footer-link">Terms & privacy</a>
+            <a href="#" class="dev-footer-link">Terms &amp; privacy</a>
             <a href="#" class="dev-footer-link">Your privacy rights</a>
           </div>
         </div>
 
+        <!-- CLI CTA -->
         <div class="dev-footer-cta">
-          <div class="dev-footer-cli">
-            <code class="dev-footer-code">curl -fsSL https://ntn.dev | bash</code>
-            <button class="dev-footer-copy" data-copy="curl -fsSL https://ntn.dev | bash" aria-label="Copy">
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                <rect x="3" y="3" width="7" height="7" rx="0.5" stroke="currentColor" stroke-width="1"/>
-                <path d="M2 8V2C2 1.44772 2.44772 1 3 1H8" stroke="currentColor" stroke-width="1"/>
-              </svg>
+          <div class="dev-footer-cli-pill">
+            <code class="dev-footer-cli-code">curl -fsSL https://ntn.dev | bash</code>
+            <button class="dev-footer-cli-copy dev-cli-copy" data-copy="curl -fsSL https://ntn.dev | bash" aria-label="Copy">
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="1" stroke="currentColor" stroke-width="1.1"/><path d="M2 8.5V2C2 1.44772 2.44772 1 3 1H8.5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></svg>
             </button>
           </div>
-          <p class="dev-footer-subtext">Start building on the Notion CLI or <a href="#">read our docs</a></p>
+          <p class="dev-footer-sub">Start building on the Notion CLI or <a href="https://developers.notion.com" target="_blank" rel="noopener">read our docs</a></p>
         </div>
 
+        <!-- Bottom row: copyright -->
         <div class="dev-footer-bottom">
-          <p class="dev-footer-copyright">© 2026 Notion Labs, Inc.</p>
+          <p class="dev-footer-copy">© 2026 Notion Labs, Inc.</p>
         </div>
       </div>
     </footer>
 
-    <script>
-      // Ensure page starts at top
-      if (history.scrollRestoration) {
-        history.scrollRestoration = 'manual';
-      }
-      window.scrollTo(0, 0);
-    </script>
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/pages.js"></script>
   </body>

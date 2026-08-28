@@ -439,92 +439,6 @@
   });
 
   /* ==========================================================================
-     DEVELOPER PLATFORM PAGE INTERACTIONS
-     ========================================================================== */
-  if (document.querySelector('.dev-platform-page')) {
-    // 1. Copy to clipboard functionality
-    const copyButtons = document.querySelectorAll('.dev-cli-copy, .dev-footer-copy');
-    copyButtons.forEach(btn => {
-      btn.addEventListener('click', async () => {
-        const textToCopy = btn.dataset.copy || 'curl -fsSL https://ntn.dev | bash';
-        try {
-          await navigator.clipboard.writeText(textToCopy);
-          const originalHTML = btn.innerHTML;
-          btn.innerHTML = '<span style="font-size:12px;">✓</span>';
-          setTimeout(() => {
-            btn.innerHTML = originalHTML;
-          }, 2000);
-        } catch (err) {
-          console.error('Copy failed:', err);
-        }
-      });
-    });
-
-    // 2. Tool tabs interaction
-    const toolTabs = document.querySelectorAll('.dev-tool-tab');
-    const toolPanels = document.querySelectorAll('.dev-tool-panel');
-    
-    toolTabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        const toolType = tab.dataset.tool;
-        
-        // Update active tab
-        toolTabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        
-        // Update active panel
-        toolPanels.forEach(panel => {
-          if (panel.dataset.content === toolType) {
-            panel.classList.add('active');
-          } else {
-            panel.classList.remove('active');
-          }
-        });
-      });
-    });
-
-    // 3. Duplicate ticker items for seamless loop
-    const tickerTracks = document.querySelectorAll('.dev-ticker-track');
-    tickerTracks.forEach(track => {
-      const items = track.innerHTML;
-      track.innerHTML = items + items; // Duplicate for seamless loop
-    });
-
-    // 4. Smooth scroll for navigation links
-    const navLinks = document.querySelectorAll('.dev-nav-link[href^="#"]');
-    navLinks.forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const targetId = link.getAttribute('href');
-        const targetSection = document.querySelector(targetId);
-        if (targetSection) {
-          targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
-    });
-
-    // 5. Mobile navigation toggle
-    const mobileToggle = document.querySelector('.dev-nav-mobile-toggle');
-    const navCenter = document.querySelector('.dev-nav-center');
-    
-    if (mobileToggle && navCenter) {
-      mobileToggle.addEventListener('click', () => {
-        navCenter.style.display = navCenter.style.display === 'flex' ? 'none' : 'flex';
-        if (navCenter.style.display === 'flex') {
-          navCenter.style.position = 'absolute';
-          navCenter.style.top = '64px';
-          navCenter.style.left = '0';
-          navCenter.style.right = '0';
-          navCenter.style.background = '#ffffff';
-          navCenter.style.flexDirection = 'column';
-          navCenter.style.padding = '24px';
-          navCenter.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
-        }
-      });
-    }
-  }
-
-  /* ==========================================================================
      STARTUPS PAGE INTERACTIONS
      ========================================================================== */
   if (document.querySelector('.startups-page')) {
@@ -596,5 +510,137 @@
       });
     });
   }
+
+  /* ==========================================================================
+     DEVELOPER PLATFORM PAGE (.dev-platform-page)
+     ========================================================================== */
+  if (document.querySelector('.dev-platform-page')) {
+
+    // ── Nav scroll behaviour (transparent blue → lighter on scroll past hero) ──
+    const devNav = document.getElementById('devNav');
+    if (devNav) {
+      const heroEl = document.getElementById('hero');
+      const toggleNavTheme = () => {
+        const threshold = heroEl ? heroEl.offsetHeight - 80 : 300;
+        if (window.scrollY > threshold) {
+          devNav.classList.add('dev-nav--light');
+        } else {
+          devNav.classList.remove('dev-nav--light');
+        }
+      };
+      window.addEventListener('scroll', toggleNavTheme, { passive: true });
+      toggleNavTheme();
+    }
+
+    // ── Mobile menu toggle ──
+    const mobileToggle = document.getElementById('devMobileToggle');
+    const mobileDrawer = document.getElementById('devMobileDrawer');
+    if (mobileToggle && mobileDrawer) {
+      mobileToggle.addEventListener('click', () => {
+        const isOpen = mobileDrawer.classList.toggle('open');
+        mobileToggle.setAttribute('aria-expanded', String(isOpen));
+      });
+      // Close drawer when a link is clicked
+      mobileDrawer.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+          mobileDrawer.classList.remove('open');
+          mobileToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
+    // ── Keyboard nav shortcuts (S/A/H/W/E/P/D) ──
+    document.addEventListener('keydown', (e) => {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.metaKey || e.ctrlKey || e.altKey) return;
+      const keyMap = { S: '#sync', A: '#tools', H: '#webhooks', W: '#workers', E: '#externalAgents', P: '#platform', D: null };
+      const upper = e.key.toUpperCase();
+      if (upper in keyMap) {
+        if (upper === 'D') {
+          window.open('https://developers.notion.com', '_blank', 'noopener');
+          return;
+        }
+        const target = document.querySelector(keyMap[upper]);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    });
+
+    // ── Copy-to-clipboard helper ──
+    function setupCopyBtn(btn) {
+      btn.addEventListener('click', () => {
+        const text = btn.dataset.copy || btn.closest('[data-copy]')?.dataset.copy;
+        if (!text) return;
+        navigator.clipboard.writeText(text).then(() => {
+          btn.classList.add('dev-copied');
+          const orig = btn.innerHTML;
+          btn.innerHTML = `<svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2.5 7L5 9.5L10.5 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+          setTimeout(() => {
+            btn.classList.remove('dev-copied');
+            btn.innerHTML = orig;
+          }, 1800);
+        }).catch(() => {
+          // Silent fail on insecure origins
+          const sel = window.getSelection();
+          const range = document.createRange();
+          const tmp = document.createElement('span');
+          tmp.textContent = text;
+          tmp.style.position = 'fixed';
+          tmp.style.opacity = '0';
+          document.body.appendChild(tmp);
+          range.selectNode(tmp);
+          sel.removeAllRanges();
+          sel.addRange(range);
+          document.execCommand('copy');
+          sel.removeAllRanges();
+          document.body.removeChild(tmp);
+          btn.classList.add('dev-copied');
+          setTimeout(() => btn.classList.remove('dev-copied'), 1800);
+        });
+      });
+    }
+
+    document.querySelectorAll('.dev-cli-copy, .dev-cmd-copy, .dev-footer-cli-copy').forEach(setupCopyBtn);
+
+    // ── Sync source tabs ──
+    const syncTabs = document.querySelectorAll('.dev-sync-tab');
+    const syncPanels = document.querySelectorAll('.dev-sync-panel');
+    syncTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = tab.dataset.target;
+        syncTabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+        syncPanels.forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+        const panel = document.getElementById(target);
+        if (panel) panel.classList.add('active');
+      });
+    });
+
+    // ── Tool accordion tabs ──
+    const toolTabs = document.querySelectorAll('.dev-tool-tab');
+    const toolPanels = document.querySelectorAll('.dev-tool-panel');
+    toolTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = tab.dataset.target;
+        toolTabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+        toolPanels.forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+        const panel = document.getElementById(target);
+        if (panel) panel.classList.add('active');
+      });
+    });
+
+    // ── Pause ticker rows on hover ──
+    document.querySelectorAll('.dev-slot-row').forEach(row => {
+      const track = row.closest('.dev-slot-track');
+      if (!track) return;
+      track.addEventListener('mouseenter', () => { row.style.animationPlayState = 'paused'; });
+      track.addEventListener('mouseleave', () => { row.style.animationPlayState = 'running'; });
+    });
+
+  } // end .dev-platform-page block
 })();
 
