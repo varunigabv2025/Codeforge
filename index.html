@@ -136,14 +136,17 @@
               id="heroPlayPause"
               aria-label="Pause"
             >
-              <svg class="icon-pause" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
-                <rect x="4" y="3" width="2.5" height="10" rx="1" fill="currentColor" />
-                <rect x="9.5" y="3" width="2.5" height="10" rx="1" fill="currentColor" />
-              </svg>
-              <svg class="icon-play" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" hidden>
-                <path d="M5 3.5v9l8-4.5-8-4.5Z" fill="currentColor" />
-              </svg>
-              <span class="hero-play-pause-label">Pause</span>
+              <span class="hero-play-pause-icon" aria-hidden="true">
+                <svg
+                  class="frontPauseButton"
+                  viewBox="0 0 16 16"
+                  style="width: 100%; height: 100%; display: block; fill: inherit; flex-shrink: 0"
+                >
+                  <rect x="1" y="0" width="5" height="16" rx="1"></rect>
+                  <rect x="9" y="0" width="5" height="16" rx="1"></rect>
+                </svg>
+              </span>
+              <span class="hero-play-pause-label visually-hidden">Pause</span>
             </button>
           </div>
         </div>

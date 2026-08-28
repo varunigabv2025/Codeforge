@@ -98,12 +98,28 @@
       tryPlay();
     }
 
+    const pauseIcon = `
+      <svg class="frontPauseButton" viewBox="0 0 16 16" style="width: 100%; height: 100%; display: block; fill: inherit; flex-shrink: 0">
+        <rect x="1" y="0" width="5" height="16" rx="1"></rect>
+        <rect x="9" y="0" width="5" height="16" rx="1"></rect>
+      </svg>`;
+    const playIcon = `
+      <svg class="frontPlayButton" viewBox="0 0 14 16" style="width: 100%; height: 100%; display: block; fill: inherit; flex-shrink: 0">
+        <path d="M1.34699 16C1.73805 16 2.07697 15.8756 2.52017 15.6089L12.8703 9.47556C13.6437 9.01333 14 8.62222 14 8C14 7.37778 13.6437 6.98667 12.8703 6.52444L2.52017 0.391111C2.07697 0.133333 1.73805 0 1.34699 0C0.582247 0 0 0.595556 0 1.57333V14.4356C0 15.4044 0.582247 16 1.34699 16Z"></path>
+      </svg>`;
+
     const syncButton = () => {
       const paused = heroVideo.paused;
+      const labelText = paused ? "Play" : "Pause";
       playPauseBtn.classList.toggle("is-paused", paused);
-      playPauseBtn.setAttribute("aria-label", paused ? "Play" : "Pause");
+      playPauseBtn.setAttribute("aria-label", labelText);
+      const icon = playPauseBtn.querySelector(".hero-play-pause-icon");
       const label = playPauseBtn.querySelector(".hero-play-pause-label");
-      if (label) label.textContent = paused ? "Play" : "Pause";
+      if (icon) {
+        icon.classList.toggle("is-paused", paused);
+        icon.innerHTML = paused ? playIcon : pauseIcon;
+      }
+      if (label) label.textContent = labelText;
     };
 
     playPauseBtn.addEventListener("click", () => {
