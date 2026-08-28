@@ -107,96 +107,44 @@
         </div>
 
         <div class="hero-visual-wrap">
-          <svg class="hero-doodle face" viewBox="0 0 80 80" aria-hidden="true">
-            <circle cx="40" cy="40" r="28" fill="none" stroke="#111" stroke-width="2.5" />
-            <circle cx="30" cy="36" r="2.5" fill="#111" />
-            <circle cx="50" cy="36" r="2.5" fill="#111" />
-            <path d="M28 50 Q40 58 52 50" fill="none" stroke="#111" stroke-width="2.5" />
-          </svg>
-          <svg class="hero-doodle person" viewBox="0 0 90 140" aria-hidden="true">
-            <circle cx="48" cy="26" r="14" fill="none" stroke="#111" stroke-width="2.5" />
-            <path
-              d="M30 55 C30 45 66 45 66 55 L72 120 C50 112 46 112 24 120 Z"
-              fill="none"
-              stroke="#111"
-              stroke-width="2.5"
-              stroke-linejoin="round"
-            />
-            <path d="M18 78 C8 90 10 118 22 124" fill="none" stroke="#111" stroke-width="2.5" stroke-linecap="round" />
-          </svg>
-
-          <div class="comment-bubble">
-            <strong>Chloe</strong>
-            <span>Outline upcoming sprint goals</span>
-          </div>
-
-          <div class="hero-visual" aria-label="Notion product preview">
-            <div class="product-window">
-              <div class="window-chrome">
-                <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
-                <span>Ramp · Ramp HQ</span>
-              </div>
-              <aside class="sidebar">
-                <div class="side-item active">⌂ Home</div>
-                <div class="side-label">Upcoming events</div>
-                <div class="side-item"><span class="badge-dot" style="background:#5e6ad2"></span> Design Weekly</div>
-                <div class="side-item"><span class="badge-dot" style="background:#0f7b6c"></span> Eng Kickoff</div>
-                <div class="side-item"><span class="badge-dot" style="background:#d9730d"></span> Product Updates</div>
-                <div class="side-label">Agents</div>
-                <div class="side-item">◎ Task routing agent</div>
-                <div class="side-item">◎ Q&amp;A agent</div>
-                <div class="side-item">◎ Reporting agent</div>
-                <div class="side-item">◎ IT help desk</div>
-                <div class="side-label">Teamspaces</div>
-                <div class="side-item">▣ Company HQ</div>
-                <div class="side-item">▣ Product</div>
-                <div class="side-item">▣ Engineering</div>
-              </aside>
-              <div class="main-pane">
-                <div class="pane-top">
-                  <div class="workspace-title">
-                    <span class="workspace-icon">R</span>
-                    Ramp HQ
-                  </div>
-                  <span class="btn btn-ghost" style="font-size:13px">Share</span>
-                </div>
-                <div class="tabs">
-                  <span class="tab active">Company tasks</span>
-                  <span class="tab">My tasks</span>
-                  <span class="tab">Current sprint</span>
-                  <span class="tab">Timeline</span>
-                </div>
-                <div class="board">
-                  <div class="col">
-                    <div class="col-head"><span class="pill todo">To-do 10</span></div>
-                    <div class="card">Update help center and office documentation</div>
-                    <div class="card">Review campaign assets</div>
-                    <div class="card">Customer stories</div>
-                    <div class="card">Refresh product color palette</div>
-                  </div>
-                  <div class="col">
-                    <div class="col-head"><span class="pill progress">In progress 5</span></div>
-                    <div class="card">Sales demo sync</div>
-                    <div class="card">Launch demo video</div>
-                    <div class="card">Respond to beta test questions</div>
-                    <div class="card">Engineering sync</div>
-                  </div>
-                  <div class="col">
-                    <div class="col-head"><span class="pill review">In review 3</span></div>
-                    <div class="card">Weekly sales status report</div>
-                    <div class="card">Marketing campaign designs</div>
-                    <div class="card">Latest features customer emails</div>
-                  </div>
-                  <div class="col">
-                    <div class="col-head"><span class="pill done">Complete 34</span></div>
-                    <div class="card">Project onboarding</div>
-                    <div class="card">Finalize launch timeline</div>
-                    <div class="card">All hands alignment</div>
-                    <div class="card">Draft press release</div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="hero-media" aria-label="Notion product preview">
+            <video
+              id="heroVideo"
+              class="hero-video"
+              width="2560"
+              height="1600"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              poster=""
+              style="--video-aspect-ratio: 2560 / 1600"
+            >
+              <source
+                src="assets/videos/web-homepage-hero-1920x1200_final.mp4"
+                type="video/mp4"
+              />
+              <source
+                src="https://videos.ctfassets.net/spoqsaf9291f/1EL7UZIXfcqngxsNSbL8tR/291f61f56f29dd8e788deaec8561d882/web-homepage-hero-1920x1200_final.mp4"
+                type="video/mp4"
+              />
+            </video>
+            <button
+              type="button"
+              class="hero-play-pause"
+              id="heroPlayPause"
+              aria-label="Pause"
+            >
+              <svg class="icon-pause" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+                <rect x="4" y="3" width="2.5" height="10" rx="1" fill="currentColor" />
+                <rect x="9.5" y="3" width="2.5" height="10" rx="1" fill="currentColor" />
+              </svg>
+              <svg class="icon-play" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" hidden>
+                <path d="M5 3.5v9l8-4.5-8-4.5Z" fill="currentColor" />
+              </svg>
+              <span class="hero-play-pause-label">Pause</span>
+            </button>
           </div>
         </div>
       </section>

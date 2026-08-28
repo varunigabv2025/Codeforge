@@ -79,4 +79,44 @@
       });
     });
   }
+
+  // Hero dashboard video (same animation as notion.com)
+  const heroVideo = document.getElementById("heroVideo");
+  const playPauseBtn = document.getElementById("heroPlayPause");
+  if (heroVideo && playPauseBtn) {
+    heroVideo.muted = true;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const tryPlay = () => {
+      const playPromise = heroVideo.play();
+      if (playPromise && typeof playPromise.catch === "function") {
+        playPromise.catch(() => {});
+      }
+    };
+    if (reducedMotion) {
+      heroVideo.pause();
+    } else {
+      tryPlay();
+    }
+
+    const syncButton = () => {
+      const paused = heroVideo.paused;
+      playPauseBtn.classList.toggle("is-paused", paused);
+      playPauseBtn.setAttribute("aria-label", paused ? "Play" : "Pause");
+      const label = playPauseBtn.querySelector(".hero-play-pause-label");
+      if (label) label.textContent = paused ? "Play" : "Pause";
+    };
+
+    playPauseBtn.addEventListener("click", () => {
+      if (heroVideo.paused) {
+        tryPlay();
+      } else {
+        heroVideo.pause();
+      }
+      syncButton();
+    });
+
+    heroVideo.addEventListener("play", syncButton);
+    heroVideo.addEventListener("pause", syncButton);
+    syncButton();
+  }
 })();
