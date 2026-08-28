@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Your connected workspace for wiki, docs &amp; projects | Notion</title>
+    <meta
+      name="description"
+      content="A new tool that blends your everyday work apps into one. It's the all-in-one workspace for you and your team."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <link rel="stylesheet" href="../assets/css/pages.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23000'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='white' font-family='Inter,Arial' font-size='16' font-weight='700'%3EN%3C/text%3E%3C/svg%3E"
+    />
+  </head>
+  <body class="startups-page">
+    <!-- Header / Global Navigation -->
+    <header class="site-header" id="siteHeader">
+      <nav class="nav" aria-label="Main">
+        <div class="nav-left">
+          <a href="../index.html" class="logo" aria-label="Notion – Home">
+            <svg width="33" height="34" viewBox="0 0 33 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.8051 3.26755L20.5301 2.04319C22.5839 1.86808 23.1124 1.98538 24.4032 2.91756L29.7421 6.64773C30.623 7.28917 30.9165 7.46381 30.9165 8.16307V28.6217C30.9165 29.9038 30.4468 30.6622 28.804 30.7782L9.38138 31.9442C8.14825 32.0027 7.56135 31.8279 6.91556 31.0114L2.98395 25.9405C2.27947 25.0072 1.98651 24.3088 1.98651 23.4918V5.3068C1.98651 4.25826 2.45649 3.38366 3.8051 3.26755Z" fill="#000"></path>
+            </svg>
+          </a>
+        </div>
+
+        <div class="nav-center">
+          <div class="nav-dropdown" data-dropdown>
+            <button class="nav-dropdown-btn" type="button" aria-expanded="false">
+              Product
+              <svg class="chevron" viewBox="0 0 10 10" aria-hidden="true">
+                <path d="M2 3.5 L5 6.5 L8 3.5" fill="none" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </button>
+            <div class="dropdown-panel">
+              <a href="product.html">Product Overview</a>
+              <a href="product.html#features">AI &amp; Search</a>
+              <a href="product.html#agents">Agents &amp; Automation</a>
+              <a href="product.html#usecases">Use Cases</a>
+            </div>
+          </div>
+
+          <div class="nav-dropdown" data-dropdown>
+            <button class="nav-dropdown-btn" type="button" aria-expanded="false">
+              Resources
+              <svg class="chevron" viewBox="0 0 10 10" aria-hidden="true">
+                <path d="M2 3.5 L5 6.5 L8 3.5" fill="none" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </button>
+            <div class="dropdown-panel">
+              <a href="resources.html">Resources Hub</a>
+              <a href="developers.html">Developer Platform</a>
+              <a href="startups.html">Notion for Startups</a>
+            </div>
+          </div>
+
+          <a class="nav-link" href="#site-footer">Pricing</a>
+          <a class="nav-link" href="#site-footer">Request a demo</a>
+        </div>
+
+        <div class="nav-right">
+          <a class="btn btn-ghost hide-mobile" href="#site-footer">Log in</a>
+          <a class="btn btn-primary" href="#startup-os">Get Notion free</a>
+          <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu">
+            <span></span>
+          </button>
+        </div>
+      </nav>
+
+      <div class="mobile-nav" id="mobileNav" hidden>
+        <a href="product.html">Product</a>
+        <a href="resources.html">Resources</a>
+        <a href="developers.html">Developers</a>
+        <a href="startups.html">Startups</a>
+        <a href="#site-footer">Pricing</a>
+        <a href="#site-footer">Log in</a>
+        <a href="#startup-os">Get Notion free</a>
+      </div>
+    </header>
+
+    <main class="layout-base">
+      <!-- SECTION 1: HERO & LOGOS -->
+      <section class="section-module" id="notion-for-startups" data-color-scheme="light">
+        <div class="hero-container">
+          <header class="surface-hero">
+            <div class="hero-grid">
+              <div class="hero-content">
+                <p class="variant-global-eyebrow">Notion for Startups</p>
+                <h1 class="variant-global-title">One workspace. Every startup tool.</h1>
+                <p class="variant-global-deck">The AI workspace from idea to exit. Get up to 6 months free on the Business plan with Notion AI included.</p>
+                <div class="button-group">
+                  <a class="btn btn-primary btn-lg" href="#startup-os">Unlock your startup offer</a>
+                </div>
+              </div>
+            </div>
+          </header>
+        </div>
+
+        <div class="logos-group" role="group" aria-label="Trust Logos">
+          <p class="logos-label">The fastest growing companies in history build on Notion</p>
+          <div class="logos-grid">
+            <img class="logo-img" alt="OpenAI" src="https://images.ctfassets.net/spoqsaf9291f/jWkCPMAAj0Av69704DQoB/84499b606028b276e0bf94c238f07097/OpenAI-black-wordmark-cropped.png" />
+            <img class="logo-img" alt="Figma" src="https://images.ctfassets.net/spoqsaf9291f/502ApiNcRHgIwrDU8XRYTQ/497492503acb3fa21bbd9dd1aec193c3/Figma-logo-color.svg" />
+            <img class="logo-img" alt="Deel" src="https://images.ctfassets.net/spoqsaf9291f/7zCRwysc5YJxmu2M8EmiFF/569d286a66d1db0e004586a6035ed68d/deel.png" />
+            <img class="logo-img" alt="Vercel" src="https://images.ctfassets.net/spoqsaf9291f/6NEhbP27yAbhvWdLKPHTFV/6978b1603c567d69f5fe7b4895b1d30f/Vercel.svg" />
+            <img class="logo-img" alt="Ramp" src="https://images.ctfassets.net/spoqsaf9291f/4eiEZBWL5gEClwB1IHi18I/b9b86479965977121ceabd01f45567a7/ramp.png" />
+            <img class="logo-img" alt="Cursor" src="https://images.ctfassets.net/spoqsaf9291f/3CSWr4Z4uIvbfO7102KPY/bbd97c8edd0673853ac8dae2887a638d/cursor.png" />
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: MOVE FASTER, CUT COSTS & SAVINGS CALCULATOR -->
+      <section class="section-module" id="startups-savings-calculator" data-color-scheme="light">
+        <div class="section-header">
+          <div class="header-content">
+            <h2 class="section-heading">Move faster, cut costs.</h2>
+            <p class="section-subheading">Go all-in-one with the AI workspace that scales with you. Get the Business plan free for up to 6 months and save $12,000.</p>
+            <div class="section-ctas">
+              <a class="link-text-primary" href="#startup-os">Unlock your startup offer →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="calculator-block-wrapper">
+          <div class="notion-startup-pricing-calculator" style="max-width: 1120px; margin: 0 auto;">
+            <form action="#" onsubmit="return false;">
+              <p class="calculator-label">Too many AI tools? Calculate potential savings here.</p>
+
+              <div class="calculator-interactive">
+                <fieldset class="calculator-tools">
+                  <label class="tool-checkbox">
+                    <input type="checkbox" name="tools" value="35" class="calc-cb" />
+                    <span class="tool-label"><span class="tool-label-text">AI Search</span><span class="tool-price">$35/user</span></span>
+                  </label>
+                  <label class="tool-checkbox">
+                    <input type="checkbox" name="tools" value="20" checked class="calc-cb" />
+                    <span class="tool-label"><span class="tool-label-text">AI Chatbot</span><span class="tool-price">$20/user</span></span>
+                  </label>
+                  <label class="tool-checkbox">
+                    <input type="checkbox" name="tools" value="18" class="calc-cb" />
+                    <span class="tool-label"><span class="tool-label-text">AI Meeting Notes</span><span class="tool-price">$18/user</span></span>
+                  </label>
+                  <label class="tool-checkbox">
+                    <input type="checkbox" name="tools" value="20" class="calc-cb" />
+                    <span class="tool-label"><span class="tool-label-text">AI Writing Assistant</span><span class="tool-price">$20/user</span></span>
+                  </label>
+                  <label class="tool-checkbox">
+                    <input type="checkbox" name="tools" value="30" class="calc-cb" />
+                    <span class="tool-label"><span class="tool-label-text">AI Email App</span><span class="tool-price">$30/user</span></span>
+                  </label>
+                  <label class="tool-checkbox">
+                    <input type="checkbox" name="tools" value="40" class="calc-cb" />
+                    <span class="tool-label"><span class="tool-label-text">AI Research</span><span class="tool-price">$40/user</span></span>
+                  </label>
+                  <label class="tool-checkbox">
+                    <input type="checkbox" name="tools" value="15" class="calc-cb" />
+                    <span class="tool-label"><span class="tool-label-text">Calendar Scheduling</span><span class="tool-price">$15/user</span></span>
+                  </label>
+                  <label class="tool-checkbox">
+                    <input type="checkbox" name="tools" value="10" checked class="calc-cb" />
+                    <span class="tool-label"><span class="tool-label-text">Team Wiki</span><span class="tool-price">$10/user</span></span>
+                  </label>
+                  <label class="tool-checkbox">
+                    <input type="checkbox" name="tools" value="24" checked class="calc-cb" />
+                    <span class="tool-label"><span class="tool-label-text">Project Management Tool</span><span class="tool-price">$24/user</span></span>
+                  </label>
+                  <label class="tool-checkbox">
+                    <input type="checkbox" name="tools" value="20" class="calc-cb" />
+                    <span class="tool-label"><span class="tool-label-text">Basic CRM</span><span class="tool-price">$20/user</span></span>
+                  </label>
+                  <label class="tool-checkbox">
+                    <input type="checkbox" name="tools" value="20" class="calc-cb" />
+                    <span class="tool-label"><span class="tool-label-text">Site Builder</span><span class="tool-price">$20/user</span></span>
+                  </label>
+                  <label class="tool-checkbox">
+                    <input type="checkbox" name="tools" value="15" class="calc-cb" />
+                    <span class="tool-label"><span class="tool-label-text">Forms</span><span class="tool-price">$15/user</span></span>
+                  </label>
+                </fieldset>
+
+                <div class="calculator-output">
+                  <label class="team-label">
+                    Team size
+                    <input type="number" size="3" min="1" max="500" class="team-input" id="calcTeamInput" value="10" />
+                  </label>
+                  <label class="savings-label monthly-savings">
+                    Monthly savings
+                    <output class="savings-output" id="calcMonthlyOutput">$540</output>
+                  </label>
+                  <label class="savings-label annual-savings">
+                    Annual savings
+                    <output class="savings-output" id="calcAnnualOutput">$6,480</output>
+                  </label>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: STATISTICS -->
+      <section class="section-module" id="tool-of-choice" data-color-scheme="light">
+        <div class="section-header">
+          <div class="header-content">
+            <h2 class="section-heading">The tool of choice for startups.</h2>
+            <p class="section-subheading">It’s powerful, flexible, and fast. That’s why startups all around the world choose to build on Notion.</p>
+          </div>
+        </div>
+
+        <div class="stats-row" role="group">
+          <article class="surface-neutral block-stat">
+            <div class="block-content">
+              <h3 class="variant-global-stat">94%</h3>
+              <p class="variant-card-body">of Forbes AI 50 companies use Notion</p>
+            </div>
+          </article>
+          <article class="surface-neutral block-stat">
+            <div class="block-content">
+              <h3 class="variant-global-stat">50%</h3>
+              <p class="variant-card-body">of YC companies use Notion</p>
+            </div>
+          </article>
+          <article class="surface-neutral block-stat">
+            <div class="block-content">
+              <h3 class="variant-global-stat">70%</h3>
+              <p class="variant-card-body">of users replaced 2+ tools</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- SECTION 4: KOMBI CAROUSEL (BUILD & SCALE) -->
+      <section class="section-module" data-color-scheme="light">
+        <div class="section-header">
+          <div class="header-content">
+            <h2 class="section-heading">Build and scale your startup—all in one place.</h2>
+          </div>
+        </div>
+
+        <div class="kombi-carousel-root" id="carousel">
+          <div class="kombi-blocks-grid">
+            <div class="kombi-block active" data-stage="ideate" role="group">
+              <div class="kombi-header">
+                <span class="kombi-title">Ideate</span>
+              </div>
+              <div class="kombi-content">
+                <p class="kombi-description">Go from idea to plan faster with AI help.</p>
+              </div>
+            </div>
+
+            <div class="kombi-block" data-stage="fundraise" role="group">
+              <div class="kombi-header">
+                <span class="kombi-title">Fundraise</span>
+              </div>
+              <div class="kombi-content">
+                <p class="kombi-description">From pitch to close, organized in Notion.</p>
+              </div>
+            </div>
+
+            <div class="kombi-block" data-stage="build" role="group">
+              <div class="kombi-header">
+                <span class="kombi-title">Build</span>
+              </div>
+              <div class="kombi-content">
+                <p class="kombi-description">Ship and iterate rapidly.</p>
+              </div>
+            </div>
+
+            <div class="kombi-block" data-stage="launch" role="group">
+              <div class="kombi-header">
+                <span class="kombi-title">Launch</span>
+              </div>
+              <div class="kombi-content">
+                <p class="kombi-description">Plan and collaborate in one place.</p>
+              </div>
+            </div>
+
+            <div class="kombi-block" data-stage="scale" role="group">
+              <div class="kombi-header">
+                <span class="kombi-title">Scale</span>
+              </div>
+              <div class="kombi-content">
+                <p class="kombi-description">Keep teams focused and goals on track.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="kombi-slides-container">
+            <figure class="carousel-figure" id="kombiDisplayCanvas">
+              <img class="kombi-slide-img" alt="Ideate - Notion Canvas" src="https://images.ctfassets.net/spoqsaf9291f/4YbEemGbTfMzNRSG6Gkuu2/dd819efa5f66dee6f9a76589531688f6/image.png" />
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 5: OPENAI TESTIMONIAL QUOTE -->
+      <section class="section-module" id="open-ai-quote" data-color-scheme="light">
+        <figure class="quote-figure">
+          <blockquote class="variant-global-quote">
+            <span>Having our technical documentation in Notion means that solutions we discover today become organizational knowledge tomorrow. What used to take hours of debugging can now be solved in minutes just by asking Notion AI.</span>
+          </blockquote>
+          <figcaption>
+            <div class="accreditation-column">
+              <div class="accreditation-logo">
+                <img alt="Open AI" src="https://images.ctfassets.net/spoqsaf9291f/jWkCPMAAj0Av69704DQoB/84499b606028b276e0bf94c238f07097/OpenAI-black-wordmark-cropped.png" style="max-height:28px;" />
+              </div>
+              <span class="info-name"><strong>John Allard, Engineering</strong></span>
+            </div>
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- SECTION 6: AI FEATURES SHOWCASE -->
+      <section class="section-module" id="build-your-company" data-color-scheme="light">
+        <div class="section-header">
+          <div class="header-content">
+            <h2 class="section-heading">Get every AI tool you need—free for up to 6 months.</h2>
+            <div class="section-ctas">
+              <a class="link-text-primary" href="#startup-os">Unlock your startup offer →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="ai-blocks-grid">
+          <article class="surface-neutral block-feature">
+            <div class="block-stack">
+              <h3 class="variant-card-title-block">Use AI to speed up work. Write, analyze, generate, anything—just ask Notion AI.</h3>
+              <div class="block-media">
+                <img alt="projects.webp" src="https://images.ctfassets.net/spoqsaf9291f/49tuy8l5kL1bN6d2ga4J4P/f3e2a8a0c0b6aea54396ae042870d622/image.png" />
+              </div>
+            </div>
+          </article>
+
+          <article class="surface-neutral block-feature">
+            <div class="block-stack">
+              <h3 class="variant-card-title-block">Capture meeting notes automatically where your team moves work forward.</h3>
+              <div class="block-media">
+                <img alt="ai.webp" src="https://images.ctfassets.net/spoqsaf9291f/11T25kw4wj0ekzBBs4p108/c7bcb037ff4d38bf2b56140d0c6882bd/ai-meeting-notes.png" />
+              </div>
+            </div>
+          </article>
+
+          <article class="surface-neutral block-feature">
+            <div class="block-stack">
+              <h3 class="variant-card-title-block">Create detailed reports in Notion with deep research across your work data.</h3>
+              <div class="block-media">
+                <img alt="Notion mail thumbnail" src="https://images.ctfassets.net/spoqsaf9291f/5rueHDVripRs3YkEsQWd2/7d37e166dc65a54497fc0d1f3df15282/ai-research-3.png" />
+              </div>
+            </div>
+          </article>
+
+          <article class="surface-neutral block-feature">
+            <div class="block-stack">
+              <h3 class="variant-card-title-block">Find instant context and answers across your tools to unblock work.</h3>
+              <div class="block-media">
+                <img alt="Enterprise search" src="https://images.ctfassets.net/spoqsaf9291f/5kg2F0PRg4k6ge8PPCZq3Z/bc8f3f876f06cb1c3133112b2177db56/Enterprise-Search.png" />
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- SECTION 7: CLAY TESTIMONIAL QUOTE -->
+      <section class="section-module" id="how-startups-use-notion" data-color-scheme="light">
+        <figure class="quote-figure">
+          <blockquote class="variant-global-quote">
+            <span>We use Notion as our operating system for everything, from engineering specs to new hire onboarding. Our team tripled in size this past year, and Notion allowed us to keep all information central and quickly accessible.</span>
+          </blockquote>
+          <figcaption>
+            <div class="accreditation-column">
+              <div class="accreditation-logo">
+                <img alt="Clay" src="https://images.ctfassets.net/spoqsaf9291f/2Kxd0s7jxoiTvPyFOyf6pp/cb8b28976c1be66428b95ab3568a4236/Clay_Logo_Primary_Blk.png" style="max-height:26px;" />
+              </div>
+              <span class="info-name"><strong>Nashilu Mouen-Makoua, Growth &amp; Operations</strong></span>
+            </div>
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- SECTION 8: ELIGIBILITY & BENEFITS TIERS -->
+      <section class="section-module" id="startup-os" data-color-scheme="light">
+        <div class="section-header">
+          <div class="header-content">
+            <h2 class="section-heading">Eligibility &amp; Benefits</h2>
+            <p class="section-subheading">Your essential tools for building, built by founders for founders.</p>
+            <div class="section-ctas">
+              <a class="link-text-primary" href="#startup-os">Unlock your startup offer →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="tiers-grid-3col">
+          <article class="surface-neutral tier-card">
+            <h3 class="variant-card-title-block">6 months free with Notion AI included</h3>
+            <p class="variant-card-body">For non-paying Notion customers with under 100 employees and are affiliated with one of our select startup partners.</p>
+          </article>
+
+          <article class="surface-neutral tier-card">
+            <h3 class="variant-card-title-block">3 months free with Notion AI included</h3>
+            <p class="variant-card-body">For non-paying Notion customers with under 100 employees, a valid business website, and a company domain email address.</p>
+          </article>
+
+          <article class="surface-neutral tier-card">
+            <h3 class="variant-card-title-block">1 month free with Notion AI included</h3>
+            <p class="variant-card-body">For non-paying Notion customers with under 10 employees (SMBs) or startups who provided incomplete business information during application.</p>
+          </article>
+        </div>
+
+        <div class="perks-grid-2col" style="margin-top: 24px;">
+          <article class="surface-neutral perk-card">
+            <h3 class="variant-card-title-block">Notion Perks</h3>
+            <p class="variant-card-body">Exclusive software discounts for each part of the founder's journey</p>
+            <a class="link-text-primary" href="#startup-os">Apply to access →</a>
+          </article>
+
+          <article class="surface-neutral perk-card">
+            <h3 class="variant-card-title-block">Notion Certified Consultants</h3>
+            <p class="variant-card-body">One complimentary session with a consultant to setup your Notion workspace.</p>
+            <a class="link-text-primary" href="#startup-os">Apply to access →</a>
+          </article>
+        </div>
+      </section>
+
+      <!-- SECTION 9: PARTNER NETWORK PACHINKO BANNER -->
+      <section class="section-module" id="become-a-partner" data-color-scheme="light">
+        <article class="pachinko-article">
+          <div class="pachinko-grid">
+            <div class="pachinko-content">
+              <h2 class="pachinko-heading">Join our partner network alongside top VCs and accelerators</h2>
+              <p class="pachinko-subheading">Offer your network Notion's Business plan free and additional perks!</p>
+              <a class="link-text-primary" href="https://startupshub.notion.site/1c1590db1742802ba5e3ca6411499628?pvs=105" target="_blank" rel="noopener">Apply to become a partner →</a>
+            </div>
+            <div class="pachinko-media">
+              <img alt="Partner-logo-wall" src="https://images.ctfassets.net/spoqsaf9291f/43XegBXBwtkYjatF342hIQ/82f80441a64e59bdef6f0276f76b0b32/partner-network-logos.webp" />
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- SECTION 10: QUESTIONS & ANSWERS (FAQ ACCORDION) -->
+      <section class="section-module" id="questions-and-answers" data-color-scheme="light">
+        <div class="section-header">
+          <div class="header-content">
+            <h2 class="section-heading">Questions &amp; answers</h2>
+          </div>
+        </div>
+
+        <div class="faq-toggles-wrapper">
+          <details class="faq-toggle-details">
+            <summary class="faq-toggle-summary">
+              <p class="faq-summary-paragraph">Who is eligible?</p>
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="1em" class="faq-icon"><path d="M16.875 9.063v1.874h-5.937v5.938H9.062v-5.937H3.125V9.062h5.938V3.125h1.874v5.938z" fill="currentColor"></path></svg>
+            </summary>
+            <div class="faq-toggle-content">
+              <p>You must be a non-paying Notion customer with a valid work email (no Gmail, Outlook, etc), have not received any previous Notion promotions, and have fewer than 100 employees. See <a href="https://www.notion.so/Notion-for-Startup-Terms-936b74c0323745a186b1497747074020">full terms and conditions</a>.</p>
+            </div>
+          </details>
+
+          <details class="faq-toggle-details">
+            <summary class="faq-toggle-summary">
+              <p class="faq-summary-paragraph">Why is Notion offering a discount for startups?</p>
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="1em" class="faq-icon"><path d="M16.875 9.063v1.874h-5.937v5.938H9.062v-5.937H3.125V9.062h5.938V3.125h1.874v5.938z" fill="currentColor"></path></svg>
+            </summary>
+            <div class="faq-toggle-content">
+              <p>We've seen thousands of startups use Notion as their complete workspace - from using AI to speed up work, capturing meeting notes automatically, managing emails and scheduling, to organizing their startup's knowledge from day one. We want to help more companies lay a strong foundation that can grow with them from the beginning.</p>
+            </div>
+          </details>
+
+          <details class="faq-toggle-details">
+            <summary class="faq-toggle-summary">
+              <p class="faq-summary-paragraph">How do I apply to receive the discount?</p>
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="1em" class="faq-icon"><path d="M16.875 9.063v1.874h-5.937v5.938H9.062v-5.937H3.125V9.062h5.938V3.125h1.874v5.938z" fill="currentColor"></path></svg>
+            </summary>
+            <div class="faq-toggle-content">
+              <p>Fill out this <a href="#startup-os">application</a>!</p>
+            </div>
+          </details>
+
+          <details class="faq-toggle-details">
+            <summary class="faq-toggle-summary">
+              <p class="faq-summary-paragraph">What is the offer worth?</p>
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="1em" class="faq-icon"><path d="M16.875 9.063v1.874h-5.937v5.938H9.062v-5.937H3.125V9.062h5.938V3.125h1.874v5.938z" fill="currentColor"></path></svg>
+            </summary>
+            <div class="faq-toggle-content">
+              <p>Notion’s Business Plan costs $20 per member paid annually. The startup offer is equivalent to a maximum of $12,000 for 100 employees.</p>
+            </div>
+          </details>
+
+          <details class="faq-toggle-details">
+            <summary class="faq-toggle-summary">
+              <p class="faq-summary-paragraph">Why did I receive a 1 month trial instead of 3 or 6 months?</p>
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="1em" class="faq-icon"><path d="M16.875 9.063v1.874h-5.937v5.938H9.062v-5.937H3.125V9.062h5.938V3.125h1.874v5.938z" fill="currentColor"></path></svg>
+            </summary>
+            <div class="faq-toggle-content">
+              <p>You received a 1 month trial because either:</p>
+              <ol>
+                <li><p><strong>You have under 10 employees</strong> – SMBs with fewer than 10 employees receive our 1 month trial offer, or</p></li>
+                <li><p><strong>You're an SMB or service-based business</strong> rather than a startup, or</p></li>
+                <li><p><strong>We couldn't fully verify your startup status</strong> with the information provided in your application</p></li>
+              </ol>
+              <p>The 3 month and 6 month offers are designed specifically for <strong>startups</strong> building scalable tech-related products or services. SMBs, service-based businesses, consultancies, agencies, and companies under 10 employees receive the 1 month trial.</p>
+              <p>You may have also received a 1 month trial if one or more of the following apply:</p>
+              <ul>
+                <li><p><strong>Inactive or incomplete website:</strong> Your website appears to be a domain parking page, shows errors, or doesn't clearly describe your business</p></li>
+                <li><p><strong>Limited business presence:</strong> Only personal social media profiles were provided instead of company pages</p></li>
+                <li><p><strong>Insufficient information:</strong> Not enough details were available to verify your business legitimacy</p></li>
+                <li><p><strong>Solo applicant:</strong> The application suggests a single individual rather than a company</p></li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="faq-toggle-details">
+            <summary class="faq-toggle-summary">
+              <p class="faq-summary-paragraph">How do I suggest a partner that Notion should work with?</p>
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="1em" class="faq-icon"><path d="M16.875 9.063v1.874h-5.937v5.938H9.062v-5.937H3.125V9.062h5.938V3.125h1.874v5.938z" fill="currentColor"></path></svg>
+            </summary>
+            <div class="faq-toggle-content">
+              <p>Don’t see your investors on our list? There are a few things you can do:</p>
+              <ol>
+                <li><p>Have them email us at <a href="mailto:startup-partners@makenotion.com">startup-partners@makenotion.com</a>.</p></li>
+                <li><p>Have them fill out the <a href="https://startupshub.notion.site/1c1590db1742802ba5e3ca6411499628">application</a>.</p></li>
+              </ol>
+            </div>
+          </details>
+
+          <details class="faq-toggle-details">
+            <summary class="faq-toggle-summary">
+              <p class="faq-summary-paragraph">I want this offer to be available to my portfolio companies. How can I become a partner?</p>
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="1em" class="faq-icon"><path d="M16.875 9.063v1.874h-5.937v5.938H9.062v-5.937H3.125V9.062h5.938V3.125h1.874v5.938z" fill="currentColor"></path></svg>
+            </summary>
+            <div class="faq-toggle-content">
+              <p>We want to hear from you! <a href="https://startupshub.notion.site/1c1590db1742802ba5e3ca6411499628">Apply to be a partner</a> and we’ll get back to you with more information. We’re especially interested in finding partners outside of major tech hubs.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer (Shared Multi-Column Notion Grid) -->
+    <footer id="site-footer" class="site-footer">
+      <div class="container-wide">
+        <div class="footer-grid">
+          <div>
+            <a href="../index.html" class="logo-wordmark" aria-label="Notion – Home">
+              <span class="logo">N</span>
+              Notion
+            </a>
+            <p class="footer-quote">
+              “We shape our tools, and thereafter our tools shape us.”
+              <cite>Marshall McLuhan</cite>
+            </p>
+          </div>
+
+          <div class="footer-col">
+            <h4>Product</h4>
+            <a href="product.html">Features</a>
+            <a href="product.html#features">What's New</a>
+            <a href="product.html#features">Notion AI</a>
+            <a href="#site-footer">Pricing</a>
+            <a href="#site-footer">Request a demo</a>
+            <a href="#site-footer">Download</a>
+            <a href="product.html#usecases">Explore more →</a>
+          </div>
+
+          <div class="footer-col">
+            <h4>Resources</h4>
+            <a href="resources.html">Customer stories</a>
+            <a href="resources.html">Connections</a>
+            <a href="resources.html">Marketplace</a>
+            <a href="resources.html">Help Center</a>
+            <a href="developers.html">Developers</a>
+            <a href="startups.html">Startups</a>
+          </div>
+
+          <div class="footer-col">
+            <h4>Company</h4>
+            <a href="#site-footer">About us</a>
+            <a href="#site-footer">Careers</a>
+            <a href="#site-footer">Security</a>
+            <a href="#site-footer">Status</a>
+            <a href="#site-footer">Terms &amp; privacy</a>
+          </div>
+
+          <div class="footer-col">
+            <h4>Notion for</h4>
+            <a href="#site-footer">Enterprise</a>
+            <a href="#site-footer">Small businesses</a>
+            <a href="startups.html">Startups</a>
+            <a href="developers.html">Developers</a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div>
+            <span>© 2026 Notion Labs, Inc.</span>
+            ·
+            <a href="#site-footer">Cookie settings</a>
+          </div>
+          <button class="lang-btn" type="button">English (US)</button>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/pages.js"></script>
+  </body>
+</html>

@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notion Product — The AI workspace for docs, projects, &amp; agents</title>
+    <meta
+      name="description"
+      content="Recreation of Notion's Product page — where teams bring AI, knowledge, projects, and automated agents together."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <link rel="stylesheet" href="../assets/css/pages.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23000'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='white' font-family='Inter,Arial' font-size='16' font-weight='700'%3EN%3C/text%3E%3C/svg%3E"
+    />
+  </head>
+  <body class="product-page">
+    <!-- Header / Navbar -->
+    <header class="site-header" id="siteHeader">
+      <nav class="nav" aria-label="Main">
+        <div class="nav-left">
+          <a href="../index.html" class="logo" aria-label="Notion – Home">N</a>
+        </div>
+
+        <div class="nav-center">
+          <div class="nav-dropdown" data-dropdown>
+            <button class="nav-dropdown-btn" type="button" aria-expanded="false">
+              Product
+              <svg class="chevron" viewBox="0 0 10 10" aria-hidden="true">
+                <path d="M2 3.5 L5 6.5 L8 3.5" fill="none" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </button>
+            <div class="dropdown-panel">
+              <a href="product.html">Product Overview</a>
+              <a href="#features">AI &amp; Search</a>
+              <a href="#agents">Agents &amp; Automation</a>
+              <a href="#usecases">Use Cases</a>
+            </div>
+          </div>
+
+          <div class="nav-dropdown" data-dropdown>
+            <button class="nav-dropdown-btn" type="button" aria-expanded="false">
+              Resources
+              <svg class="chevron" viewBox="0 0 10 10" aria-hidden="true">
+                <path d="M2 3.5 L5 6.5 L8 3.5" fill="none" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+            </button>
+            <div class="dropdown-panel">
+              <a href="resources.html">Resources Hub</a>
+              <a href="developers.html">Developer Platform</a>
+              <a href="startups.html">Notion for Startups</a>
+            </div>
+          </div>
+
+          <a class="nav-link" href="#cta">Pricing</a>
+          <a class="nav-link" href="#cta">Request a demo</a>
+        </div>
+
+        <div class="nav-right">
+          <a class="btn btn-ghost hide-mobile" href="#cta">Log in</a>
+          <a class="btn btn-primary" href="#cta">Get Notion free</a>
+          <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu">
+            <span></span>
+          </button>
+        </div>
+      </nav>
+
+      <div class="mobile-nav" id="mobileNav" hidden>
+        <a href="product.html">Product</a>
+        <a href="resources.html">Resources</a>
+        <a href="developers.html">Developers</a>
+        <a href="startups.html">Startups</a>
+        <a href="#cta">Pricing</a>
+        <a href="#cta">Log in</a>
+        <a href="#cta">Get Notion free</a>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="product-hero">
+        <div class="container">
+          <div class="fade-up">
+            <span class="hero-pill-tag">
+              <span class="sparkle">✦</span> Notion Product Engine
+            </span>
+            <h1 class="product-hero-title">
+              So... what is Notion?
+            </h1>
+            <p class="product-hero-sub">
+              Meet the AI workspace where teams and agents collaborate. Capture knowledge, answer questions, and push projects forward. All in one place.
+            </p>
+
+            <div class="product-hero-actions">
+              <a class="btn btn-primary btn-lg" href="#cta">Get Notion free</a>
+              <a class="btn btn-secondary btn-lg" href="#cta">Request a demo</a>
+            </div>
+          </div>
+
+          <!-- Product Canvas Interactive UI Mockup -->
+          <div class="product-mockup-wrapper fade-up">
+            <div class="product-window-frame">
+              <!-- Window Chrome Topbar -->
+              <div class="window-topbar">
+                <div class="window-dots">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="window-title-tab">
+                  <span>🚀</span> Product Strategy &amp; Engineering HQ
+                </div>
+                <div style="font-size: 11px; opacity: 0.7;">Synced • AI Active</div>
+              </div>
+
+              <!-- Sidebar -->
+              <aside class="window-sidebar">
+                <div class="sidebar-user">
+                  <div class="sidebar-user-avatar">N</div>
+                  <span>Notion Labs HQ</span>
+                </div>
+
+                <div class="sidebar-menu-group">
+                  <div class="sidebar-menu-title">Workspace</div>
+                  <div class="sidebar-nav-item active">
+                    <span>📑 Product Roadmap</span>
+                    <span class="sidebar-badge">Live</span>
+                  </div>
+                  <div class="sidebar-nav-item">
+                    <span>🧠 Team Knowledge</span>
+                  </div>
+                  <div class="sidebar-nav-item">
+                    <span>⚡ AI Agents</span>
+                    <span class="sidebar-badge">4 active</span>
+                  </div>
+                  <div class="sidebar-nav-item">
+                    <span>📊 H2 Performance</span>
+                  </div>
+                </div>
+
+                <div class="sidebar-menu-group">
+                  <div class="sidebar-menu-title">Teamspaces</div>
+                  <div class="sidebar-nav-item"><span>▣ Engineering</span></div>
+                  <div class="sidebar-nav-item"><span>▣ Design System</span></div>
+                  <div class="sidebar-nav-item"><span>▣ Product Ops</span></div>
+                </div>
+              </aside>
+
+              <!-- Main Pane Content -->
+              <div class="window-content">
+                <div class="content-header">
+                  <div class="content-title-area">
+                    <span class="content-icon">🚀</span>
+                    <h2 class="content-h1">Q3 Product Sprint &amp; AI Engine</h2>
+                  </div>
+                  <div class="content-toolbar">
+                    <button class="toolbar-pill" type="button">✦ Ask Notion AI</button>
+                    <button class="toolbar-pill" type="button">Filter</button>
+                    <button class="toolbar-pill" type="button">Share</button>
+                  </div>
+                </div>
+
+                <!-- AI Quick Bar -->
+                <div class="ai-quick-bar">
+                  <div class="ai-quick-input">
+                    <span class="sparkle-icon">✦</span>
+                    <span><strong>Notion AI:</strong> Generating automatic sprint status summary for 14 active tasks...</span>
+                  </div>
+                  <span class="tag blue">Active Agent</span>
+                </div>
+
+                <!-- Kanban Board Grid -->
+                <div class="kanban-grid">
+                  <!-- Column 1 -->
+                  <div class="kanban-column">
+                    <div class="column-header">
+                      <span>To-do (4)</span>
+                      <span>+</span>
+                    </div>
+                    <div class="kanban-card">
+                      <div class="card-title">Redesign Developer API Documentation</div>
+                      <div class="card-tags">
+                        <span class="tag pink">High</span>
+                        <span class="tag blue">Docs</span>
+                      </div>
+                      <div class="card-footer">
+                        <span>Updated 2h ago</span>
+                        <div class="avatar-stack">
+                          <span style="background:#5e6ad2">SK</span>
+                          <span style="background:#0f7b6c">AM</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="kanban-card">
+                      <div class="card-title">Integrate Q3 AI Search Citations</div>
+                      <div class="card-tags">
+                        <span class="tag yellow">Medium</span>
+                        <span class="tag purple">AI</span>
+                      </div>
+                      <div class="card-footer">
+                        <span>Updated 5h ago</span>
+                        <div class="avatar-stack">
+                          <span style="background:#d9730d">VR</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Column 2 -->
+                  <div class="kanban-column">
+                    <div class="column-header">
+                      <span>In Progress (3)</span>
+                      <span>+</span>
+                    </div>
+                    <div class="kanban-card">
+                      <div class="card-title">Custom AI Agent Workflow Triggers</div>
+                      <div class="card-tags">
+                        <span class="tag purple">Agents</span>
+                        <span class="tag green">Core</span>
+                      </div>
+                      <div class="card-footer">
+                        <span>Active Agent running</span>
+                        <div class="avatar-stack">
+                          <span style="background:#2b6b2f">AG</span>
+                          <span style="background:#1a6b99">NL</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="kanban-card">
+                      <div class="card-title">Smart Workspace Insights Health Engine</div>
+                      <div class="card-tags">
+                        <span class="tag pink">Hackathon</span>
+                        <span class="tag blue">Feature</span>
+                      </div>
+                      <div class="card-footer">
+                        <span>In Review</span>
+                        <div class="avatar-stack">
+                          <span style="background:#9b3a63">ED</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Column 3 -->
+                  <div class="kanban-column">
+                    <div class="column-header">
+                      <span>Done (8)</span>
+                      <span>+</span>
+                    </div>
+                    <div class="kanban-card">
+                      <div class="card-title">Shared Design System Variables</div>
+                      <div class="card-tags">
+                        <span class="tag green">Completed</span>
+                      </div>
+                      <div class="card-footer">
+                        <span>Yesterday</span>
+                        <div class="avatar-stack">
+                          <span style="background:#5e6ad2">UR</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Knowledge Section -->
+      <section class="product-section">
+        <div class="container-wide">
+          <div class="editorial-grid fade-up">
+            <div class="editorial-text">
+              <p class="eyebrow">Knowledge Management</p>
+              <h3>Capture everything your team knows in one place.</h3>
+              <p>
+                Eliminate scattered wikis and forgotten docs. Notion organizes company policies, meeting transcripts, and project specs into a connected system of record.
+              </p>
+              <div class="feature-bullets">
+                <div class="feature-bullet">
+                  <div class="bullet-icon">✓</div>
+                  <div class="bullet-content">
+                    <h4>Nested Pages &amp; Databases</h4>
+                    <p>Organize information visually with flexible blocks, databases, and custom relations.</p>
+                  </div>
+                </div>
+                <div class="feature-bullet">
+                  <div class="bullet-icon">✓</div>
+                  <div class="bullet-content">
+                    <h4>Connected References</h4>
+                    <p>Mention pages, link inline database views, and cross-reference tasks dynamically.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Document Mockup Card -->
+            <div class="doc-mockup-card">
+              <div style="font-size: 20px; font-weight: 700;">📘 Engineering System Architecture</div>
+              <div class="doc-callout">
+                <span>💡 <strong>Tip:</strong> Architecture decision records (ADRs) are automatically parsed by Notion AI for instant answer retrieval.</span>
+              </div>
+              <div style="font-size: 14.5px; line-height: 1.6; color: var(--text-muted);">
+                <p style="margin-bottom: 12px;"><strong>Overview:</strong> Our core API service uses a decoupled event architecture. All microservices communicate asynchronously via verified protocol schemas.</p>
+                <div class="row"><span>Database Sharding Plan</span><span class="tag green">Approved</span></div>
+                <div class="row"><span>Authentication Gateway Spec</span><span class="tag blue">In Progress</span></div>
+                <div class="row"><span>Real-time Sync Protocol</span><span class="tag purple">Completed</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- AI Search Section -->
+      <section class="product-section bg-soft" id="features">
+        <div class="container-wide">
+          <div class="section-head-center fade-up">
+            <p class="eyebrow">Notion AI Search</p>
+            <h2 class="section-title">Instant answers with full team citations.</h2>
+            <p class="section-lead">
+              Ask your workspace anything. Notion AI reads across all docs, notes, and database records to synthesize clear answers with exact source links.
+            </p>
+          </div>
+
+          <!-- Interactive AI Search Box -->
+          <div class="ai-search-box fade-up">
+            <div class="search-input-wrapper">
+              <span style="color: var(--blue); font-weight: 700;">✦</span>
+              <input type="text" id="aiSearchInput" value="What are our Q3 priorities?" />
+              <button class="search-ask-btn" id="aiSearchBtn" type="button">Ask AI</button>
+            </div>
+
+            <div class="ai-answer-panel" id="aiAnswerPanel">
+              <div class="ai-answer-header">
+                <span>✦</span> Notion AI Answer
+              </div>
+              <div class="ai-answer-body">
+                Our Q3 priorities focus on 3 core pillars: 1) Launching custom AI agents for enterprise workspaces, 2) Improving document search speed by 40%, and 3) Expanding automated workflow integrations with Slack and GitHub.
+              </div>
+              <div class="citations-list">
+                <strong>Sources:</strong>
+                <span class="citation-chip">📄 Q3 Roadmap Document</span>
+                <span class="citation-chip">📄 Engineering Sync Notes (July 14)</span>
+                <span class="citation-chip">📄 Product Strategy Deck v2</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Agent / Automation Section -->
+      <section class="product-section" id="agents">
+        <div class="container-wide">
+          <div class="section-head-center fade-up">
+            <p class="eyebrow">AI Agents &amp; Workflows</p>
+            <h2 class="section-title">Automate busywork 24/7 with custom agents.</h2>
+            <p class="section-lead">
+              Configure agents to monitor databases, summarize weekly progress, triage incoming tickets, and post updates without manual effort.
+            </p>
+          </div>
+
+          <!-- Interactive Agent Demo Block -->
+          <div class="agent-demo-container fade-up">
+            <div class="agent-header-row">
+              <div>
+                <h3>Automated Weekly Status Report Agent</h3>
+                <p style="color: rgba(255,255,255,0.7); margin: 4px 0 0; font-size: 14px;">
+                  Trigger: Every Friday at 5:00 PM • Action: Compile active team sprint tasks and write summary doc
+                </p>
+              </div>
+              <button class="run-agent-btn" id="runAgentBtn" type="button">
+                <span>▶</span> Run Agent Now
+              </button>
+            </div>
+
+            <!-- Steps Grid -->
+            <div class="workflow-steps-grid">
+              <div class="workflow-step-card">
+                <div class="step-num">1</div>
+                <div class="step-title">Trigger Fired</div>
+                <div class="step-desc">Scheduled trigger or manual button click initiated.</div>
+              </div>
+              <div class="workflow-step-card">
+                <div class="step-num">2</div>
+                <div class="step-title">Context Gathering</div>
+                <div class="step-desc">Agent scans 14 teamspaces and recent Kanban cards.</div>
+              </div>
+              <div class="workflow-step-card">
+                <div class="step-num">3</div>
+                <div class="step-title">AI Synthesis</div>
+                <div class="step-desc">Summarizes progress, blockers, and key metrics.</div>
+              </div>
+              <div class="workflow-step-card">
+                <div class="step-num">4</div>
+                <div class="step-title">Publish Result</div>
+                <div class="step-desc">Creates new page &amp; sends Slack notification.</div>
+              </div>
+            </div>
+
+            <div class="agent-output-box" id="agentOutput">
+              [$] Agent status: Idle. Click "Run Agent Now" to execute the simulated workflow.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- See how Notion can work for you Section -->
+      <section class="product-section bg-soft">
+        <div class="container-wide">
+          <div class="section-head-center fade-up">
+            <h2 class="section-title">See how Notion can work for you.</h2>
+          </div>
+
+          <div class="features-grid-3col fade-up">
+            <div class="feature-box">
+              <div>
+                <span class="tag blue" style="margin-bottom:12px; display:inline-block;">Marketplace</span>
+                <h4>Get inspired to level up.</h4>
+                <p>Explore templates, agents, integrations, and more to customize your team workspace.</p>
+              </div>
+              <a href="#cta" class="arrow-btn" aria-label="Learn more">Learn more →</a>
+            </div>
+
+            <div class="feature-box">
+              <div>
+                <span class="tag purple" style="margin-bottom:12px; display:inline-block;">Customer stories</span>
+                <h4>Run your business on Notion.</h4>
+                <p>See how industry leaders like Ramp, Cursor, and Faire scale their teams on Notion.</p>
+              </div>
+              <a href="#cta" class="arrow-btn" aria-label="Explore stories">Explore stories →</a>
+            </div>
+
+            <div class="feature-box">
+              <div>
+                <span class="tag green" style="margin-bottom:12px; display:inline-block;">Notion Academy</span>
+                <h4>Build smarter workflows.</h4>
+                <p>Learn Notion basics and validate your skills with official badges &amp; certifications.</p>
+              </div>
+              <a href="#cta" class="arrow-btn" aria-label="Get started">Get started →</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Anything you can do in Notion, your agents can do for you Section -->
+      <section class="product-section" id="usecases">
+        <div class="container-wide">
+          <div class="section-head-center fade-up">
+            <h2 class="section-title">Anything you can do in Notion, your agents can do for you.</h2>
+          </div>
+
+          <div class="usecases-tab-grid fade-up">
+            <div class="usecase-tile">
+              <div class="usecase-tile-icon blue">👋</div>
+              <h3>Onboard a new hire</h3>
+              <p>Get new teammates up to speed automatically with curated docs, checklists, and AI Q&amp;A.</p>
+            </div>
+
+            <div class="usecase-tile">
+              <div class="usecase-tile-icon purple">🚀</div>
+              <h3>Go from brainstorm to roadmap</h3>
+              <p>Turn raw meeting notes into structured project tasks and engineering sprint specs.</p>
+            </div>
+
+            <div class="usecase-tile">
+              <div class="usecase-tile-icon green">📊</div>
+              <h3>Automate weekly reporting</h3>
+              <p>Let AI agents compile updates from active databases and publish weekly status docs.</p>
+            </div>
+
+            <div class="usecase-tile">
+              <div class="usecase-tile-icon orange">📥</div>
+              <h3>Triage product feedback</h3>
+              <p>Categorize customer feedback items, tag feature requests, and link them to roadmaps.</p>
+            </div>
+          </div>
+
+          <!-- Ramp Quote -->
+          <div style="max-width: 800px; margin: 48px auto 0; text-align: center; font-size: 18px; font-style: italic; color: var(--text-muted);" class="fade-up">
+            “If it’s something that’s repetitive, we have a Notion Agent for it.”
+            <div style="font-style: normal; font-weight: 700; color: var(--text); font-size: 14px; margin-top: 8px;">— Ben Levick, Head of AI &amp; Operations, Ramp</div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Smart Workspace Insights (Hackathon Feature) -->
+      <section class="product-section bg-soft">
+        <div class="container-wide">
+          <div class="workspace-insights-banner fade-up">
+            <div class="insights-banner-content">
+              <span class="tag pink" style="margin-bottom: 12px; display: inline-block;">Original Hackathon Feature</span>
+              <h3>Smart Workspace Insights</h3>
+              <p>
+                Analyze your workspace health, detect duplicate documents, identify overdue tasks, and optimize team knowledge with 1-click AI recommendations.
+              </p>
+            </div>
+            <button class="analyze-trigger-btn" id="openInsightsModalBtn" type="button">
+              ✨ Analyze Workspace
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Smart Workspace Insights Modal Overlay -->
+      <div class="insights-modal-overlay" id="insightsModalOverlay" aria-hidden="true">
+        <div class="insights-modal-container" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+          <div class="modal-header">
+            <div class="modal-title-wrap">
+              <span style="font-size: 24px;">✨</span>
+              <h3 id="modalTitle">Smart Workspace Insights Report</h3>
+            </div>
+            <button class="modal-close-btn" id="closeInsightsModalBtn" type="button" aria-label="Close modal">✕</button>
+          </div>
+
+          <div class="modal-body">
+            <!-- Metrics Row -->
+            <div class="metrics-row">
+              <div class="metric-card">
+                <span class="metric-label">Workspace Health</span>
+                <span class="metric-val green" id="healthScoreVal">82%</span>
+              </div>
+              <div class="metric-card">
+                <span class="metric-label">Knowledge Coverage</span>
+                <span class="metric-val blue" id="coverageVal">71%</span>
+              </div>
+              <div class="metric-card">
+                <span class="metric-label">Task Completion</span>
+                <span class="metric-val" id="taskVal">89%</span>
+              </div>
+            </div>
+
+            <!-- Workspace Stats Pills -->
+            <div class="stats-pill-grid">
+              <span class="stat-pill">📄 142 Total Pages</span>
+              <span class="stat-pill">📊 18 Databases</span>
+              <span class="stat-pill">✅ 87 Tasks</span>
+              <span class="stat-pill" style="color: #ef4444; border-color: #fca5a5;">⚠️ 8 Overdue</span>
+              <span class="stat-pill" style="color: #d9730d;">💤 13 Inactive</span>
+              <span class="stat-pill" style="color: #7c3aed;">📑 7 Duplicates</span>
+            </div>
+
+            <!-- AI Recommendations Section -->
+            <div class="recommendations-section">
+              <h4>AI Optimization Recommendations</h4>
+              <div class="recommendation-list" id="recommendationsList">
+                <!-- Recommendation Item 1 -->
+                <div class="recommendation-item">
+                  <div class="rec-info">
+                    <span>📑</span>
+                    <span>Merge 3 duplicate project pages in <strong>#Product Ops</strong></span>
+                  </div>
+                  <div class="rec-actions">
+                    <button class="rec-btn apply" type="button">Apply</button>
+                    <button class="rec-btn dismiss" type="button">Dismiss</button>
+                  </div>
+                </div>
+
+                <!-- Recommendation Item 2 -->
+                <div class="recommendation-item">
+                  <div class="rec-info">
+                    <span>💤</span>
+                    <span>Archive 5 inactive documents last modified > 180 days ago</span>
+                  </div>
+                  <div class="rec-actions">
+                    <button class="rec-btn apply" type="button">Apply</button>
+                    <button class="rec-btn dismiss" type="button">Dismiss</button>
+                  </div>
+                </div>
+
+                <!-- Recommendation Item 3 -->
+                <div class="recommendation-item">
+                  <div class="rec-info">
+                    <span>⚡</span>
+                    <span>Automate weekly status report generation for Sprint 28</span>
+                  </div>
+                  <div class="rec-actions">
+                    <button class="rec-btn apply" type="button">Apply</button>
+                    <button class="rec-btn dismiss" type="button">Dismiss</button>
+                  </div>
+                </div>
+
+                <!-- Recommendation Item 4 -->
+                <div class="recommendation-item">
+                  <div class="rec-info">
+                    <span>⚠️</span>
+                    <span>Follow up on 4 overdue tasks in <strong>Engineering Backlog</strong></span>
+                  </div>
+                  <div class="rec-actions">
+                    <button class="rec-btn apply" type="button">Apply</button>
+                    <button class="rec-btn dismiss" type="button">Dismiss</button>
+                  </div>
+                </div>
+
+                <!-- Recommendation Item 5 -->
+                <div class="recommendation-item">
+                  <div class="rec-info">
+                    <span>📘</span>
+                    <span>Add missing API endpoint documentation to <strong>Project Alpha</strong></span>
+                  </div>
+                  <div class="rec-actions">
+                    <button class="rec-btn apply" type="button">Apply</button>
+                    <button class="rec-btn dismiss" type="button">Dismiss</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Customer Stories -->
+      <section class="stories">
+        <div class="container-wide">
+          <div class="section-head-center fade-up">
+            <p class="eyebrow">Customer Stories</p>
+            <h2 class="section-title">Loved by teams that scale.</h2>
+          </div>
+          <div class="story-grid fade-up">
+            <a class="story-card cursor" href="#cta">
+              <div class="story-brand">CURSOR</div>
+              <div class="avatar" aria-hidden="true">MT</div>
+              <p class="story-quote">
+                “Notion's product engine lets our small team coordinate complex technical docs and AI agent workflows effortlessly.”
+              </p>
+              <p class="story-meta">Michael Truell, Co-founder &amp; CEO</p>
+            </a>
+            <a class="story-card faire" href="#cta">
+              <div class="story-brand">FAIRE</div>
+              <div class="avatar" aria-hidden="true">RS</div>
+              <p class="story-quote">
+                “Connecting our product roadmaps and AI knowledge base inside Notion halved our meeting time.”
+              </p>
+              <p class="story-meta">Renee Solorzano, Sr. Director of Product Design</p>
+            </a>
+            <a class="story-card ramp" href="#cta">
+              <div class="story-brand">RAMP</div>
+              <div class="avatar" aria-hidden="true">BL</div>
+              <p class="story-quote">
+                “Custom AI Agents in Notion take routine reporting off our engineering team's hands completely.”
+              </p>
+              <p class="story-meta">Ben Levick, Head of Operations</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Final CTA -->
+      <section class="cta" id="cta">
+        <div class="container">
+          <div class="fade-up">
+            <h2>Build your AI workspace today.</h2>
+            <p style="font-size: 18px; color: var(--text-muted); margin-bottom: 28px;">
+              Join millions of teams using Notion for docs, projects, and automated AI workflows.
+            </p>
+            <div class="cta-actions">
+              <a class="btn btn-primary btn-lg" href="#">Get Notion free</a>
+              <a class="btn btn-secondary btn-lg" href="#">Request a demo</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container-wide">
+        <div class="footer-grid">
+          <div>
+            <a href="../index.html" class="logo-wordmark" aria-label="Notion – Home">
+              <span class="logo">N</span>
+              Notion
+            </a>
+            <p class="footer-quote">
+              “We shape our tools, and thereafter our tools shape us.”
+              <cite>Marshall McLuhan</cite>
+            </p>
+          </div>
+
+          <div class="footer-col">
+            <h4>Product</h4>
+            <a href="product.html">Product Overview</a>
+            <a href="#features">Notion AI</a>
+            <a href="#agents">Agents &amp; Automation</a>
+            <a href="#cta">Pricing</a>
+            <a href="#cta">Request a demo</a>
+          </div>
+
+          <div class="footer-col">
+            <h4>Resources</h4>
+            <a href="resources.html">Resources Hub</a>
+            <a href="developers.html">Developer Platform</a>
+            <a href="startups.html">Startups</a>
+            <a href="#cta">Customer Stories</a>
+          </div>
+
+          <div class="footer-col">
+            <h4>Company</h4>
+            <a href="#cta">About us</a>
+            <a href="#cta">Careers</a>
+            <a href="#cta">Security</a>
+            <a href="#cta">Terms &amp; privacy</a>
+          </div>
+
+          <div class="footer-col">
+            <h4>Notion for</h4>
+            <a href="startups.html">Startups</a>
+            <a href="developers.html">Developers</a>
+            <a href="#cta">Enterprise</a>
+            <a href="#cta">Small businesses</a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div>
+            <span>© 2026 Notion Labs, Inc.</span>
+            ·
+            <a href="#cta">Cookie settings</a>
+            ·
+            <span>Codeforge educational clone</span>
+          </div>
+          <button class="lang-btn" type="button">English (US)</button>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/pages.js"></script>
+  </body>
+</html>
