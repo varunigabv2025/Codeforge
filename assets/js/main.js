@@ -7,7 +7,7 @@
       if (!link) return;
       const href = (link.getAttribute("href") || "").trim();
       const path = href.split("?")[0].split("#")[0];
-      const allow = /(?:^|\/)(?:index\.html|pricing\.html)$/i.test(path);
+      const allow = /(?:^|\/)(?:index\.html|pricing\.html|developers\.html|startups\.html)$/i.test(path);
       if (allow) return;
       event.preventDefault();
     },
