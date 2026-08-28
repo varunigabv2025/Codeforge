@@ -400,7 +400,7 @@ ul {
   margin: 0;
   margin-block-end: 12px;
   width: 100%;
-  font-weight: 600;
+  font-weight: 500;
   font-size: clamp(2.625rem, 11.25vw - 25.5px, 6rem);
   line-height: clamp(3rem, 10.8333vw - 17px, 6.25rem);
   letter-spacing: clamp(-0.2875rem, 2.375px - 0.645833vw, -0.09375rem);
@@ -448,7 +448,7 @@ ul {
   display: inline-block;
   min-width: 2.1em;
   text-align: left;
-  font-weight: 600;
+  font-weight: 500;
   color: #000;
   line-height: 1.05;
 }
