@@ -8,7 +8,7 @@ This is **not** an official Notion product. Brand names and copy are used only f
 
 | Page | Owner | Status |
 |------|-------|--------|
-| Landing page (`index.html`) | Contributor (this PR/commit) | Done |
+| Landing page (`enterprise.html`) | Contributor (this PR/commit) | Done |
 | Other website pages | Team | Placeholders in `pages/` |
 
 ## Run locally
@@ -17,7 +17,7 @@ Open the landing page in a browser:
 
 ```bash
 # from the repo root
-start index.html
+start enterprise.html
 ```
 
 Or serve with any static server:
@@ -31,7 +31,7 @@ Then open the URL shown in the terminal (usually `http://localhost:3000`).
 ## Project structure
 
 ```
-index.html              # Notion-style landing page
+enterprise.html         # Notion-style landing page
 assets/css/styles.css   # Landing page styles
 assets/js/main.js       # Hero word rotation, nav, marquees
 pages/                  # Additional pages for teammates
