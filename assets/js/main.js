@@ -1,16 +1,55 @@
 (() => {
-  const words = ["Think", "Scale", "Build", "Plan", "Ship"];
+  // Keep demo CTAs on this clone; allow real nav between local pages.
+  document.addEventListener(
+    "click",
+    (event) => {
+      const link = event.target.closest("a[href]");
+      if (!link) return;
+      const href = (link.getAttribute("href") || "").trim();
+      const path = href.split("?")[0].split("#")[0];
+      const allow = /(?:^|\/)(?:index\.html|pricing\.html)$/i.test(path);
+      if (allow) return;
+      event.preventDefault();
+    },
+    true
+  );
+
+  // Colors match Notion homepage productPillAnimation tokens
+  // Default / first visual: Build (peach pill + orange dot) per hero reference
+  const pillWords = [
+    { word: "Build", bg: "#ffe8c8", dot: "#ffb110" }, // yellow / peach
+    { word: "Plan", bg: "#ffcdf1", dot: "#ff64c8" }, // pink
+    { word: "Ship", bg: "#d0f4d8", dot: "#1aae39" }, // green
+    { word: "Jam", bg: "#eadbfa", dot: "#9849e8" }, // purple
+    { word: "Think", bg: "#e6f3fe", dot: "#097fe8" }, // blue
+    { word: "Scale", bg: "#bde6e4", dot: "#27918d" }, // teal
+  ];
   const thinkWord = document.getElementById("thinkWord");
+  const thinkPill = document.querySelector(".think-pill");
   let wordIndex = 0;
+
+  const applyPillColors = (entry) => {
+    if (!thinkPill || !entry) return;
+    thinkPill.style.setProperty("--pill-bg", entry.bg);
+    thinkPill.style.setProperty("--pill-dot", entry.dot);
+    thinkPill.style.setProperty("--color-background", entry.bg);
+    thinkPill.style.setProperty("--color-dot", entry.dot);
+  };
+
+  if (thinkWord) {
+    applyPillColors(pillWords[0]);
+  }
 
   if (thinkWord && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     setInterval(() => {
-      wordIndex = (wordIndex + 1) % words.length;
+      wordIndex = (wordIndex + 1) % pillWords.length;
+      const next = pillWords[wordIndex];
       thinkWord.style.opacity = "0";
       thinkWord.style.transform = "translateY(8px)";
       thinkWord.style.transition = "opacity 180ms ease, transform 180ms ease";
       setTimeout(() => {
-        thinkWord.textContent = words[wordIndex];
+        thinkWord.textContent = next.word;
+        applyPillColors(next);
         thinkWord.style.opacity = "1";
         thinkWord.style.transform = "translateY(0)";
       }, 180);
@@ -18,13 +57,19 @@
   }
 
   // Duplicate marquee content for seamless loop
-  function duplicateTrack(id) {
+  function duplicateTrack(id, cloneClass) {
     const track = document.getElementById(id);
     if (!track) return;
-    track.innerHTML += track.innerHTML;
+    Array.from(track.children).forEach((node) => {
+      const clone = node.cloneNode(true);
+      clone.setAttribute("aria-hidden", "true");
+      if (clone.alt) clone.alt = "";
+      if (cloneClass) clone.classList.add(cloneClass);
+      track.appendChild(clone);
+    });
   }
-  duplicateTrack("logoTrack");
-  duplicateTrack("statsTrack");
+  duplicateTrack("logoTrack", "logo-clone");
+  // Stats marquee duplicates its set in HTML for a seamless loop.
 
   // Sticky header border on scroll
   const header = document.getElementById("siteHeader");
@@ -67,16 +112,17 @@
   const toggle = document.getElementById("menuToggle");
   const mobileNav = document.getElementById("mobileNav");
   if (toggle && mobileNav) {
-    toggle.addEventListener("click", () => {
-      const open = mobileNav.classList.toggle("open");
+    const setMenuOpen = (open) => {
+      mobileNav.classList.toggle("open", open);
       mobileNav.hidden = !open;
       toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    };
+    toggle.addEventListener("click", () => {
+      setMenuOpen(mobileNav.hidden);
     });
     mobileNav.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        mobileNav.classList.remove("open");
-        mobileNav.hidden = true;
-      });
+      link.addEventListener("click", () => setMenuOpen(false));
     });
   }
 
@@ -134,5 +180,27 @@
     heroVideo.addEventListener("play", syncButton);
     heroVideo.addEventListener("pause", syncButton);
     syncButton();
+  }
+
+  // Pricing page: monthly / yearly toggle
+  const billingToggle = document.querySelector("[data-billing-toggle]");
+  if (billingToggle) {
+    const applyInterval = (interval) => {
+      billingToggle.dataset.interval = interval;
+      billingToggle.classList.toggle("is-yearly", interval === "year");
+      billingToggle.classList.toggle("is-monthly", interval === "month");
+      document.querySelectorAll("[data-price-year]").forEach((el) => {
+        const yearly = el.getAttribute("data-price-year");
+        const monthly = el.getAttribute("data-price-month");
+        el.textContent = interval === "year" ? yearly : monthly;
+      });
+    };
+    billingToggle.querySelectorAll('input[name="billingInterval"]').forEach((input) => {
+      input.addEventListener("change", () => {
+        if (input.checked) applyInterval(input.value);
+      });
+    });
+    const checked = billingToggle.querySelector('input[name="billingInterval"]:checked');
+    applyInterval(checked ? checked.value : "year");
   }
 })();

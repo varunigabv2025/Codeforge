@@ -1,112 +1,189 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us" class="no-x-scroll">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>The AI workspace that works for you. | Notion</title>
     <meta
       name="description"
-      content="Codeforge educational recreation of the Notion landing page — where teams and agents think together."
+      content="Build Custom Agents, search across all your apps, and automate busywork. The AI workspace where teams get more done, faster."
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="The AI workspace that works for you. | Notion" />
+    <meta
+      name="twitter:description"
+      content="Build Custom Agents, search across all your apps, and automate busywork. The AI workspace where teams get more done, faster."
+    />
+    <meta name="twitter:image" content="https://www.notion.com/front-static/meta/teams-and-agents.jpg" />
+    <meta property="og:title" content="The AI workspace that works for you. | Notion" />
+    <meta
+      property="og:description"
+      content="Build Custom Agents, search across all your apps, and automate busywork. The AI workspace where teams get more done, faster."
+    />
+    <meta property="og:image" content="https://www.notion.com/front-static/meta/teams-and-agents.jpg" />
+    <meta property="og:site_name" content="Notion" />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="https://www.notion.com/front-static/favicon.ico" />
+    <link rel="apple-touch-icon" href="https://www.notion.com/front-static/logo-ios.png" />
+
+    <link rel="preconnect" href="https://www.notion.com" />
+    <link rel="preconnect" href="https://images.ctfassets.net" />
+    <link rel="preconnect" href="https://videos.ctfassets.net" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      href="https://www.notion.com/front-static/fonts/NotionInter-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
     />
+    <link
+      rel="preload"
+      href="https://www.notion.com/front-static/fonts/NotionInter-Medium.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="https://www.notion.com/front-static/fonts/NotionInter-Bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+
     <link rel="stylesheet" href="assets/css/styles.css" />
-    <link
-      rel="icon"
-      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23000'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='white' font-family='Inter,Arial' font-size='16' font-weight='700'%3EN%3C/text%3E%3C/svg%3E"
-    />
   </head>
   <body>
     <header class="site-header" id="siteHeader">
       <nav class="nav" aria-label="Main">
         <div class="nav-left">
-          <a href="index.html" class="logo" aria-label="Notion – Home">N</a>
+          <a href="index.html" class="notion-logo" aria-label="Notion – Home">
+            <svg width="33" height="34" viewBox="0 0 33 34" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M3.8051 3.26755L20.5301 2.04319C22.5839 1.86808 23.1124 1.98538 24.4032 2.91756L29.7421 6.64773C30.623 7.28917 30.9165 7.46381 30.9165 8.16307V28.6217C30.9165 29.9038 30.4468 30.6622 28.804 30.7782L9.38138 31.9442C8.14825 32.0027 7.56135 31.8279 6.91556 31.0114L2.98395 25.9405C2.27947 25.0072 1.98651 24.3088 1.98651 23.4918V5.3068C1.98651 4.25826 2.45649 3.38366 3.8051 3.26755Z" fill="#fff"></path>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M20.5301 2.04318C22.5838 1.86808 23.1124 1.98541 24.4031 2.91757L29.7421 6.64778C30.623 7.28918 30.9167 7.46383 30.9167 8.16301V28.6217C30.9167 29.9039 30.4468 30.6622 28.804 30.7782L9.38127 31.944C8.14822 32.0025 7.56137 31.8279 6.9156 31.0114L2.98396 25.9405C2.27951 25.0072 1.98647 24.3088 1.98645 23.492V5.30687C1.98645 4.25835 2.45646 3.38365 3.80508 3.26754L20.5301 2.04318ZM28.9214 9.91165C28.9214 9.15462 28.6285 8.74625 27.9818 8.80449L8.91064 9.91165C8.20688 9.97045 7.9722 10.3204 7.9722 11.0779V28.4466C7.97222 29.3801 8.44147 29.7293 9.49759 29.6715L27.7471 28.6217C28.8037 28.5641 28.9214 27.922 28.9214 27.1636V9.91165ZM25.988 12.0096C26.1051 12.5347 25.988 13.0592 25.4588 13.1182L24.5795 13.2926V26.1151C23.816 26.5231 23.1122 26.7563 22.5256 26.7563C21.5863 26.7563 21.351 26.4646 20.6475 25.5908L14.8959 16.6149V25.2992L16.7158 25.7076C16.7158 25.7076 16.7159 26.7563 15.2475 26.7563L11.1994 26.9897C11.0818 26.7563 11.1995 26.1739 11.6101 26.0571L12.6664 25.7662V14.2837L11.1997 14.1668C11.0822 13.6417 11.3751 12.8847 12.1972 12.8259L16.5398 12.5349L22.5256 21.6277V13.5839L20.9993 13.4098C20.8821 12.7679 21.351 12.3018 21.9379 12.244L25.988 12.0096ZM23.816 4.43331C23.2877 4.02552 22.5835 3.55846 21.2343 3.67528L5.15507 4.84121C4.56875 4.89903 4.45158 5.19046 4.68509 5.42409L6.97519 7.23083C7.91323 7.98837 8.26511 7.93069 10.0265 7.81388L26.632 6.82259C26.9842 6.82259 26.6915 6.47348 26.5739 6.41536L23.816 4.43331Z" fill="#000"></path>
+            </svg>
+          </a>
         </div>
 
         <div class="nav-center">
           <div class="nav-dropdown" data-dropdown>
             <button class="nav-dropdown-btn" type="button" aria-expanded="false">
               Product
-              <svg class="chevron" viewBox="0 0 10 10" aria-hidden="true">
-                <path d="M2 3.5 L5 6.5 L8 3.5" fill="none" stroke="currentColor" stroke-width="1.5" />
+              <svg class="chevron" viewBox="0 0 30 30" aria-hidden="true">
+                <polygon points="15,17.4 4.8,7 2,9.8 15,23 28,9.8 25.2,7" fill="currentColor"></polygon>
               </svg>
             </button>
             <div class="dropdown-panel">
-              <a href="#features">AI</a>
-              <a href="#features">Docs</a>
-              <a href="#features">Wikis</a>
-              <a href="#features">Projects</a>
-              <a href="#usecases">Agents</a>
+              <a href="#">Capture</a>
+              <a href="#">Find</a>
+              <a href="#">Automate</a>
+              <a href="#">Agents</a>
             </div>
           </div>
 
           <div class="nav-dropdown" data-dropdown>
             <button class="nav-dropdown-btn" type="button" aria-expanded="false">
               Resources
-              <svg class="chevron" viewBox="0 0 10 10" aria-hidden="true">
-                <path d="M2 3.5 L5 6.5 L8 3.5" fill="none" stroke="currentColor" stroke-width="1.5" />
+              <svg class="chevron" viewBox="0 0 30 30" aria-hidden="true">
+                <polygon points="15,17.4 4.8,7 2,9.8 15,23 28,9.8 25.2,7" fill="currentColor"></polygon>
               </svg>
             </button>
             <div class="dropdown-panel">
-              <a href="#stories">Customer stories</a>
-              <a href="#usecases">Help Center</a>
-              <a href="#cta">Community</a>
-              <a href="#cta">Academy</a>
+              <a href="#">Customer stories</a>
+              <a href="#">Help Center</a>
+              <a href="#">Community</a>
+              <a href="#">Academy</a>
             </div>
           </div>
 
-          <a class="nav-link" href="#cta">Pricing</a>
-          <a class="nav-link" href="#cta">Request a demo</a>
+          <a class="nav-link" href="pricing.html">Pricing</a>
+          <a class="nav-link" href="#">Developer</a>
+          <a class="nav-link" href="#">Startup</a>
+          <a class="nav-link" href="#">Request a demo</a>
         </div>
 
         <div class="nav-right">
-          <a class="btn btn-ghost hide-mobile" href="#cta">Log in</a>
-          <a class="btn btn-primary" href="#cta">Get Notion free</a>
-          <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu">
-            <span></span>
+          <a class="btn btn-ghost nav-login" href="#">Log in</a>
+          <a class="btn btn-primary nav-cta" href="#">Get Notion free</a>
+          <button class="menu-toggle" id="menuToggle" type="button" aria-label="Toggle main menu" aria-expanded="false">
+            <svg viewBox="0 0 30 30" width="22" height="22" aria-hidden="true">
+              <path d="M2,4v2h26V4H2z M2,16h26v-2H2V16z M2,26h26v-2H2V26z" fill="currentColor"></path>
+            </svg>
           </button>
         </div>
       </nav>
 
-      <div class="mobile-nav" id="mobileNav" hidden>
-        <a href="#features">Product</a>
-        <a href="#usecases">Resources</a>
-        <a href="#cta">Pricing</a>
-        <a href="#cta">Request a demo</a>
-        <a href="#cta">Log in</a>
-        <a href="#cta">Get Notion free</a>
-      </div>
     </header>
 
+    <div class="mobile-nav" id="mobileNav" hidden>
+      <a href="#">Product</a>
+      <a href="#">Resources</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="#">Developer</a>
+      <a href="#">Startup</a>
+      <a href="#">Request a demo</a>
+      <a href="#">Log in</a>
+      <a href="#">Get Notion free</a>
+    </div>
+
     <main>
-      <!-- Hero -->
+      <div class="hero-stack">
       <section class="hero">
-        <div class="container">
+        <div class="hero-pile" aria-hidden="true">
+          <img src="https://www.notion.com/front-static/pages/home/teams-agents-hero/pile_1.webp" alt="" width="225" height="225" />
+          <img src="https://www.notion.com/front-static/pages/home/teams-agents-hero/pile_2.webp" alt="" width="225" height="225" />
+          <img src="https://www.notion.com/front-static/pages/home/teams-agents-hero/pile_3.webp" alt="" width="225" height="225" />
+          <img src="https://www.notion.com/front-static/pages/home/teams-agents-hero/pile_4.webp" alt="" width="225" height="225" />
+          <img src="https://www.notion.com/front-static/pages/home/teams-agents-hero/pile_5.webp" alt="" width="225" height="225" />
+          <img src="https://www.notion.com/front-static/pages/home/teams-agents-hero/pile_6.webp" alt="" width="225" height="225" />
+          <img src="https://www.notion.com/front-static/pages/home/teams-agents-hero/pile_7.webp" alt="" width="225" height="225" />
+        </div>
+
+        <div class="container hero-copy">
           <h1 class="hero-title">
-            <span class="line">Where teams and</span>
-            <span class="line">
-              agents
-              <span class="think-pill" aria-live="polite">
-                <span class="think-dot" aria-hidden="true"></span>
-                <span class="think-word" id="thinkWord">Think</span>
+            <span class="hero-title-top">Where teams and</span>
+            <span class="hero-title-bottom">
+              <span class="hero-title-pill-group">
+                agents
+                <span
+                  class="think-pill"
+                  aria-live="polite"
+                  style="--color-background: #ffe8c8; --color-dot: #ffb110; --pill-bg: #ffe8c8; --pill-dot: #ffb110"
+                >
+                  <span class="think-dot" aria-hidden="true"></span>
+                  <span class="think-word" id="thinkWord">Build</span>
+                </span>
+                together.
               </span>
-              together.
             </span>
           </h1>
           <p class="hero-sub">
             Capture context, find answers, and automate tasks with AI built for your team.
           </p>
           <div class="hero-ctas">
-            <a class="btn btn-primary btn-lg" href="#cta">Get Notion free</a>
-            <a class="btn btn-secondary btn-lg" href="#cta">Request a demo</a>
+            <a class="btn btn-primary btn-lg" href="#">Get Notion free</a>
+            <a class="btn btn-secondary btn-lg" href="#">Request a demo</a>
           </div>
         </div>
 
         <div class="hero-visual-wrap">
+          <div class="accent accent-agent" aria-hidden="true">
+            <img
+              src="https://www.notion.com/front-static/accent-illustrations/agentTop.png?v=2"
+              width="480"
+              height="510"
+              alt=""
+            />
+          </div>
+          <div class="accent accent-person" aria-hidden="true">
+            <img
+              src="https://www.notion.com/front-static/accent-illustrations/personPeekLeft2.png?v=1"
+              width="480"
+              height="510"
+              alt=""
+            />
+          </div>
+
           <div class="hero-media" aria-label="Notion product preview">
             <video
               id="heroVideo"
@@ -118,30 +195,18 @@
               loop
               playsinline
               preload="metadata"
-              poster=""
+              poster="https://images.ctfassets.net/spoqsaf9291f/3kVtQWll6jUqQepQ0kaYlz/382b34f23ecb349129239f0b649aba8c/web-homepage-hero-1920x1200_final.jpg"
               style="--video-aspect-ratio: 2560 / 1600"
             >
-              <source
-                src="assets/videos/web-homepage-hero-1920x1200_final.mp4"
-                type="video/mp4"
-              />
+              <source src="assets/videos/web-homepage-hero-1920x1200_final.mp4" type="video/mp4" />
               <source
                 src="https://videos.ctfassets.net/spoqsaf9291f/1EL7UZIXfcqngxsNSbL8tR/291f61f56f29dd8e788deaec8561d882/web-homepage-hero-1920x1200_final.mp4"
                 type="video/mp4"
               />
             </video>
-            <button
-              type="button"
-              class="hero-play-pause"
-              id="heroPlayPause"
-              aria-label="Pause"
-            >
+            <button type="button" class="hero-play-pause" id="heroPlayPause" aria-label="Pause">
               <span class="hero-play-pause-icon" aria-hidden="true">
-                <svg
-                  class="frontPauseButton"
-                  viewBox="0 0 16 16"
-                  style="width: 100%; height: 100%; display: block; fill: inherit; flex-shrink: 0"
-                >
+                <svg class="frontPauseButton" viewBox="0 0 16 16" style="width:100%;height:100%;display:block;fill:inherit;flex-shrink:0">
                   <rect x="1" y="0" width="5" height="16" rx="1"></rect>
                   <rect x="9" y="0" width="5" height="16" rx="1"></rect>
                 </svg>
@@ -152,108 +217,166 @@
         </div>
       </section>
 
-      <!-- Trust logos -->
       <section class="trust" aria-label="Trusted companies">
-        <p class="trust-label">Trusted by 98% of the Forbes Cloud 100</p>
-        <div class="logo-marquee">
+        <p class="trust-label">Trusted by 96% of the Forbes Cloud 100</p>
+        <div class="logo-wall" aria-hidden="false">
+          <div class="logo-row">
+            <img class="brand-logo" src="https://images.ctfassets.net/spoqsaf9291f/6gu2Rybt4VdhS2GEEA99PO/ac0fedd553b2f541fde79cdda05271cc/OpenAI.svg" alt="OpenAI" height="24" />
+            <img class="brand-logo" src="https://images.ctfassets.net/spoqsaf9291f/6T4QxYfpIzIbZgWUSa5Rb1/8c6cb40bbf2304f8486222d777314b83/Figma_Wordmark__Black_.svg" alt="Figma" height="24" />
+            <img class="brand-logo" src="https://images.ctfassets.net/spoqsaf9291f/4KBpzIRuWO9Bkoho07RwHW/7e608b80b697431b92ffb144e545cf3c/Ramp.svg" alt="Ramp" height="24" />
+            <img class="brand-logo" src="https://images.ctfassets.net/spoqsaf9291f/5zvQQUAMUwmWaGbC9qhXpK/633c8d40bbbb2b42faec7ea3339788ff/cursor-logo-mono.svg" alt="Cursor" height="24" />
+            <img class="brand-logo" src="https://images.ctfassets.net/spoqsaf9291f/6NEhbP27yAbhvWdLKPHTFV/6978b1603c567d69f5fe7b4895b1d30f/Vercel.svg" alt="Vercel" height="24" />
+            <img class="brand-logo" src="https://images.ctfassets.net/spoqsaf9291f/27zUO0UMDpEBMwPKUUilFH/daba398de4e970fcda7a138ff09d480a/Nvidia.svg" alt="Nvidia" height="24" />
+            <img class="brand-logo" src="https://images.ctfassets.net/spoqsaf9291f/1TZBxOqNgDNBTJUEkD9Rn2/95219318a8bc7198d69e3fe0190ea94c/Volvo_Spread_Word_Mark_2025_bl.svg" alt="Volvo" height="24" />
+            <img class="brand-logo" src="https://images.ctfassets.net/spoqsaf9291f/nyxHXSMqMnFKE3RD3tteN/fa4e6ab45c999ace2a528a45c5bfb812/Loreal-k.svg" alt="L'Oreal" height="24" />
+            <img class="brand-logo" src="https://images.ctfassets.net/spoqsaf9291f/7hER3ka9QgDiTjLh5Fh3ZZ/acda79bc2449edf5d964a3fc89e19623/Discord-Logo-Black.svg" alt="Discord" height="24" />
+          </div>
+          <div class="logo-row">
+            <img class="brand-logo" src="https://images.ctfassets.net/spoqsaf9291f/5noP5n1Gp9wULYfUEzujKv/49d56f55c09d72488606d57671e7d8c4/full-logo--black.svg" alt="Lovable" height="24" />
+            <img class="brand-logo" src="https://images.ctfassets.net/spoqsaf9291f/kelAN094ZCNSM1hzESs2C/71fdfc39756f757c95f984aa78fc1e82/1Password.svg" alt="1Password" height="24" />
+            <img class="brand-logo" src="https://images.ctfassets.net/spoqsaf9291f/5GBjp1Q9QJDo8IJv0NqtNf/ba91a62e9525bccae6bffdb98bc3141b/Affirm.svg" alt="Affirm" height="24" />
+            <img class="brand-logo" src="https://images.ctfassets.net/spoqsaf9291f/3MimvlyRuaPCxQmBHpWRsr/b6808c6dca15c255e96ce2f85e2a6bc7/RiotGames.svg" alt="Riot Games" height="24" />
+            <img class="brand-logo" src="https://images.ctfassets.net/spoqsaf9291f/4ljglPuQFOp4jC8kIacMa1/73c44685b85c73a717baac0329633d59/clay-mono-black.svg" alt="Clay" height="24" />
+            <img class="brand-logo" src="https://images.ctfassets.net/spoqsaf9291f/14SNuPmXDPWdGE0I8TMeNL/6070db21d1b9f0e95c91e9ceb8b225e1/Remote-black.svg" alt="Remote.com" height="24" />
+            <img class="brand-logo" src="https://images.ctfassets.net/spoqsaf9291f/2lvHXS3UJ5sJscJTW8GTpc/c22ac415979069ab3be881b2749e0d77/Faire_logo_-_black.svg" alt="Faire" height="24" />
+            <img class="brand-logo" src="https://images.ctfassets.net/spoqsaf9291f/75O9653Z83boVzSMBMSY2D/4b36e928296e00612213aff4bdd369f2/toyota-black.svg" alt="Toyota" height="24" />
+          </div>
+        </div>
+        <div class="logo-marquee" aria-hidden="true">
           <div class="logo-track" id="logoTrack">
-            <span class="logo-item">OpenAI</span>
-            <span class="logo-item">Figma</span>
-            <span class="logo-item">ramp</span>
-            <span class="logo-item">CURSOR</span>
-            <span class="logo-item">▲ Vercel</span>
-            <span class="logo-item">NVIDIA</span>
-            <span class="logo-item">VOLVO</span>
-            <span class="logo-item">L'ORÉAL</span>
-            <span class="logo-item">Discord</span>
-            <span class="logo-item">Lovable</span>
-            <span class="logo-item">1Password</span>
-            <span class="logo-item">affirm</span>
-            <span class="logo-item">RIOT GAMES</span>
-            <span class="logo-item">clay</span>
-            <span class="logo-item">remote</span>
-            <span class="logo-item">FAIRE</span>
-            <span class="logo-item">TOYOTA</span>
+            <img class="brand-logo" src="https://images.ctfassets.net/spoqsaf9291f/6gu2Rybt4VdhS2GEEA99PO/ac0fedd553b2f541fde79cdda05271cc/OpenAI.svg" alt="" height="24" />
+            <img class="brand-logo" src="https://images.ctfassets.net/spoqsaf9291f/6T4QxYfpIzIbZgWUSa5Rb1/8c6cb40bbf2304f8486222d777314b83/Figma_Wordmark__Black_.svg" alt="" height="24" />
+            <img class="brand-logo" src="https://images.ctfassets.net/spoqsaf9291f/4KBpzIRuWO9Bkoho07RwHW/7e608b80b697431b92ffb144e545cf3c/Ramp.svg" alt="" height="24" />
+            <img class="brand-logo" src="https://images.ctfassets.net/spoqsaf9291f/5zvQQUAMUwmWaGbC9qhXpK/633c8d40bbbb2b42faec7ea3339788ff/cursor-logo-mono.svg" alt="" height="24" />
+            <img class="brand-logo" src="https://images.ctfassets.net/spoqsaf9291f/6NEhbP27yAbhvWdLKPHTFV/6978b1603c567d69f5fe7b4895b1d30f/Vercel.svg" alt="" height="24" />
+            <img class="brand-logo" src="https://images.ctfassets.net/spoqsaf9291f/27zUO0UMDpEBMwPKUUilFH/daba398de4e970fcda7a138ff09d480a/Nvidia.svg" alt="" height="24" />
+            <img class="brand-logo" src="https://images.ctfassets.net/spoqsaf9291f/1TZBxOqNgDNBTJUEkD9Rn2/95219318a8bc7198d69e3fe0190ea94c/Volvo_Spread_Word_Mark_2025_bl.svg" alt="" height="24" />
+            <img class="brand-logo" src="https://images.ctfassets.net/spoqsaf9291f/nyxHXSMqMnFKE3RD3tteN/fa4e6ab45c999ace2a528a45c5bfb812/Loreal-k.svg" alt="" height="24" />
+            <img class="brand-logo" src="https://images.ctfassets.net/spoqsaf9291f/7hER3ka9QgDiTjLh5Fh3ZZ/acda79bc2449edf5d964a3fc89e19623/Discord-Logo-Black.svg" alt="" height="24" />
+            <img class="brand-logo" src="https://images.ctfassets.net/spoqsaf9291f/5noP5n1Gp9wULYfUEzujKv/49d56f55c09d72488606d57671e7d8c4/full-logo--black.svg" alt="" height="24" />
+            <img class="brand-logo" src="https://images.ctfassets.net/spoqsaf9291f/kelAN094ZCNSM1hzESs2C/71fdfc39756f757c95f984aa78fc1e82/1Password.svg" alt="" height="24" />
+            <img class="brand-logo" src="https://images.ctfassets.net/spoqsaf9291f/5GBjp1Q9QJDo8IJv0NqtNf/ba91a62e9525bccae6bffdb98bc3141b/Affirm.svg" alt="" height="24" />
+            <img class="brand-logo" src="https://images.ctfassets.net/spoqsaf9291f/3MimvlyRuaPCxQmBHpWRsr/b6808c6dca15c255e96ce2f85e2a6bc7/RiotGames.svg" alt="" height="24" />
+            <img class="brand-logo" src="https://images.ctfassets.net/spoqsaf9291f/4ljglPuQFOp4jC8kIacMa1/73c44685b85c73a717baac0329633d59/clay-mono-black.svg" alt="" height="24" />
+            <img class="brand-logo" src="https://images.ctfassets.net/spoqsaf9291f/14SNuPmXDPWdGE0I8TMeNL/6070db21d1b9f0e95c91e9ceb8b225e1/Remote-black.svg" alt="" height="24" />
+            <img class="brand-logo" src="https://images.ctfassets.net/spoqsaf9291f/2lvHXS3UJ5sJscJTW8GTpc/c22ac415979069ab3be881b2749e0d77/Faire_logo_-_black.svg" alt="" height="24" />
+            <img class="brand-logo" src="https://images.ctfassets.net/spoqsaf9291f/75O9653Z83boVzSMBMSY2D/4b36e928296e00612213aff4bdd369f2/toyota-black.svg" alt="" height="24" />
           </div>
         </div>
       </section>
+      </div>
 
-      <!-- Features -->
       <section class="features" id="features">
         <div class="container-wide">
           <h2 class="section-title">AI where your team works.</h2>
-
           <div class="feature-grid">
-            <article class="feature-card">
-              <p class="eyebrow">Capture knowledge</p>
-              <h3>
-                Bring everything into one system of record.
-                <span class="arrow-btn" aria-hidden="true">→</span>
-              </h3>
-              <div class="mini-ui">
-                <h4>
-                  <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" style="vertical-align:-4px;margin-right:6px">
-                    <path fill="currentColor" d="M12 14a3 3 0 0 0 3-3V6a3 3 0 1 0-6 0v5a3 3 0 0 0 3 3Zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2Z"/>
-                  </svg>
-                  Meetings
-                </h4>
-                <div class="row"><span>Technical Design Review</span><span><span class="tag pink">Growth</span> <span class="tag blue">Infra</span></span></div>
-                <div class="row"><span>Product + Design Crit</span><span><span class="tag yellow">Design</span> <span class="tag purple">Mobile</span></span></div>
-                <div class="row"><span>Engineering Standup</span><span><span class="tag yellow">Design</span> <span class="tag purple">Mobile</span></span></div>
-                <div class="row"><span>Sprint Planning (Sprint 27)</span><span><span class="tag green">Product Ops</span></span></div>
-                <div class="row"><span>Sprint Retro (Sprint 26)</span><span><span class="tag green">Product Ops</span> <span class="tag yellow">Design</span></span></div>
-              </div>
-            </article>
-
-            <article class="feature-card">
-              <p class="eyebrow">Find answers</p>
-              <h3>
-                Get answers, instantly—with citations.
-                <span class="arrow-btn" aria-hidden="true">→</span>
-              </h3>
-              <div class="mini-ui" style="border-radius:14px;margin-bottom:18px;">
-                <h4>
-                  <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" style="vertical-align:-3px;margin-right:6px">
-                    <path fill="#d4a017" d="M7 4h10v2h3l-1.5 5A4.5 4.5 0 0 1 14 15.9V18h3v2H7v-2h3v-2.1A4.5 4.5 0 0 1 5.5 11L4 6h3V4Zm2 2v1h6V6H9Zm-1.6 5.2A2.5 2.5 0 0 0 9.9 13h4.2a2.5 2.5 0 0 0 2.5-1.8L17.4 8H6.6l.8 3.2Z"/>
-                  </svg>
-                  H2 Deal Flow Dashboard
-                </h4>
-                <div class="chart-mock">
-                  <div class="bars" aria-hidden="true">
-                    <span></span><span></span><span></span><span></span><span></span>
-                  </div>
-                  <div class="ask-bubble">
-                    <span>What are our biggest opportunities in H2?</span>
-                    <span class="arrow-btn" style="width:28px;height:28px;font-size:14px">↑</span>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <article class="feature-card wide">
-              <div>
-                <p class="eyebrow">Automate busywork</p>
-                <h3 style="margin-bottom:0">
-                  Keep work moving 24/7 with agents.
+            <article class="feature-card bento bento--pair">
+              <a class="bento-anchor" href="#" aria-label="Capture knowledge">&nbsp;</a>
+              <header class="bento-header bento-header--pair">
+                <p class="eyebrow">Capture knowledge</p>
+                <div class="bento-title-row">
+                  <h3>Bring everything into one system of record.</h3>
                   <span class="arrow-btn" aria-hidden="true">→</span>
-                </h3>
-              </div>
-              <div class="agent-panels">
-                <div class="agent-panel">
-                  <h5>Engineering Tasks</h5>
-                  <span class="chip" style="background:#e8e3f3;color:#6b4faa">New 2</span>
-                  <span class="chip" style="background:#fdecc8;color:#9a6700">In progress 3</span>
-                  <div class="row"><span>Fix wrap on H1</span><span class="tag pink">High</span></div>
-                  <div class="row"><span>Coding Agent</span><span class="tag yellow">Medium</span></div>
-                  <div class="row"><span>Animation refinements</span><span class="tag green">Low</span></div>
                 </div>
-                <div class="agent-panel accent">
-                  <h5>Coding Agent</h5>
-                  <p style="font-size:13px;margin:0 0 10px;color:rgba(0,0,0,.7)">
-                    Take a look at what’s in Engineering Tasks to see if there’s anything you can take off the team’s plate.
-                  </p>
-                  <div class="row"><span>Updated 5 pages in Engineering Tasks</span></div>
-                  <div class="row"><span>Assigned Fix wrap on H1 as highest priority</span></div>
+              </header>
+              <div class="bento-media bento-media-layered">
+                <picture class="bento-layer bento-layer-base">
+                  <source
+                    media="(max-width: 768px)"
+                    srcset="https://images.ctfassets.net/spoqsaf9291f/37B39r8J6IrO7wtJ1CrpXh/0bf4bcb1e873d5269bf306dff83c78dd/capture_mobile.jpg"
+                  />
+                  <img
+                    src="https://images.ctfassets.net/spoqsaf9291f/5s8E0EU3tXEvGrFrRwgxhb/c44fce43494ccd6f098746c64b679aab/capture_desktop.jpg"
+                    alt=""
+                    loading="lazy"
+                  />
+                </picture>
+                <img
+                  class="bento-layer bento-layer-pin"
+                  src="https://images.ctfassets.net/spoqsaf9291f/5bqhI7eaPc7AeAtuuTvtuh/915d56f683fcd7edbd9f1e0434136b0d/pin_capture.png"
+                  alt=""
+                  loading="lazy"
+                />
+                <img
+                  class="bento-layer bento-layer-aimn"
+                  src="https://images.ctfassets.net/spoqsaf9291f/3wptjGyp47YX2bFx2LikSS/06eae544cf0d12dcd58a41e157031c9a/Mini_AIMN.png"
+                  alt=""
+                  loading="lazy"
+                />
+              </div>
+            </article>
+
+            <article class="feature-card bento bento--pair">
+              <a class="bento-anchor" href="#" aria-label="Find answers">&nbsp;</a>
+              <header class="bento-header bento-header--pair">
+                <p class="eyebrow">Find answers</p>
+                <div class="bento-title-row">
+                  <h3>Get answers, instantly—with citations.</h3>
+                  <span class="arrow-btn" aria-hidden="true">→</span>
+                </div>
+              </header>
+              <div class="bento-media bento-media-layered bento-media-find">
+                <picture class="bento-layer bento-layer-base">
+                  <source
+                    media="(max-width: 768px)"
+                    srcset="https://images.ctfassets.net/spoqsaf9291f/3tqrLCOFenEuNxyEi4qDGG/43e86f7698290dae928aad37f0a3c7c3/find_mobile.png"
+                  />
+                  <img
+                    src="https://images.ctfassets.net/spoqsaf9291f/1FOyxGfzHA9kKA1BVPQa4m/721dc34d66976c6dbaa4b16b260b9a97/find_desktop.png"
+                    alt=""
+                    loading="lazy"
+                  />
+                </picture>
+                <img
+                  class="bento-layer bento-layer-south bento-layer-find-south"
+                  src="https://images.ctfassets.net/spoqsaf9291f/3PH2HDqwPQKa0Xtq1EzIHs/df192356392843cf5999e8691221fae1/image.png"
+                  alt=""
+                  loading="lazy"
+                />
+                <img
+                  class="bento-layer bento-layer-south bento-layer-find-input"
+                  src="https://images.ctfassets.net/spoqsaf9291f/4mw82WFsPwlqM8p3SFChGp/0f24425d9c398b7231eb089e4677e069/chat_input.png"
+                  alt=""
+                  loading="lazy"
+                />
+              </div>
+            </article>
+
+            <article class="feature-card wide bento bento--stacked">
+              <div class="bento-inner">
+                <a class="bento-anchor" aria-label="Automate busywork" href="#">&nbsp;</a>
+                <header class="bento-header bento-header--side">
+                  <p class="eyebrow">Automate busywork</p>
+                  <h3>Keep work moving 24/7 with agents.</h3>
+                  <span class="arrow-btn" aria-hidden="true">→</span>
+                </header>
+                <div class="bento-media bento-media-stacked">
+                  <picture class="align-center">
+                    <source
+                      media="(max-width: 839px)"
+                      srcset="https://images.ctfassets.net/spoqsaf9291f/1jqcG8A8fT67XZAhwR1oVH/d07e98b94af5fc4f6ec4a9b7648f02a0/image.png"
+                    />
+                    <img
+                      src="https://images.ctfassets.net/spoqsaf9291f/4U19kO5gM7RYsJa4Xr2oGF/806a8c048e2a03bf4886d3085a03986d/image.png"
+                      alt=""
+                      width="1980"
+                      height="1980"
+                      loading="lazy"
+                    />
+                  </picture>
+                  <picture class="align-right">
+                    <source
+                      media="(max-width: 839px)"
+                      srcset="https://images.ctfassets.net/spoqsaf9291f/74S6scH4Wyb7HIj8vAQwcT/37fb4a6eaa694d43a684592c48f252da/automate_front_mobile.jpg"
+                    />
+                    <img
+                      src="https://images.ctfassets.net/spoqsaf9291f/5CESaDHalT60BVMktTrFD9/986587f634695de956580c1654b4f777/automate_front_desktop.jpg"
+                      alt=""
+                      width="1980"
+                      height="1980"
+                      loading="lazy"
+                    />
+                  </picture>
                 </div>
               </div>
             </article>
@@ -261,90 +384,193 @@
         </div>
       </section>
 
-      <!-- Use cases -->
       <section class="usecases" id="usecases">
         <div class="container-wide">
-          <p class="usecases-label">See what Notion can do</p>
+          <h3 class="usecases-label">See what Notion can do</h3>
           <div class="usecase-grid">
-            <a class="usecase-card" href="#cta">
-              <div class="usecase-icon blue" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#3b82f6" d="M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H9l-5 3V6a1 1 0 0 1 1-1Z"/></svg>
+            <div class="usecase-card">
+              <a class="usecase-card-anchor" aria-label="Triage product feedback" href="#">&nbsp;</a>
+              <div class="usecase-icon usecase-icon--blue" aria-hidden="true">
+                <span class="usecase-graphic">
+                  <img src="assets/images/agents/mailbox.png" alt="" width="48" height="48" />
+                </span>
               </div>
-              <h3>Triage product feedback →</h3>
-            </a>
-            <a class="usecase-card" href="#cta">
-              <div class="usecase-icon yellow" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="#f5c542"/><circle cx="9" cy="10" r="1.2" fill="#111"/><circle cx="15" cy="10" r="1.2" fill="#111"/><path d="M8.5 14.5c1.2 1.4 5.8 1.4 7 0" fill="none" stroke="#111" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <h3 class="usecase-card-title">Triage product feedback<span class="usecase-card-arrow">→</span></h3>
+            </div>
+            <div class="usecase-card">
+              <a class="usecase-card-anchor" aria-label="Resolve support tickets in Slack" href="#">&nbsp;</a>
+              <div class="usecase-icon usecase-icon--yellow" aria-hidden="true">
+                <span class="usecase-graphic">
+                  <img src="assets/images/agents/rock.png" alt="" width="48" height="48" />
+                </span>
               </div>
-              <h3>Resolve support tickets in Slack →</h3>
-            </a>
-            <a class="usecase-card" href="#cta">
-              <div class="usecase-icon red" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#ef4444" d="M12 3 2 20h20L12 3Zm0 5 6.5 11h-13L12 8Zm-1 4h2v3h-2v-3Zm0 4h2v2h-2v-2Z"/></svg>
+              <h3 class="usecase-card-title">Resolve support tickets in Slack<span class="usecase-card-arrow">→</span></h3>
+            </div>
+            <div class="usecase-card">
+              <a class="usecase-card-anchor" aria-label="Respond to security alerts faster" href="#">&nbsp;</a>
+              <div class="usecase-icon usecase-icon--red" aria-hidden="true">
+                <span class="usecase-graphic">
+                  <img src="assets/images/agents/sign.png" alt="" width="48" height="48" />
+                </span>
               </div>
-              <h3>Respond to security alerts faster →</h3>
-            </a>
-            <a class="usecase-card" href="#cta">
-              <div class="usecase-icon green" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#22a06b" d="M12 2c2 3 2 5 0 7 2 0 5 1 6 4-3 0-5 1-6 3-1-2-3-3-6-3 1-3 4-4 6-4-2-2-2-4 0-7Zm0 9c1.5 1.5 2 3 1 5-1.5-.5-3 0-4 1 .5-2 1.5-4 3-6Z"/></svg>
+              <h3 class="usecase-card-title">Respond to security alerts faster<span class="usecase-card-arrow">→</span></h3>
+            </div>
+            <div class="usecase-card">
+              <a class="usecase-card-anchor" aria-label="Automate weekly reporting" href="#">&nbsp;</a>
+              <div class="usecase-icon usecase-icon--green" aria-hidden="true">
+                <span class="usecase-graphic">
+                  <img src="assets/images/agents/apple.png" alt="" width="48" height="48" />
+                </span>
               </div>
-              <h3>Automate weekly reporting →</h3>
-            </a>
-            <a class="usecase-card" href="#cta">
-              <div class="usecase-icon purple" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#7c3aed" d="M14.7 6.3 17.7 3.3l3 3-3 3-3-3Zm-1.4 1.4L4 17v3h3l9.3-9.3-3-3Z"/></svg>
+              <h3 class="usecase-card-title">Automate weekly reporting<span class="usecase-card-arrow">→</span></h3>
+            </div>
+            <div class="usecase-card">
+              <a class="usecase-card-anchor" aria-label="Create your own developer tools" href="#">&nbsp;</a>
+              <div class="usecase-icon usecase-icon--dev" aria-hidden="true">
+                <span class="usecase-graphic">
+                  <img src="assets/images/agents/light_bulb.png" alt="" width="48" height="48" />
+                </span>
+                <img class="usecase-worker" src="assets/images/agents/worker.png" alt="" width="24" height="24" />
               </div>
-              <h3>Create your own developer tools →</h3>
-            </a>
+              <h3 class="usecase-card-title">Create your own developer tools<span class="usecase-card-arrow">→</span></h3>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- Stories -->
       <section class="stories" id="stories">
         <div class="container-wide">
           <h2 class="section-title">Trusted by teams that ship.</h2>
           <div class="story-grid">
-            <a class="story-card cursor" href="#cta">
-              <div class="story-brand">CURSOR</div>
-              <div class="avatar" aria-hidden="true">MT</div>
-              <p class="story-quote">
-                “Using the most AI-native tools like Notion is an important competitive advantage for us to stay small while doing a lot.”
-              </p>
-              <p class="story-meta">Michael Truell, Co-founder &amp; CEO</p>
+            <a class="story-card cursor" href="#" aria-label="Read the Cursor customer story">
+              <img
+                class="story-portrait"
+                src="https://images.ctfassets.net/spoqsaf9291f/3M9ceMRlhgl2rIRgqs6nSq/8a641169512d0053ac357d97ba527758/cursor.png"
+                alt="Michael Truell, Co-founder and CEO of Cursor"
+                width="1200"
+                height="1500"
+                loading="lazy"
+              />
+              <img
+                class="story-logo"
+                src="https://images.ctfassets.net/spoqsaf9291f/OJRQbA3XzRNfCfMh3UWf4/76408a06d9d9a1ed52fcd109b264de80/Company_Cursor__Colorway_White.svg"
+                alt="Cursor"
+                height="24"
+              />
+              <div class="story-copy">
+                <p class="story-quote">
+                  “Using the most AI-native tools like Notion is an important competitive advantage for us to stay small while doing a lot.”
+                </p>
+                <p class="story-meta">Michael Truell, Co-founder &amp; CEO</p>
+              </div>
             </a>
-            <a class="story-card faire" href="#cta">
-              <div class="story-brand">FAIRE</div>
-              <div class="avatar" aria-hidden="true">RS</div>
-              <p class="story-quote">
-                “Notion’s thoughtful design speeds up collaboration and decisions so we can deliver impact to our customers faster.”
-              </p>
-              <p class="story-meta">Renee Solorzano, Sr. Director of Product Design</p>
+            <a class="story-card faire" href="#" aria-label="Read the Faire customer story">
+              <img
+                class="story-portrait"
+                src="https://images.ctfassets.net/spoqsaf9291f/3pCHbRV7f5UjIssdK3CDpy/7b48cf81bad50d66e31caa5a3b80d5b5/faire.png"
+                alt="Renee Solorzano, Sr. Director of Product Design at Faire"
+                width="1200"
+                height="1500"
+                loading="lazy"
+              />
+              <img
+                class="story-logo"
+                src="https://images.ctfassets.net/spoqsaf9291f/6HI6Z7JAuvLnNK8mDWdnF8/fd2d3b36fc27b8bbad2042136c7991f2/Company_faire__Colorway_White.svg"
+                alt="Faire"
+                height="24"
+              />
+              <div class="story-copy">
+                <p class="story-quote">
+                  “Notion’s thoughtful design speeds up collaboration and decisions so we can deliver impact to our customers faster.”
+                </p>
+                <p class="story-meta">Renee Solorzano, Sr. Director of Product Design</p>
+              </div>
             </a>
-            <a class="story-card ramp" href="#cta">
-              <div class="story-brand">ramp</div>
-              <div class="avatar" aria-hidden="true">BL</div>
-              <p class="story-quote">
-                “Notion Custom Agents help our team go beyond doing work with AI to building AI tools that do the work for them.”
-              </p>
-              <p class="story-meta">Ben Levick, Head of Operations &amp; Internal AI</p>
+            <a class="story-card ramp" href="#" aria-label="Read the Ramp customer story">
+              <img
+                class="story-portrait"
+                src="https://images.ctfassets.net/spoqsaf9291f/69ZGgVfnKktXcsoatPFe10/bb284c982b9a95f943eef6bbda821104/ramp.png"
+                alt="Ben Levick, Head of Operations &amp; Internal AI at Ramp"
+                width="1200"
+                height="1500"
+                loading="lazy"
+              />
+              <img
+                class="story-logo"
+                src="https://images.ctfassets.net/spoqsaf9291f/6zW25mUZj4PMuydbiGSEIi/9b8c5eb1d8e0db2abf4c531433a39a6e/Ramp_Business_Corporation_Logo_1.svg"
+                alt="Ramp"
+                height="24"
+              />
+              <div class="story-copy">
+                <p class="story-quote">
+                  “Notion Custom Agents help our team go beyond doing work with AI to building AI tools that do the work for them.”
+                </p>
+                <p class="story-meta">Ben Levick, Head of Operations &amp; Internal AI</p>
+              </div>
             </a>
           </div>
         </div>
       </section>
 
-      <!-- Stats -->
       <section class="stats" aria-label="Company stats">
-        <div class="stats-track" id="statsTrack">
-          <span class="stat-item"><strong>G2’s #1</strong> knowledge base for 3 consecutive years</span>
-          <span class="stat-item"><strong>100M</strong> users in over 50 countries</span>
-          <span class="stat-item"><strong>Over 50%</strong> of YC companies</span>
-          <span class="stat-item"><strong>1.4M+</strong> community members</span>
-          <span class="stat-item"><strong>62%</strong> of Fortune 100 use Notion</span>
+        <div class="stats-row">
+          <div class="stats-placeholder" aria-hidden="true">
+            <div class="stat-item">
+              <svg class="stat-icon" width="24" height="24" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M15.625 5H15V2.5H5V5h-.625C2.447 5 1.25 6.197 1.25 8.125s1.197 3.125 3.125 3.125h1.153c.65 1.34 1.881 2.2 3.535 2.431v.694c0 .772-.479 1.25-1.25 1.25h-.625V17.5h5.625v-1.875h-.626c-.771 0-1.25-.478-1.25-1.25v-.694c1.657-.231 2.885-1.09 3.535-2.431h1.153c1.928 0 3.125-1.197 3.125-3.125S17.553 5 15.625 5M4.375 9.375c-.888 0-1.25-.363-1.25-1.25 0-.888.362-1.25 1.25-1.25H5V8.75q.002.322.031.625zm11.25 0h-.656q.03-.303.031-.625V6.875h.625c.887 0 1.25.362 1.25 1.25 0 .887-.363 1.25-1.25 1.25"/></svg>
+              <span>G2's #1 knowledge base for 3 consecutive years</span>
+            </div>
+          </div>
+          <div class="stats-viewport">
+            <div class="stats-track" id="statsTrack">
+              <div class="stats-set">
+                <div class="stat-item">
+                  <svg class="stat-icon" width="24" height="24" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M15.625 5H15V2.5H5V5h-.625C2.447 5 1.25 6.197 1.25 8.125s1.197 3.125 3.125 3.125h1.153c.65 1.34 1.881 2.2 3.535 2.431v.694c0 .772-.479 1.25-1.25 1.25h-.625V17.5h5.625v-1.875h-.626c-.771 0-1.25-.478-1.25-1.25v-.694c1.657-.231 2.885-1.09 3.535-2.431h1.153c1.928 0 3.125-1.197 3.125-3.125S17.553 5 15.625 5M4.375 9.375c-.888 0-1.25-.363-1.25-1.25 0-.888.362-1.25 1.25-1.25H5V8.75q.002.322.031.625zm11.25 0h-.656q.03-.303.031-.625V6.875h.625c.887 0 1.25.362 1.25 1.25 0 .887-.363 1.25-1.25 1.25"/></svg>
+                  <span>G2's #1 knowledge base for 3 consecutive years</span>
+                </div>
+                <div class="stat-item">
+                  <svg class="stat-icon" width="24" height="24" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 2.5c-4.14 0-7.5 3.36-7.5 7.5s3.36 7.5 7.5 7.5 7.5-3.36 7.5-7.5-3.36-7.5-7.5-7.5m4.675 4.375h-1.556a9.6 9.6 0 0 0-.597-1.897 5.6 5.6 0 0 1 2.15 1.897zm-3.394 0H8.716c.593-2.769 1.972-2.769 2.565 0M4.52 11.25A5.7 5.7 0 0 1 4.375 10c0-.431.053-.847.144-1.25h2.093c-.03.412-.05.831-.05 1.25q0 .63.05 1.25zm.803 1.875h1.556c.147.69.347 1.334.597 1.897a5.6 5.6 0 0 1-2.15-1.897zm1.556-6.25H5.322a5.7 5.7 0 0 1 2.15-1.897 10 10 0 0 0-.597 1.897zm1.838 6.25h2.565c-.594 2.769-1.972 2.769-2.565 0m2.809-1.875h-3.05A20 20 0 0 1 8.438 10q0-.67.037-1.25h3.05q.037.58.037 1.25t-.037 1.25m1 3.772c.25-.563.447-1.206.597-1.897h1.556a5.7 5.7 0 0 1-2.15 1.897zm.862-3.772q.049-.62.05-1.25t-.05-1.25h2.094c.09.403.144.819.144 1.25s-.053.847-.144 1.25z"/></svg>
+                  <span>100M users in over 50 countries</span>
+                </div>
+                <div class="stat-item">
+                  <svg class="stat-icon" width="24" height="24" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M15 11.25V15h-1.25l-1.875-1.875V15h-3.75v-1.875L6.25 15H5v-3.75l3.125-3.125v-3.75c0-2.119.719-3.125 1.875-3.125s1.875 1.006 1.875 3.125v3.75zm-5 4.688c-.69 0-1.25.559-1.25 1.25 0 .69.331 1.056 1.25 2.187.919-1.131 1.25-1.497 1.25-2.187 0-.691-.56-1.25-1.25-1.25"/></svg>
+                  <span>Over 50% of YC companies</span>
+                </div>
+                <div class="stat-item">
+                  <svg class="stat-icon" width="24" height="24" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M17.5 7.5c0 4.36-4.578 7.972-7.5 10-2.922-2.028-7.5-5.64-7.5-10 0-2.669 1.819-4.375 4.063-4.375 1.537 0 2.859.928 3.437 2.253a3.75 3.75 0 0 1 3.438-2.253c2.243 0 4.062 1.706 4.062 4.375"/></svg>
+                  <span>1.4M+ community members</span>
+                </div>
+                <div class="stat-item">
+                  <svg class="stat-icon" width="24" height="24" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 2.5c-4.14 0-7.5 3.36-7.5 7.5s3.36 7.5 7.5 7.5 7.5-3.36 7.5-7.5-3.36-7.5-7.5-7.5m4.675 4.375h-1.556a9.6 9.6 0 0 0-.597-1.897 5.6 5.6 0 0 1 2.15 1.897zm-3.394 0H8.716c.593-2.769 1.972-2.769 2.565 0M4.52 11.25A5.7 5.7 0 0 1 4.375 10c0-.431.053-.847.144-1.25h2.093c-.03.412-.05.831-.05 1.25q0 .63.05 1.25zm.803 1.875h1.556c.147.69.347 1.334.597 1.897a5.6 5.6 0 0 1-2.15-1.897zm1.556-6.25H5.322a5.7 5.7 0 0 1 2.15-1.897 10 10 0 0 0-.597 1.897zm1.838 6.25h2.565c-.594 2.769-1.972 2.769-2.565 0m2.809-1.875h-3.05A20 20 0 0 1 8.438 10q0-.67.037-1.25h3.05q.037.58.037 1.25t-.037 1.25m1 3.772c.25-.563.447-1.206.597-1.897h1.556a5.7 5.7 0 0 1-2.15 1.897zm.862-3.772q.049-.62.05-1.25t-.05-1.25h2.094c.09.403.144.819.144 1.25s-.053.847-.144 1.25z"/></svg>
+                  <span>62% of Fortune 100 use Notion</span>
+                </div>
+              </div>
+              <div class="stats-set" aria-hidden="true">
+                <div class="stat-item">
+                  <svg class="stat-icon" width="24" height="24" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M15.625 5H15V2.5H5V5h-.625C2.447 5 1.25 6.197 1.25 8.125s1.197 3.125 3.125 3.125h1.153c.65 1.34 1.881 2.2 3.535 2.431v.694c0 .772-.479 1.25-1.25 1.25h-.625V17.5h5.625v-1.875h-.626c-.771 0-1.25-.478-1.25-1.25v-.694c1.657-.231 2.885-1.09 3.535-2.431h1.153c1.928 0 3.125-1.197 3.125-3.125S17.553 5 15.625 5M4.375 9.375c-.888 0-1.25-.363-1.25-1.25 0-.888.362-1.25 1.25-1.25H5V8.75q.002.322.031.625zm11.25 0h-.656q.03-.303.031-.625V6.875h.625c.887 0 1.25.362 1.25 1.25 0 .887-.363 1.25-1.25 1.25"/></svg>
+                  <span>G2's #1 knowledge base for 3 consecutive years</span>
+                </div>
+                <div class="stat-item">
+                  <svg class="stat-icon" width="24" height="24" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 2.5c-4.14 0-7.5 3.36-7.5 7.5s3.36 7.5 7.5 7.5 7.5-3.36 7.5-7.5-3.36-7.5-7.5-7.5m4.675 4.375h-1.556a9.6 9.6 0 0 0-.597-1.897 5.6 5.6 0 0 1 2.15 1.897zm-3.394 0H8.716c.593-2.769 1.972-2.769 2.565 0M4.52 11.25A5.7 5.7 0 0 1 4.375 10c0-.431.053-.847.144-1.25h2.093c-.03.412-.05.831-.05 1.25q0 .63.05 1.25zm.803 1.875h1.556c.147.69.347 1.334.597 1.897a5.6 5.6 0 0 1-2.15-1.897zm1.556-6.25H5.322a5.7 5.7 0 0 1 2.15-1.897 10 10 0 0 0-.597 1.897zm1.838 6.25h2.565c-.594 2.769-1.972 2.769-2.565 0m2.809-1.875h-3.05A20 20 0 0 1 8.438 10q0-.67.037-1.25h3.05q.037.58.037 1.25t-.037 1.25m1 3.772c.25-.563.447-1.206.597-1.897h1.556a5.7 5.7 0 0 1-2.15 1.897zm.862-3.772q.049-.62.05-1.25t-.05-1.25h2.094c.09.403.144.819.144 1.25s-.053.847-.144 1.25z"/></svg>
+                  <span>100M users in over 50 countries</span>
+                </div>
+                <div class="stat-item">
+                  <svg class="stat-icon" width="24" height="24" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M15 11.25V15h-1.25l-1.875-1.875V15h-3.75v-1.875L6.25 15H5v-3.75l3.125-3.125v-3.75c0-2.119.719-3.125 1.875-3.125s1.875 1.006 1.875 3.125v3.75zm-5 4.688c-.69 0-1.25.559-1.25 1.25 0 .69.331 1.056 1.25 2.187.919-1.131 1.25-1.497 1.25-2.187 0-.691-.56-1.25-1.25-1.25"/></svg>
+                  <span>Over 50% of YC companies</span>
+                </div>
+                <div class="stat-item">
+                  <svg class="stat-icon" width="24" height="24" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M17.5 7.5c0 4.36-4.578 7.972-7.5 10-2.922-2.028-7.5-5.64-7.5-10 0-2.669 1.819-4.375 4.063-4.375 1.537 0 2.859.928 3.437 2.253a3.75 3.75 0 0 1 3.438-2.253c2.243 0 4.062 1.706 4.062 4.375"/></svg>
+                  <span>1.4M+ community members</span>
+                </div>
+                <div class="stat-item">
+                  <svg class="stat-icon" width="24" height="24" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 2.5c-4.14 0-7.5 3.36-7.5 7.5s3.36 7.5 7.5 7.5 7.5-3.36 7.5-7.5-3.36-7.5-7.5-7.5m4.675 4.375h-1.556a9.6 9.6 0 0 0-.597-1.897 5.6 5.6 0 0 1 2.15 1.897zm-3.394 0H8.716c.593-2.769 1.972-2.769 2.565 0M4.52 11.25A5.7 5.7 0 0 1 4.375 10c0-.431.053-.847.144-1.25h2.093c-.03.412-.05.831-.05 1.25q0 .63.05 1.25zm.803 1.875h1.556c.147.69.347 1.334.597 1.897a5.6 5.6 0 0 1-2.15-1.897zm1.556-6.25H5.322a5.7 5.7 0 0 1 2.15-1.897 10 10 0 0 0-.597 1.897zm1.838 6.25h2.565c-.594 2.769-1.972 2.769-2.565 0m2.809-1.875h-3.05A20 20 0 0 1 8.438 10q0-.67.037-1.25h3.05q.037.58.037 1.25t-.037 1.25m1 3.772c.25-.563.447-1.206.597-1.897h1.556a5.7 5.7 0 0 1-2.15 1.897zm.862-3.772q.049-.62.05-1.25t-.05-1.25h2.094c.09.403.144.819.144 1.25s-.053.847-.144 1.25z"/></svg>
+                  <span>62% of Fortune 100 use Notion</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <!-- CTA -->
       <section class="cta" id="cta">
         <div class="container">
           <h2>Get started today.</h2>
@@ -356,13 +582,16 @@
       </section>
     </main>
 
-    <footer class="site-footer">
+    <footer class="site-footer" id="site-footer">
       <div class="container-wide">
         <div class="footer-grid">
           <div>
-            <a href="index.html" class="logo-wordmark" aria-label="Notion – Home">
-              <span class="logo">N</span>
-              Notion
+            <a href="index.html" class="notion-logo footer-logo" aria-label="Notion – Home">
+              <svg width="33" height="34" viewBox="0 0 33 34" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M3.8051 3.26755L20.5301 2.04319C22.5839 1.86808 23.1124 1.98538 24.4032 2.91756L29.7421 6.64773C30.623 7.28917 30.9165 7.46381 30.9165 8.16307V28.6217C30.9165 29.9038 30.4468 30.6622 28.804 30.7782L9.38138 31.9442C8.14825 32.0027 7.56135 31.8279 6.91556 31.0114L2.98395 25.9405C2.27947 25.0072 1.98651 24.3088 1.98651 23.4918V5.3068C1.98651 4.25826 2.45649 3.38366 3.8051 3.26755Z" fill="#fff"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M20.5301 2.04318C22.5838 1.86808 23.1124 1.98541 24.4031 2.91757L29.7421 6.64778C30.623 7.28918 30.9167 7.46383 30.9167 8.16301V28.6217C30.9167 29.9039 30.4468 30.6622 28.804 30.7782L9.38127 31.944C8.14822 32.0025 7.56137 31.8279 6.9156 31.0114L2.98396 25.9405C2.27951 25.0072 1.98647 24.3088 1.98645 23.492V5.30687C1.98645 4.25835 2.45646 3.38365 3.80508 3.26754L20.5301 2.04318ZM28.9214 9.91165C28.9214 9.15462 28.6285 8.74625 27.9818 8.80449L8.91064 9.91165C8.20688 9.97045 7.9722 10.3204 7.9722 11.0779V28.4466C7.97222 29.3801 8.44147 29.7293 9.49759 29.6715L27.7471 28.6217C28.8037 28.5641 28.9214 27.922 28.9214 27.1636V9.91165ZM25.988 12.0096C26.1051 12.5347 25.988 13.0592 25.4588 13.1182L24.5795 13.2926V26.1151C23.816 26.5231 23.1122 26.7563 22.5256 26.7563C21.5863 26.7563 21.351 26.4646 20.6475 25.5908L14.8959 16.6149V25.2992L16.7158 25.7076C16.7158 25.7076 16.7159 26.7563 15.2475 26.7563L11.1994 26.9897C11.0818 26.7563 11.1995 26.1739 11.6101 26.0571L12.6664 25.7662V14.2837L11.1997 14.1668C11.0822 13.6417 11.3751 12.8847 12.1972 12.8259L16.5398 12.5349L22.5256 21.6277V13.5839L20.9993 13.4098C20.8821 12.7679 21.351 12.3018 21.9379 12.244L25.988 12.0096ZM23.816 4.43331C23.2877 4.02552 22.5835 3.55846 21.2343 3.67528L5.15507 4.84121C4.56875 4.89903 4.45158 5.19046 4.68509 5.42409L6.97519 7.23083C7.91323 7.98837 8.26511 7.93069 10.0265 7.81388L26.632 6.82259C26.9842 6.82259 26.6915 6.47348 26.5739 6.41536L23.816 4.43331Z" fill="#000"></path>
+              </svg>
+              <span>Notion</span>
             </a>
             <p class="footer-quote">
               “We shape our tools, and thereafter our tools shape us.”
@@ -372,41 +601,38 @@
 
           <div class="footer-col">
             <h4>Product</h4>
-            <a href="#features">Features</a>
-            <a href="#features">What's New</a>
-            <a href="#features">Notion AI</a>
-            <a href="#cta">Pricing</a>
-            <a href="#cta">Request a demo</a>
-            <a href="#cta">Download</a>
-            <a href="#usecases">Explore more →</a>
+            <a href="#">Features</a>
+            <a href="#">What's New</a>
+            <a href="#">Notion AI</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="#">Request a demo</a>
+            <a href="#">Download</a>
+            <a href="#">Explore more →</a>
           </div>
-
           <div class="footer-col">
             <h4>Resources</h4>
-            <a href="#stories">Customer stories</a>
-            <a href="#cta">Connections</a>
-            <a href="#cta">Marketplace</a>
-            <a href="#cta">Help Center</a>
-            <a href="#cta">Academy</a>
-            <a href="#cta">Community</a>
+            <a href="#">Customer stories</a>
+            <a href="#">Connections</a>
+            <a href="#">Marketplace</a>
+            <a href="#">Help Center</a>
+            <a href="#">Academy</a>
+            <a href="#">Community</a>
           </div>
-
           <div class="footer-col">
             <h4>Company</h4>
-            <a href="#cta">About us</a>
-            <a href="#cta">Careers</a>
-            <a href="#cta">Security</a>
-            <a href="#cta">Status</a>
-            <a href="#cta">Terms &amp; privacy</a>
-            <a href="#cta">Your privacy rights</a>
+            <a href="#">About us</a>
+            <a href="#">Careers</a>
+            <a href="#">Security</a>
+            <a href="#">Status</a>
+            <a href="#">Terms &amp; privacy</a>
+            <a href="#">Your privacy rights</a>
           </div>
-
           <div class="footer-col">
             <h4>Notion for</h4>
-            <a href="#cta">Enterprise</a>
-            <a href="#cta">Small businesses</a>
-            <a href="#cta">Startups</a>
-            <a href="#cta">Developers</a>
+            <a href="#">Enterprise</a>
+            <a href="#">Small businesses</a>
+            <a href="#">Startups</a>
+            <a href="#">Developers</a>
           </div>
         </div>
 
@@ -414,7 +640,7 @@
           <div>
             <span>© 2026 Notion Labs, Inc.</span>
             ·
-            <a href="#cta">Cookie settings</a>
+            <a href="#">Cookie settings</a>
             ·
             <span>Codeforge educational clone</span>
           </div>
